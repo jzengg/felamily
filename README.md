@@ -6,19 +6,23 @@
 
 ## Minimum Viable Product
 
-FresherNote is a web application inspired by Evernote built using Ruby on Rails
-and React.js. FresherNote allows users to:
+MyShelterManager is a web application inspired by ShelterManager built using Ruby on Rails
+and React.js. MyShelterManager helps animal shelters manage the people and animals at their shelter
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
+
 - [ ] Create an account
 - [ ] Log in / Log out
-- [ ] Create, read, edit, and delete notes
-- [ ] Organize notes within Notebooks
-- [ ] Tag notes with multiple tags and search notes by tag
-- [ ] Search through notes for blocks of text
-- [ ] Apply complex styling to notes while editing
-- [ ] Set reminders on notes
+- [ ] Role-based permissions management
+- [ ] Holds records for animals and owners.
+- [ ] CRUD for animal records, medical regiments, medical tests, and vaccinations.
+- [ ] Can schedule medications for certain frequency, duration, and can add comments to medical regimens.
+- [ ] Can associate media and owners with animals
+- [ ] Search by animal attributes (microchip number, id, owner, location)
+- [ ] Can take database info and insert into templates
+- [ ] Can sort animals by their location and display them (shelter view)
+
 
 ## Design Docs
 * [View Wireframes][view]
@@ -64,7 +68,7 @@ extend this to a fuzzy search through every Note's content.
 
 ### Phase 4: Allow Complex Styling in Notes (1 day)
 
-Using quill.js, allow for complex styling of notes. 
+Using quill.js, allow for complex styling of notes.
 
 [Details][phase-four]
 
@@ -85,11 +89,13 @@ Phase 6 I will add styling flourishes and make modals out of some elements (like
 the NotebookForm).
 
 ### Bonus Features (TBD)
-- [ ] Prettify transitions
-- [ ] Use javascript library for cleaner tag selection
-- [ ] Changelogs for Notes
-- [ ] Pagination / infinite scroll for Notes Index
-- [ ] Multiple sessions
+- [ ] full word processor and online application form
+- [ ] standard adoption contracts, invoices, cage cards included and fully editable
+- [ ] automatic daily publishing to petfinder.com, adoptapet.com, rescuegroups.org and other partner adoption sites
+- [ ] staff and volunteer rota management
+- [ ] document and contract generation, mailing labels, bulk emailing/fundraising
+- [ ] post adoptable animals straight to your shelter's Facebook page, Twitter, Pinterest or Google+ feeds
+- [ ] importing data
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
