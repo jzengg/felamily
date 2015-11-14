@@ -1,4 +1,4 @@
-# FresherNote
+# MyShelterManager
 
 [Heroku link][heroku] **NB:** This should be a link to your production site
 
@@ -17,11 +17,9 @@ and React.js. MyShelterManager helps animal shelters manage the people and anima
 - [ ] Role-based permissions management
 - [ ] Holds records for animals and owners.
 - [ ] CRUD for animal records, medical regiments, medical tests, and vaccinations.
-- [ ] Can schedule medications for certain frequency, duration, and can add comments to medical regimens.
 - [ ] Can associate media and owners with animals
 - [ ] Search by animal attributes (microchip number, id, owner, location)
 - [ ] Can take database info and insert into templates
-- [ ] Can sort animals by their location and display them (shelter view)
 
 
 ## Design Docs
@@ -89,6 +87,8 @@ Phase 6 I will add styling flourishes and make modals out of some elements (like
 the NotebookForm).
 
 ### Bonus Features (TBD)
+- [ ] Can schedule medications for certain frequency, duration, and can add comments to medical regimens.
+- [ ] Can sort animals by their location and display them (shelter view)
 - [ ] full word processor and online application form
 - [ ] standard adoption contracts, invoices, cage cards included and fully editable
 - [ ] automatic daily publishing to petfinder.com, adoptapet.com, rescuegroups.org and other partner adoption sites
