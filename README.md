@@ -14,7 +14,6 @@ and React.js. MyShelterManager helps animal shelters manage the people and anima
 
 - [ ] Create an account
 - [ ] Log in / Log out
-- [ ] Role-based permissions management
 - [ ] Holds records for animals and owners.
 - [ ] CRUD for animal records, medical regiments, medical tests, and vaccinations.
 - [ ] Can associate media and owners with animals
@@ -86,6 +85,7 @@ Phase 6 I will add styling flourishes and make modals out of some elements (like
 the NotebookForm).
 
 ### Bonus Features (TBD)
+- [ ] Role-based permissions management
 - [ ] Can take database info and insert into templates
 - [ ] Can schedule medications for certain frequency, duration, and can add comments to medical regimens.
 - [ ] Can sort animals by their location and display them (shelter view)

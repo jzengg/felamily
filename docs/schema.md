@@ -6,9 +6,10 @@ column name | data type | details
 id          | integer   | not null, primary key
 name        | string    | not null
 dob         | date      |
-owner_id    | integer   | not null, foreign key (Person), indexed
+owner_id    | integer   | not null, foreign key (references Person), indexed
 location_id | integer   | not null, foreign key (references Location), indexed
-description | integer   | not null, foreign key (Person), indexed
+entry_category | string | not null, in: ["unable to cope", "abandoned", "abuse", "allergies", "biting/scratching", "died", "unable to afford", "unsuitable accomodation", "stray", "sick/injured", "separation from partner" ]
+description | text   | not null, foreign key (Person), indexed
 time_at_shelter    | integer   | not null
 entered_shelter    | date   | not null
 code    | integer   | not null
@@ -24,33 +25,15 @@ litter    | string   |  default: false
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-fname   | integer   | not null, foreign key (references users), indexed
+fname       | string   | not null
 lname       | string    | not null
-description | string    |
-
-## reminders
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references users), indexed
-note_id     | string    | not null, foreign key (references notes), indexed
-date        | datetime  | not null
-type        | string    | not null
-prev_id     | integer   | foreign key (references reminders), indexed
-
-## tags
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-name        | string    | not null
-
-## taggings
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-name        | string    | not null
-note_id     | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
-tag_id      | integer   | not null, foreign key (references tags), indexed
+address | text    | not null
+city | string    | not null
+state | string    | not null
+zipcode | string    | not null
+phone_number | string    | not null
+email | string    | not null
+flags | string    | not null, in: ["staff", "fosterer", "volunteer", "member", "banned"]
 
 ## users
 column name     | data type | details
