@@ -1,22 +1,32 @@
 # Schema Information
 
-## notes
+## Cat
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-title       | string    | not null
-body        | text      | not null
-author_id   | integer   | not null, foreign key (references users), indexed
-notebook_id | integer   | not null, foreign key (references notebooks), indexed
-archived    | boolean   | not null, default: false
+name        | string    | not null
+dob         | date      |
+owner_id    | integer   | not null, foreign key (Person), indexed
+location_id | integer   | not null, foreign key (references Location), indexed
+description | integer   | not null, foreign key (Person), indexed
+time_at_shelter    | integer   | not null
+entered_shelter    | date   | not null
+code    | integer   | not null
+sex    | string   | not null
+color    | string   | not null
+coat_type    | string   | not null, in: ["short", "medium", "long"]
+size    | string   | not null, in: ["small", "medium", "large"]
+breed    | string   | not null
+weight    | integer   | not null
+litter    | string   |  default: false
 
-## notebooks
+## Person
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users), indexed
-title       | string    | not null
-description | string    | 
+fname   | integer   | not null, foreign key (references users), indexed
+lname       | string    | not null
+description | string    |
 
 ## reminders
 column name | data type | details

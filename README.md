@@ -19,7 +19,6 @@ and React.js. MyShelterManager helps animal shelters manage the people and anima
 - [ ] CRUD for animal records, medical regiments, medical tests, and vaccinations.
 - [ ] Can associate media and owners with animals
 - [ ] Search by animal attributes (microchip number, id, owner, location)
-- [ ] Can take database info and insert into templates
 
 
 ## Design Docs
@@ -87,6 +86,7 @@ Phase 6 I will add styling flourishes and make modals out of some elements (like
 the NotebookForm).
 
 ### Bonus Features (TBD)
+- [ ] Can take database info and insert into templates
 - [ ] Can schedule medications for certain frequency, duration, and can add comments to medical regimens.
 - [ ] Can sort animals by their location and display them (shelter view)
 - [ ] full word processor and online application form
