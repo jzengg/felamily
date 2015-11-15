@@ -28,12 +28,12 @@ and React.js. MyShelterManager helps animal shelters manage the people and anima
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Note Model and JSON API (1.5 days)
+### Phase 1: User Authentication, Cat and Person model and JSON API (1.5 days)
 
 In Phase 1, I will begin by implementing user signup and authentication (using
 BCrypt). There will be a basic landing page after signup that will contain the
 container for the application's root React component. Before building out the
-front end, I will begin by setting up a full JSON API for Notes.
+front end, I will begin by setting up a full JSON API for cats and people.
 
 [Details][phase-one]
 
@@ -87,7 +87,6 @@ the NotebookForm).
 - [ ] Can associate media and owners with animals
 - [ ] Role-based permissions management
 - [ ] Can take database info and insert into templates
-- [ ] Can schedule medications for certain frequency, duration, and can add comments to medical regimens.
 - [ ] Can sort animals by their location and display them (shelter view)
 - [ ] full word processor and online application form
 - [ ] standard adoption contracts, invoices, cage cards included and fully editable
