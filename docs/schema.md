@@ -16,8 +16,8 @@ good_with_kids         | boolean |
 declawed         | boolean | not null
 special_needs         | boolean | not null
 health_problems         | text |
-user_id    | integer   | foreign key
-owner_id    | integer   | foreign key (references people), indexed
+user_id    | integer   | foreign key (user who created the cat record)
+person_id    | integer   | foreign key (references people), indexed
 location | string   | not null, in: ["cats", "kittens", "quarantine", "isolation", "foster"]
 entry_category | string | not null, in: ["unable to cope", "abandoned", "abuse", "allergies", "biting/scratching", "died", "unable to afford", "unsuitable accommodation", "stray", "sick/injured", "separation from partner" ]
 description | text   | not null, foreign key (Person), indexed
@@ -50,6 +50,7 @@ flags | string    | not null, in: ["staff", "fosterer", "volunteer", "member", "
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
+cat_id | integer | not null
 type | string   | not null, in: ["temporary", "second", "parvovirus", "leukaemia", "first", "booster"]
 required       | date    |
 given | date    |
@@ -66,6 +67,7 @@ required       | date    | not null
 performed | date    |
 result | string    | not null, in: ["positive", "negative", "unknown"]
 comments | text    |
+cat_id | integer | not null
 
 ## medications
 column name | data type | details
@@ -78,27 +80,7 @@ start_date | date    | not null
 frequency | integer    | not null
 duration | integer    | not null
 comments | text    |
-
-## cat_tests
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-cat_id | integer   | not null, foreign key
-test_id       | integer    | not null, foreign key
-
-## cat_medications
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-cat_id | integer   | not null, foreign key
-medication_id_id       | integer    | not null, foreign key
-
-## cat_vaccines
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-cat_id | integer   | not null, foreign key
-vaccine_id       | integer    | not null, foreign key
+cat_id | integer | not null
 
 ## users
 column name     | data type | details

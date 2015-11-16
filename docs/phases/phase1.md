@@ -3,18 +3,22 @@
 ## Rails
 ### Models
 * User
-* Note
+* Cat
+* Person
 
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* Api::NotesController (create, destroy, index, show, update)
+* Api::CatsController (create, destroy, index, show, update)
+* Api::PeopleController (create, destroy, index, show, update)
 
 ### Views
 * users/new.html.erb
 * session/new.html.erb
-* notes/index.json.jbuilder
-* notes/show.json.jbuilder
+* cats/index.json.jbuilder
+* cats/show.json.jbuilder
+* people/index.json.jbuilder
+* people/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
