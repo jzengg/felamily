@@ -9,25 +9,38 @@
 
 ## Flux
 ### Views (React Components)
-* NotesIndex
-  - NotesIndexItem
-* NoteForm
+
 
 ### Stores
-* Note
+* Cat
+* Medication
+* Person
+* Vaccine
+* Test
 
 ### Actions
-* ApiActions.receiveAllNotes
-* ApiActions.receiveSingleNote
-* ApiActions.deleteNote
+* ApiActions.receiveAllCats
+* ApiActions.receiveSingleCat
+* ApiActions.receiveAllMedications
+* ApiActions.receiveSingleMedication
+* ApiActions.receiveAllVaccines
+* ApiActions.receiveSingleVaccine
+* ApiActions.receiveAllTests
+* ApiActions.receiveSingleTest
 
 ### ApiUtil
-* ApiUtil.fetchAllNotes
-* ApiUtil.fetchSingleNote
-* ApiUtil.createNote
-* ApiUtil.editNote
-* ApiUtil.destroyNote
+* ApiUtil.fetchAllCats
+* ApiUtil.fetchSingleCat
+* ApiUtil.createCat
+* ApiUtil.fetchAllMedications
+* ApiUtil.fetchSingleMedication
+* ApiUtil.createMedication
+* ApiUtil.fetchVaccines
+* ApiUtil.fetchSingleVaccine
+* ApiUtil.createVaccine
+* ApiUtil.fetchTests
+* ApiUtil.fetchSingleTest
+* ApiUtil.createTest
 
 ## Gems/Libraries
 * Flux Dispatcher
-* Twitter Bootstrap

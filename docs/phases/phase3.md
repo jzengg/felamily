@@ -2,17 +2,18 @@
 
 ## Rails
 ### Models
-* Notebook
-* Tag
-* Tagging
 
 ### Controllers
-* Api::NotebooksController (create, destroy, index, show, update)
 
 ### Views
-* notebooks/index.json.jbuilder
-* notebooks/show.json.jbuilder
-* tags/show.json.jbuilder
+* Nav Bar
+* Individual Record Page
+  * Record summary
+  * Tabs for categories of cat attributes
+  * Actions available for category
+  * Cat attributes
+    * Active tab
+    * Inactive tabs
 
 ## Flux
 ### Views (React Components)
