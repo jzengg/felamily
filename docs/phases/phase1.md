@@ -1,4 +1,4 @@
-# Phase 1: User Authentication, Note Model and JSON API
+# Phase 1: User Authentication, Cat, Medication, Test, Vaccine, and Person model and JSON API (2 days)
 
 ## Rails
 ### Models
