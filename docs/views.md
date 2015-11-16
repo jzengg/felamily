@@ -6,21 +6,20 @@
 ## New Session
 ![new-session]
 
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
+## Home Page
+![homepage]
 
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
+## Individual Record
+![record]
 
-## NoteBookForm
+## SearchResult
 ![notebook-form]
 
 ## Component Heirarchy
 ![component-heirarchy]
 
-[new-user]: ./wireframes/new_user.png
-[new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
-[component-heirarchy]: ./wireframes/component_heirarchy.png
+[new-user]: ./wireframes/sign_up.png
+[new-session]: ./wireframes/sign_in.png
+[homepage]: ./wireframes/home_page.png
+[record]: ./wireframes/record.png
+[searchresult]: ./wireframes/search_result.png
