@@ -60,7 +60,7 @@ Phase 4 adds search function for cats and people. A cat has one owner, and a per
 [Details][phase-four]
 
 
-### Phase 5:  (1 day)
+### Phase 5: Advanced Search and User Info (1 day)
 
 Phase 5 implements search by attributes. Create a component for advanced search by attributes and the associated flux needed for it. Create user info component.
 
@@ -68,7 +68,7 @@ Phase 5 implements search by attributes. Create a component for advanced search 
 
 ### Phase 6: Styling Cleanup and Seeding (1 day)
 
-I will style with CSS and possibly bootstrap.
+I will style with CSS and possibly bootstrap. Add seed data
 
 ### Bonus Features (TBD)
 - [ ] Can associate media and owners with animals
