@@ -1,4 +1,4 @@
-# Phase 5: Reminders and Garbage Collection
+# Phase 5: Advanced Search and User Info (1 day)
 
 ## Rails
 ### Models
