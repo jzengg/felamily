@@ -1,4 +1,4 @@
-# Phase 4: Allow Complex Styling in Notes (1 day)
+# Phase 4: Search, displaying results, and RUD (2 days)
 
 ## Rails
 ### Models
