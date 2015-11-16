@@ -49,6 +49,8 @@ set up, a Cat and Person store will be implemented and a set of actions correspo
 ### Phase 3: Add views for medications, tests, and vaccines (1 day)
 
 I will set up the React component for the Individual Record Page and the children components. At this point, I should be able to add new cats and new people to the database.
+
+
 [Details][phase-three]
 
 ### Phase 4: Search, displaying results, and RUD (2 days)
