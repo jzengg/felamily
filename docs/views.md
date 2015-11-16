@@ -13,10 +13,7 @@
 ![record]
 
 ## SearchResult
-![notebook-form]
-
-## Component Heirarchy
-![component-heirarchy]
+![searchresult]
 
 [new-user]: ./wireframes/sign_up.png
 [new-session]: ./wireframes/sign_in.png
