@@ -1,4 +1,5 @@
 var Search = React.createClass({
+  mixins: [ReactRouter.History],
 
   getInitialState: function () {
     return {input: ""};
@@ -19,6 +20,15 @@ var Search = React.createClass({
 
   handleSubmit: function (e) {
     e.preventDefault();
+    var filtered = CatStore.filtered(this.state.input);
+    if (filtered.length == 1) {
+      this.history.pushState(null, "cats/" + filtered[0].id);
+    } else {
+      this.history.pushState(null, "/");
+    }
+    this.setState({input: ""});
+    // trying to search from show page requires you to submit form to get back to index
+    // want to have it so you can submit and the index will update once it's been pushed in
   },
 
   render: function () {
