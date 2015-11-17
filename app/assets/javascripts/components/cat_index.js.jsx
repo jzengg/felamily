@@ -1,3 +1,5 @@
+var Link = ReactRouter.Link;
+
 var CatIndex = React.createClass({
 
   getInitialState: function () {
@@ -26,7 +28,11 @@ var CatIndex = React.createClass({
       <div>
         <ul>
         {cats.map( function (cat) {
-          return <li key={cat.id}> {cat.name} </li>;
+          return(
+          <Link key={cat.id} to={"cats/"+cat.id}>
+            <li > {cat.name} </li>
+          </Link>
+        );
         })}
         </ul>
       </div>

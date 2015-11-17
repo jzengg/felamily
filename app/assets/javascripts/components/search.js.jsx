@@ -17,11 +17,16 @@ var Search = React.createClass({
     }
   },
 
+  handleSubmit: function (e) {
+    e.preventDefault();
+  },
+
   render: function () {
     return (
       <div>
+        <form onSubmit={this.handleSubmit}>
           <input onChange={this.handleChange} type="search" value={this.state.input} placeholder="Search by name"/>
-
+          </form>
       </div>
 
 

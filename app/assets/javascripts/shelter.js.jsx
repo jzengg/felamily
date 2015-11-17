@@ -20,7 +20,7 @@ $(function () {
   var routes = (
       <Route path="/" component={App}>
         <IndexRoute component={CatIndex}/>
-        <Route path="cats/:id" />
+        <Route path="cats/:id" component={CatRecord} />
 
       </Route>
   );

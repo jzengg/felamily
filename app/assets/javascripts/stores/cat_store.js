@@ -15,6 +15,12 @@
       return _cats.slice();
     },
 
+    findCat: function (id) {
+      return _cats.find( function (cat) {
+        return cat.id == id;
+      });
+    },
+
     filtered: function (searchString) {
       if (typeof searchString == "undefined") {
         return;
