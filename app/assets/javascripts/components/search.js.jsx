@@ -4,13 +4,15 @@ var Search = React.createClass({
     return {input: ""};
   },
 
+
+
   handleChange: function (e) {
     e.preventDefault();
-    var name = e.currentTarget.value;
-    this.setState({input: name});
+    var searchString = e.currentTarget.value;
+    this.setState({input: searchString});
 
-    if (name.length > 0) {
-      ApiActions.searchCats({name: name});
+    if (searchString.length > 0) {
+      FilterActions.receiveParams(searchString);
     }
 
   },

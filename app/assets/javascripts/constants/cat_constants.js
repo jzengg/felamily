@@ -1,4 +1,3 @@
 CatConstants = {
   CATS_RECEIVED: 'CATS_RECEIVED',
-  SEARCH_CATS: 'SEARCH_CATS'
 };

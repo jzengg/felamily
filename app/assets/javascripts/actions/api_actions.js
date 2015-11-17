@@ -7,13 +7,6 @@ ApiActions = {
     });
   },
 
-  searchCats: function (param) {
-    AppDispatcher.dispatch({
-      actionType: CatConstants.SEARCH_CATS,
-      params: param
-    });
-  }
-
 
 
 

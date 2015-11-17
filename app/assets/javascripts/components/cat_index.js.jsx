@@ -6,16 +6,16 @@ var CatIndex = React.createClass({
 
   componentDidMount: function () {
     ApiUtil.fetchCats();
-    CatStore.addChangeListener(this.onChange);
+    FilterStore.addChangeListener(this.onChange);
   },
 
   componentWillUnmount: function () {
-    CatStore.removeChangeListener(this.onChange);
+    FilterStore.removeChangeListener(this.onChange);
   },
 
   onChange: function () {
-    this.setState({cats: CatStore.all()});
-
+    var filters = FilterStore.all();
+    this.setState({cats: CatStore.filtered(filters)});
   },
 
 

@@ -12,13 +12,14 @@
 
   var CatStore = root.CatStore = $.extend({}, EventEmitter.prototype, {
     all: function () {
-      return _cats;
+      return _cats.slice();
     },
 
-    filterCatByName: function (param) {
-      _cats.filter( function (cat) {
-        return cat.name.toLowerCase().startsWith(param.name.toLowerCase());
+    filtered: function (searchString) {
+      var filtered = _cats.filter( function (cat) {
+        return cat.name.toLowerCase().startsWith(searchString.toLowerCase());
       });
+      return filtered;
     },
 
     addChangeListener: function(callback){
@@ -33,9 +34,7 @@
           _resetCats(payload.cats);
           CatStore.emit(CHANGE_EVENT);
           break;
-        case CatConstants.SEARCH_CATS:
-          _resetCats(CatStore.filterCatByName(payload.params));
-          CatStore.emit(CHANGE_EVENT);
+
 
       }
 
