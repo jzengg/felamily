@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   namespace :api do
     resources :cats
   end
-  resources :users
+
+
+  resources :users, :cats, only: [:show]
   resource :session, only: [:create, :destroy, :new]
 end

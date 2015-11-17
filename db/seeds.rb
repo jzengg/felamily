@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+cats = Cat.create([
+  {name: "Emmanuel", available: true},
+  {name: "Jose", available: false }
+  ])
