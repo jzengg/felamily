@@ -1,3 +1,4 @@
 CatConstants = {
   CATS_RECEIVED: 'CATS_RECEIVED',
+  NEW_CAT: 'NEW_CAT'
 };

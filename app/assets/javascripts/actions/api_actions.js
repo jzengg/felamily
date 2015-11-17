@@ -7,6 +7,13 @@ ApiActions = {
     });
   },
 
+  receiveNewCat: function (data) {
+    AppDispatcher.dispatch({
+      actionType: CatConstants.NEW_CAT,
+      cat: data
+    });
+  }
+
 
 
 

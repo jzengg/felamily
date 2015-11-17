@@ -3,8 +3,13 @@
   // array of cat objects
   var _cats = [];
   var CHANGE_EVENT = 'change';
+  var NEW_CAT_EVENT = 'new_cat';
+
   var _resetCats = function (cats) {
     _cats = cats;
+  };
+  var _addCat = function (cat) {
+    _cats.push(cat);
   };
 
 
@@ -31,6 +36,13 @@
       return filtered;
     },
 
+    addNewCatListener: function (callback) {
+      this.on(NEW_CAT_EVENT, callback);
+    },
+    removeNewCatListener: function (callback) {
+      this.removeListener(NEW_CAT_EVENT, callback);
+    },
+
     addChangeListener: function(callback){
     this.on(CHANGE_EVENT, callback);
     },
@@ -43,7 +55,11 @@
           _resetCats(payload.cats);
           CatStore.emit(CHANGE_EVENT);
           break;
-
+        case CatConstants.NEW_CAT:
+          _addCat(payload.cat);
+          CatStore.emit(CHANGE_EVENT);
+          CatStore.emit(NEW_CAT_EVENT);
+          break;
 
       }
 

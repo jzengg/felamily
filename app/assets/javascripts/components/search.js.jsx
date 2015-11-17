@@ -28,7 +28,7 @@ var Search = React.createClass({
     } else {
       this.history.pushState(null, "/");
     }
-    
+
     this.setState({input: ""});
   },
 
