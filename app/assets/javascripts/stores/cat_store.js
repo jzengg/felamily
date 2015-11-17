@@ -16,8 +16,11 @@
     },
 
     filtered: function (searchString) {
+      if (typeof searchString == "undefined") {
+        return;
+      }
       var filtered = _cats.filter( function (cat) {
-        return cat.name.toLowerCase().startsWith(searchString.toLowerCase());
+        return cat.name.toLowerCase().includes(searchString.toLowerCase());
       });
       return filtered;
     },

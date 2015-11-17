@@ -10,11 +10,11 @@ var Search = React.createClass({
     e.preventDefault();
     var searchString = e.currentTarget.value;
     this.setState({input: searchString});
-
     if (searchString.length > 0) {
       FilterActions.receiveParams(searchString);
+    } else {
+      FilterActions.resetParams();
     }
-
   },
 
   render: function () {

@@ -1,10 +1,14 @@
 (function (root) {
 
-  var _filters = null;
-  var _resetFilters = function (params) {
+  var _filters;
+  var CHANGE_EVENT = 'change';
+
+  var _setFilters = function (params) {
     _filters = params;
   };
-  var CHANGE_EVENT = 'change';
+  var _resetFilters = function () {
+    _filters = undefined;
+  };
 
   var FilterStore = root.FilterStore = $.extend({}, EventEmitter.prototype, {
     all: function () {
@@ -22,10 +26,13 @@
     dispatcherId: AppDispatcher.register(function (payload) {
       switch (payload.actionType) {
         case FilterConstants.RECEIVE_PARAMS:
-            _resetFilters(payload.params);
+            _setFilters(payload.params);
             FilterStore.emit(CHANGE_EVENT);
           break;
-
+        case FilterConstants.RESET_PARAMS:
+          _resetFilters();
+          FilterStore.emit(CHANGE_EVENT);
+          break;
       }
     })
 
