@@ -35,6 +35,10 @@ BCrypt). There will be a basic landing page after signup that will contain the
 container for the application's root React component. Before building out the
 front end, I will begin by setting up a full JSON API for cats and people.
 
+Add picture to cat show page and file upload for it
+Add new attributes for cat using enums
+Make a news summary / shelter summary the default indexroute instead of index.
+
 [Details][phase-one]
 
 ### Phase 2: Flux Architecture and Cat and Person Create (2 days)

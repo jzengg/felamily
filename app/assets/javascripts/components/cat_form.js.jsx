@@ -20,6 +20,7 @@ var CatForm = React.createClass({
 
   handleSubmit: function (e) {
     e.preventDefault();
+
     var cat = {
       name: this.linkState("name").value,
       available: this.state.available };
@@ -39,7 +40,9 @@ var CatForm = React.createClass({
         <label> Name
           <input type="text" valueLink={this.linkState("name")} />
         </label>
+
         <label> Availability
+
         <select onChange={this.updateAvailability} value={this.state.available}>
           <option value="true"> Available </option>
           <option value="false"> Unavailable </option>

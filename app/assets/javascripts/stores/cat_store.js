@@ -12,9 +12,6 @@
     _cats.push(cat);
   };
 
-
-
-
   var CatStore = root.CatStore = $.extend({}, EventEmitter.prototype, {
     all: function () {
       return _cats.slice();
@@ -32,6 +29,7 @@
       }
       var filtered = _cats.filter( function (cat) {
         return cat.name.toLowerCase().includes(searchString.toLowerCase());
+        // add support for including results if cat id matches
       });
       return filtered;
     },
@@ -44,11 +42,12 @@
     },
 
     addChangeListener: function(callback){
-    this.on(CHANGE_EVENT, callback);
+      this.on(CHANGE_EVENT, callback);
     },
     removeChangeListener: function(callback){
       this.removeListener(CHANGE_EVENT, callback);
     },
+
     dispatcherId: AppDispatcher.register( function (payload) {
       switch (payload.actionType) {
         case CatConstants.CATS_RECEIVED:
@@ -62,14 +61,6 @@
           break;
 
       }
-
     })
-
-
-
-});
-
-
-
-
+  });
 })(this);

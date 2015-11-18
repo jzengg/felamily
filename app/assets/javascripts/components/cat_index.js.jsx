@@ -10,7 +10,6 @@ var CatIndex = React.createClass({
   componentDidMount: function () {
     ApiUtil.fetchCats();
     FilterStore.addChangeListener(this.onChange);
-
   },
 
   componentWillUnmount: function () {
@@ -27,13 +26,14 @@ var CatIndex = React.createClass({
     var cats = this.state.cats || [];
     var results;
     if (cats.length === 0) {
-      results = <li> "Nothing found" </li>;
+      results = <li> "No results found" </li>;
     } else {
-        results = cats.map( function (cat) {
-          return(
-            <Link key={cat.id} to={"cats/"+cat.id}>
-              <li> {cat.name} </li>
-            </Link>
+        results = cats.map( function (cat)
+          {
+            return(
+              <Link key={cat.id} to={"cats/"+cat.id}>
+                <li> {cat.name} </li>
+              </Link>
             );
           });
     }
