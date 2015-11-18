@@ -18,7 +18,7 @@ $(function () {
 
   var routes = (
       <Route path="/" component={App}>
-        <IndexRoute component={CatIndex}/>
+        <IndexRoute component={ShelterSummary}/>
         <Route path="cats/new" component={CatForm} />
         <Route path="cats/:id" component={CatRecord}>
           <IndexRoute component={RecordDetail} />
