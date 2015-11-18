@@ -1,22 +1,20 @@
 class Api::CatsController < ApplicationController
   def index
-    @cats = Cat.all
-    render json: @cats
+    @cats = Cat.order(created_at: :desc).all
   end
 
   def show
     @cat = Cat.find(params[:id])
-    render json: @cat
   end
 
   def create
     @cat = Cat.create!(cat_params)
-    render json: @cat
+    render :show
   end
 
   private
   def cat_params
-    params.require(:cat).permit(:name, :available)
+    params.require(:cat).permit(:name, :available, :profile_image)
   end
 
 end

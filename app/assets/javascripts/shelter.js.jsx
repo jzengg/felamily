@@ -21,6 +21,7 @@ $(function () {
         <IndexRoute component={CatIndex}/>
         <Route path="cats/new" component={CatForm} />
         <Route path="cats/:id" component={CatRecord}>
+          <IndexRoute component={RecordDetail} />
           <Route path ="animal" component={RecordDetail} />
           <Route path="vaccination" component={RecordVac} />
         </Route>

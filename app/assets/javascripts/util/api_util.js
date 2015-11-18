@@ -22,14 +22,17 @@ ApiUtil = {
     });
   },
 
-  createCat: function (cat) {
+  createCat: function (formData, callback) {
     $.ajax({
       url: 'api/cats',
       type: 'POST',
-      data: {cat: cat},
+      processData: false,
+      contentType: false,
       dataType: 'json',
+      data: formData,
       success: function (data) {
         ApiActions.receiveNewCat(data);
+        callback && callback();
       }
 
     });

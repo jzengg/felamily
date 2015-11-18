@@ -23,6 +23,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pry-rails'
 
+gem 'paperclip'
+gem 'aws-sdk', '~> 1.6'
+gem 'figaro'
+
 gem 'react-rails', '~> 1.3.0'
 gem 'flux-rails-assets'
 
