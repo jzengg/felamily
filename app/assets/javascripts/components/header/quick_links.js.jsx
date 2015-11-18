@@ -5,6 +5,7 @@ var QuickLinks = React.createClass({
   render: function () {
     return(
         <ul className="quicklinks-bar">
+          <Link to="/"> Homepage </Link>
           <Link to="cats/new"> Add a new cat </Link>
         </ul>
     );

@@ -20,6 +20,7 @@ $(function () {
       <Route path="/" component={App}>
         <IndexRoute component={ShelterSummary}/>
         <Route path="cats/new" component={CatForm} />
+        <Route path="cats/index" component={CatIndex} />
         <Route path="cats/:id" component={CatRecord}>
           <IndexRoute component={RecordDetail} />
           <Route path ="animal" component={RecordDetail} />

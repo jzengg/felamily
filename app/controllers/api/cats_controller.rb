@@ -1,6 +1,6 @@
 class Api::CatsController < ApplicationController
   def index
-    @cats = Cat.order(created_at: :desc).all
+    @cats = Cat.order(updated_at: :desc).all
   end
 
   def show

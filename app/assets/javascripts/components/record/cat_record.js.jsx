@@ -8,7 +8,7 @@ var CatRecord = React.createClass({
   },
 
   componentWillReceiveProps: function (newprops) {
-    ApiUtil.fetchOneCat(this.props.params.id);
+      ApiUtil.fetchOneCat(newprops.params.id);
   },
 
   componentWillUnmount: function () {

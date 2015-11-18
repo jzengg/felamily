@@ -9,10 +9,12 @@ var CatIndex = React.createClass({
 
   componentDidMount: function () {
     ApiUtil.fetchCats();
+    CatStore.addChangeListener(this.onChange);
     FilterStore.addChangeListener(this.onChange);
   },
 
   componentWillUnmount: function () {
+    CatStore.removeChangeListener(this.onChange);
     FilterStore.removeChangeListener(this.onChange);
   },
 
@@ -38,7 +40,7 @@ var CatIndex = React.createClass({
             );
           });
     }
-    
+
     return (
       <div className="search-content">
         <ul className="search-results">

@@ -25,7 +25,7 @@ var Search = React.createClass({
     if (filtered.length == 1) {
       this.history.pushState(null, "cats/" + filtered[0].id);
     } else {
-      this.history.pushState(null, "/");
+      this.history.pushState(null, "/cats/index");
     }
 
     this.setState({input: ""});
