@@ -27,19 +27,19 @@ var CatIndex = React.createClass({
     var cats = this.state.cats || [];
     var results;
     if (cats.length === 0) {
-      results = "Nothing found";
+      results = <li> "Nothing found" </li>;
     } else {
         results = cats.map( function (cat) {
           return(
             <Link key={cat.id} to={"cats/"+cat.id}>
-              <li > {cat.name} </li>
+              <li> {cat.name} </li>
             </Link>
             );
           });
     }
     return (
-      <div>
-        <ul>
+      <div className="search-content">
+        <ul className="search-results">
           {results}
         </ul>
       </div>

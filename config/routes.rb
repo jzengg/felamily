@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :cats
   end
 
-
-  resources :users, :cats, only: [:show]
+  resources :users, only: [:new, :create]
+  resources :cats, only: [:show]
   resource :session, only: [:create, :destroy, :new]
 end

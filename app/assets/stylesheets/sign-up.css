@@ -1,0 +1,30 @@
+.sign-up-form {
+  position: relative;
+  box-shadow: 2px 2px 2px grey;
+  padding: 45px;
+  width: 300px;
+  font-size: 12px;
+  margin: 350px auto;
+  border: 1px solid black;
+}
+
+.sign-up-form label {
+
+}
+
+.sign-up-form input {
+  border: 1px solid black;
+  margin: 2px;
+  padding: 5px;
+  left: 5
+}
+
+
+.sign-up-form #submit {
+  border-radius: 3px;
+  left: 50px;
+  padding: 5px;
+  background: lightblue;
+  font-size: 14px;
+  color: white;
+}

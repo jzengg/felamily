@@ -8,8 +8,7 @@ $(function () {
   var App = React.createClass({
     render: function(){
       return (
-          <div>
-            <header><h1>FBA 2k16</h1></header>
+          <div className="app">
             <Header />
             {this.props.children}
           </div>

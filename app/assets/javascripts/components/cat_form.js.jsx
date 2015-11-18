@@ -34,7 +34,8 @@ var CatForm = React.createClass({
 
   render: function () {
     return(
-      <form onSubmit={this.handleSubmit}>
+      <form className="cat-form" onSubmit={this.handleSubmit}>
+        <heading> Add a new animal </heading>
         <label> Name
           <input type="text" valueLink={this.linkState("name")} />
         </label>

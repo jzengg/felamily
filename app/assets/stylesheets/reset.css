@@ -1,0 +1,29 @@
+html, body, ul, li, div, a, h1, header, input, select {
+  padding: 0;
+  margin: 0;
+  border: 0;
+
+  text-align: inherit;
+  text-decoration: inherit;
+  background: transparent;
+  color: inherit;
+
+}
+
+body {
+  font-family: sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  text-align: center;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}

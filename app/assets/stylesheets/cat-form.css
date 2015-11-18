@@ -1,0 +1,23 @@
+.cat-form {
+  margin: 5px;
+  background: red;
+  width: 95%;
+  border-radius: 5px;
+  font-size: 14px;
+
+}
+
+.cat-form input {
+  display: block;
+  border: 1px solid grey;
+  border-radius: 3px;
+}
+
+.cat-form heading {
+  display: block;
+  padding: 15px 15px 0px 15px;
+  text-align: center;
+  height: 35px;
+  color: white;
+  background: darkblue;
+}

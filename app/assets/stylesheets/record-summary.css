@@ -1,0 +1,22 @@
+.record-summary {
+  border: 1px solid grey;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.record-summary-name {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.record-summary-available {
+  color: #E54242;
+  width: 425px;
+  height: 45px;
+  float:right;
+  display: block;
+  padding: 10px 5px 10px 5px;
+  border-radius: 5px;
+  border: 1px solid red;
+}

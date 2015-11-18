@@ -4,7 +4,7 @@ var CatRecord = React.createClass({
     var cat = CatStore.findCat(this.props.params.id);
 
     return (
-      <div>
+      <div className="record-summary group">
         <CatSummary cat={cat} />
       </div>
     );

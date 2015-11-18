@@ -5,8 +5,8 @@ var CatSummary = React.createClass({
     var cat = this.props.cat;
     return(
       <ul>
-        <li> Name: {cat.name} </li>
-        <li> Available: {cat.available.toString()} </li>
+        <li className="record-summary-name"> Name: {cat.name} </li>
+        <li className="record-summary-available"> Available: {cat.available.toString()} </li>
       </ul>
     );
   }
