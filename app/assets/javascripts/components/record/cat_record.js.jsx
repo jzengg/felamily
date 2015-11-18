@@ -7,6 +7,10 @@ var CatRecord = React.createClass({
     ApiUtil.fetchOneCat(this.props.params.id);
   },
 
+  componentWillReceiveProps: function (newprops) {
+    ApiUtil.fetchOneCat(this.props.params.id);
+  },
+
   componentWillUnmount: function () {
     CatStore.removeReceiveOneCatListener(this.receiveCat);
   },
@@ -19,11 +23,12 @@ var CatRecord = React.createClass({
     var cat = this.state.cat;
     var details;
       if (!!this.state.cat) {
-        details = <div>
-        <CatSummary cat={cat} />
-        <RecordCategories cat={cat}/>
-        <RecordActions cat={cat} />
-        </div>
+        details =
+        <div>
+          <CatSummary cat={cat} />
+          <RecordCategories cat={cat}/>
+          <RecordActions cat={cat} />
+        </div>;
       }
     return (
       <div className="record-summary group">
