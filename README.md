@@ -36,6 +36,7 @@ container for the application's root React component. Before building out the
 front end, I will begin by setting up a full JSON API for cats and people.
 
 Add new attributes for cat using enums
+Push state can take args. Check whether can refactor by passing args
 
 [Details][phase-one]
 
