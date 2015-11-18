@@ -25,6 +25,7 @@ var CatIndex = React.createClass({
   render: function () {
     var cats = this.state.cats || [];
     var results;
+
     if (cats.length === 0) {
       results = <li> "No results found" </li>;
     } else {
@@ -37,6 +38,7 @@ var CatIndex = React.createClass({
             );
           });
     }
+    
     return (
       <div className="search-content">
         <ul className="search-results">

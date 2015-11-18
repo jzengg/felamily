@@ -22,7 +22,6 @@ var Search = React.createClass({
   handleSubmit: function (e) {
     e.preventDefault();
     var filtered = CatStore.filtered(this.state.input);
-
     if (filtered.length == 1) {
       this.history.pushState(null, "cats/" + filtered[0].id);
     } else {

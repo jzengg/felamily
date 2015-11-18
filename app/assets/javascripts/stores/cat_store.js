@@ -9,8 +9,21 @@
   var _resetCats = function (cats) {
     _cats = cats;
   };
+  
   var _addCat = function (cat) {
-    _cats.push(cat);
+    if (!_hasDup(cat)) {
+      _cats.push(cat);
+    }
+  };
+
+  var _hasDup = function (cat) {
+    for (var i = 0; i < _cats.length; i++) {
+      if (cat.id == _cats[i].id) {
+        _cats[i] = cat;
+        return true;
+      }
+    }
+    return false;
   };
 
   var CatStore = root.CatStore = $.extend({}, EventEmitter.prototype, {
@@ -64,7 +77,6 @@
           break;
         case CatConstants.NEW_CAT:
           _addCat(payload.cat);
-          CatStore.emit(CHANGE_EVENT);
           CatStore.emit(NEW_CAT_EVENT);
           break;
         case CatConstants.RECEIVE_ONE_CAT:

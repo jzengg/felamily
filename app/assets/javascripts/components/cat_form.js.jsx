@@ -24,7 +24,6 @@ var CatForm = React.createClass({
     var cat = {
       name: this.linkState("name").value,
       available: this.state.available };
-
     ApiUtil.createCat(cat);
   },
 
