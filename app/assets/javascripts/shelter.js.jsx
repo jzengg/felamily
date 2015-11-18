@@ -20,8 +20,9 @@ $(function () {
       <Route path="/" component={App}>
         <IndexRoute component={CatIndex}/>
         <Route path="cats/new" component={CatForm} />
-        <Route path="cats/:id" component={CatRecord} />
-
+        <Route path="cats/:id" component={CatRecord}>
+          <Route path="/animal" component={RecordDetail} />
+        </Route>
       </Route>
   );
   React.render(<Router>{routes}</Router>, root);

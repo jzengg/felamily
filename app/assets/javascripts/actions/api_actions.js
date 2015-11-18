@@ -12,7 +12,14 @@ ApiActions = {
       actionType: CatConstants.NEW_CAT,
       cat: data
     });
-  }
+  },
+
+  receiveOneCat: function (data) {
+    AppDispatcher.dispatch({
+      actionType: CatConstants.RECEIVE_ONE_CAT,
+      cat: data
+    });
+  },
 
 
 

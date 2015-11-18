@@ -4,6 +4,7 @@
   var _cats = [];
   var CHANGE_EVENT = 'change';
   var NEW_CAT_EVENT = 'new_cat';
+  var RECEIVE_ONE_CAT_EVENT = 'receive_one_cat';
 
   var _resetCats = function (cats) {
     _cats = cats;
@@ -48,6 +49,13 @@
       this.removeListener(CHANGE_EVENT, callback);
     },
 
+    addReceiveOneCatListener: function(callback){
+      this.on(RECEIVE_ONE_CAT_EVENT, callback);
+    },
+    removeReceiveOneCatListener: function(callback){
+      this.removeListener(RECEIVE_ONE_CAT_EVENT, callback);
+    },
+
     dispatcherId: AppDispatcher.register( function (payload) {
       switch (payload.actionType) {
         case CatConstants.CATS_RECEIVED:
@@ -58,6 +66,10 @@
           _addCat(payload.cat);
           CatStore.emit(CHANGE_EVENT);
           CatStore.emit(NEW_CAT_EVENT);
+          break;
+        case CatConstants.RECEIVE_ONE_CAT:
+          _addCat(payload.cat);
+          CatStore.emit(RECEIVE_ONE_CAT_EVENT);
           break;
 
       }
