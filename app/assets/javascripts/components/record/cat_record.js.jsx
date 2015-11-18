@@ -27,12 +27,12 @@ var CatRecord = React.createClass({
         <div>
           <CatSummary cat={cat} />
           <RecordCategories cat={cat}/>
-          <RecordActions cat={cat} />
         </div>;
       }
     return (
       <div className="record-summary group">
         {details}
+        {this.props.children}
       </div>
     );
   }
