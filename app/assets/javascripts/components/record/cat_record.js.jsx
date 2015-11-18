@@ -29,10 +29,16 @@ var CatRecord = React.createClass({
           <RecordCategories cat={cat}/>
         </div>;
       }
+
+    var childrenWithProps = React.Children.map(this.props.children,             function(child) {
+             return React.cloneElement(child, { cat: cat });
+           }
+         );
+
     return (
       <div className="record-summary group">
         {details}
-        {this.props.children}
+        {childrenWithProps}
       </div>
     );
   }
