@@ -28,10 +28,10 @@ var ShelterSummary = React.createClass({
 
 
     return (
-      <div>
+      <div className="shelter-summary">
         <ul>
-          <li>There are {numCats} cats in the database </li>
-            <li> Recently modified cats
+          <li> <h3> There are {numCats} cats in the database </h3> </li>
+            <li> <h3> Recently modified cats </h3>
               {recentCats}
             </li>
         </ul>

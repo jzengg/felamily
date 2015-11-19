@@ -7,12 +7,11 @@ var RecordCategories = React.createClass({
     var cat = this.props.cat;
     var extra = ["medication", "test"];
     var categories = ["animal", "vaccine"];
-    var links = categories.map(function (category) {
-      return <li>  <Link to={"/cats/" + cat.id + "/" + category}> {category} </Link> </li>;
+    var links = categories.map(function (category, i) {
+      return <li key={i}>  <Link to={"/cats/" + cat.id + "/" + category}> {category} </Link> </li>;
     });
     return(
-      <ul>
-      RecordCategories
+      <ul className="record-categories group">
         {links}
       </ul>
     );

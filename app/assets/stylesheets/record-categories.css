@@ -1,0 +1,13 @@
+.record-categories {
+  border: 1.5px solid grey;
+  border-radius: 5px;
+}
+
+.record-categories li {
+  display: block;
+  float: left;
+  border: 1.5px solid grey;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 1px;
+}
