@@ -37,22 +37,23 @@ front end, I will begin by setting up a full JSON API for cats and people.
 
 Add new attributes for cat using enums
 Push state can take args. Check whether can refactor by passing args
-// 1. Fix search after cat create
+<!-- // 1. Fix search after cat create
 //2. Resize uploaded images
 //3. Replace homepage link with a logo via css?
-4. Add attributes
+//4. Add attributes -->
+<!-- Fix styling on action category -->
+4. auth using react 
 5. Add record detail display as form
-6. make it possible to search for available cats
+Add save category action on record detail
+Add media category and figure out how to attach multiple images to a single cat
+Add destroy action for cat
 
+make it possible to search for available cats
 add validations
 filter store sometimes still gets multiple copies of same record
 update shelter summary to show what time the cat was modified
 Add link to vaccine tab
 Add display for vaccine info
-Add save category action on record detail
-Fix styling on action category
-Add media category and figure out how to attach multiple images to a single cat
-Add destroy action for cat
 
 
 [Details][phase-one]

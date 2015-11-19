@@ -25,7 +25,9 @@ var CatRecord = React.createClass({
       if (!!this.state.cat) {
         details =
         <div>
-          <RecordSummary cat={cat} />
+          <div className="record-summary group">
+            <RecordSummary cat={cat} />
+          </div>
           <RecordCategories cat={cat}/>
         </div>;
       }
@@ -36,7 +38,7 @@ var CatRecord = React.createClass({
          );
 
     return (
-      <div className="record-summary group">
+      <div className="record">
         {details}
         {childrenWithProps}
       </div>

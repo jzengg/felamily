@@ -1,8 +1,10 @@
 .record-summary {
   border: 1px solid grey;
-  margin: 5px;
-  padding: 10px;
+  margin: 8px;
+  padding-top: 25px;
+  padding-left: 15px;
   border-radius: 5px;
+  width: 95%;
 }
 
 .record-summary-name {
@@ -10,12 +12,14 @@
   font-weight: bold;
 }
 
+.record-summary .summary-columns {
+
+}
+
 .record-summary-available {
   color: #E54242;
   width: 425px;
   height: 45px;
-  float:right;
-  display: block;
   padding: 10px 5px 10px 5px;
   border-radius: 5px;
   border: 1px solid red;
@@ -30,6 +34,7 @@
 }
 
 .record-summary .profile-image-container {
+  border-radius: 2px;
   display: block;
   margin: 0px auto;
   display: table-cell;
