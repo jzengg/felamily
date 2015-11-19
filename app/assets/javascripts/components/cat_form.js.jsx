@@ -2,7 +2,7 @@ var CatForm = React.createClass({
   mixins: [React.addons.LinkedStateMixin, ReactRouter.History],
 
   getInitialState: function () {
-    return {name: "", available: "false", imageUrl: "", imageFile: null};
+    return {name: "", available: "false", imageUrl: "", imageFile: undefined};
   },
 
   componentDidMount: function () {
@@ -26,8 +26,9 @@ var CatForm = React.createClass({
     var formData = new FormData();
     formData.append("cat[name]", name);
     formData.append("cat[available]", available);
-    formData.append("cat[profile_image]", file);
-
+    if (typeof file != "undefined") {
+      formData.append("cat[profile_image]", file);
+    }
     ApiUtil.createCat(formData, this.resetForm);
   },
 
