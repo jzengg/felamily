@@ -1,4 +1,4 @@
-var CatSummary = React.createClass({
+var RecordSummary = React.createClass({
   mixins: [ReactRouter.History],
 
   render: function () {
@@ -6,8 +6,10 @@ var CatSummary = React.createClass({
     return(
       <ul>
         <li>
-          <a href={cat.profile_image_url}>
-            <img src={cat.profile_image_url_thumb} />
+          <a className="profile-image-container" href={cat.profile_image_url}>
+
+              <img className="profile-image" src={cat.profile_image_url_thumb} />
+        
           </a>
         </li>
         <li className="record-summary-name"> Name: {cat.name} </li>

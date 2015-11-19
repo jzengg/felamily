@@ -5,35 +5,38 @@ var CatForm = React.createClass({
     return {name: "", available: "temp_unavailable", sex: "unknown", location: "cats", imageUrl: "", imageFile: undefined};
   },
 
-  componentDidMount: function () {
-    CatStore.addNewCatListener(this.redirectToShow);
-  },
-
-  componentWillUnmount: function () {
-    CatStore.removeNewCatListener(this.redirectToShow);
-  },
-
-  redirectToShow: function () {
-    var catId = CatStore.all().pop().id;
-    this.history.pushState(null, "cats/" + catId);
-  },
 
   handleSubmit: function (e) {
     e.preventDefault();
-    var name = this.linkState("name").value;
-    var available = this.state.available;
-    var sex = this.state.sex;
-    var location = this.state.location;
+
     var file = this.state.imageFile;
-    var formData = new FormData();
-    formData.append("cat[name]", name);
-    formData.append("cat[available]", available);
-    formData.append("cat[sex]", available);
-    formData.append("cat[location]", available);
+    var formData = this.createFormData();
+
     if (typeof file != "undefined") {
       formData.append("cat[profile_image]", file);
     }
-    ApiUtil.createCat(formData, this.resetForm);
+
+    ApiUtil.createCat(formData, this.handleSubmitSuccess);
+  },
+
+  createFormData: function () {
+    var name = this.linkState("name").value;
+    var state = this.state
+    var formData = new FormData();
+    formData.append("cat[name]", state.name);
+    formData.append("cat[available]", state.available);
+    formData.append("cat[sex]", state.sex);
+    formData.append("cat[location]", state.location);
+    return formData
+  },
+
+  handleSubmitSuccess: function (id) {
+    this.resetForm()
+    this.redirectToShow(id)
+  },
+
+  redirectToShow: function (id) {
+    this.history.pushState(null, "cats/" + id);
   },
 
   resetForm: function () {
@@ -69,17 +72,28 @@ var CatForm = React.createClass({
 
   },
 
-  render: function () {
-    var locations = ["cats", "kittens", "quarantine", "isolation", "foster"]
+  sexOptions: function () {
     var sex = ["unknown", "male", "female"]
-
-    var sexOptions = sex.map(function (sex, i) {
+    return sex.map(function (sex, i) {
       return <option key={sex + i} value={sex}> {sex} </option>
     })
+  },
 
-    var locationOptions = locations.map(function (location, i) {
-      return <option key={sex + i} value={location}> {location} </option>
+  locationOptions: function () {
+    var locations = ["cats", "kittens", "quarantine", "isolation", "foster"]
+    return locations.map(function (location, i) {
+      return <option key={location + i} value={location}> {location} </option>
     })
+  },
+
+  availabilityOptions: function () {
+    var availables = ["temp_unavailable", "available", "unavailable"]
+    return availables.map(function (status, i) {
+      return <option key={status + i} value={status}> {status} </option>
+    })
+  },
+
+  render: function () {
 
     return(
       <form className="cat-form" onSubmit={this.handleSubmit}>
@@ -90,21 +104,19 @@ var CatForm = React.createClass({
 
         <label> Availability
         <select onChange={this.updateAvailability} value={this.state.available}>
-          <option value="temp_unavailable"> Temporarily Unavailable </option>
-          <option value="unavailable"> Unavailable </option>
-          <option value="available"> Available </option>
+          {this.availabilityOptions()}
         </select>
         </label>
 
         <label> Location
         <select onChange={this.updateLocation} value={this.state.location}>
-          {locationOptions}
+          {this.locationOptions()}
         </select>
         </label>
 
         <label> Sex
         <select onChange={this.updateSex} value={this.state.sex}>
-          {sexOptions}
+          {this.sexOptions()}
         </select>
         </label>
 

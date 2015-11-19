@@ -25,7 +25,7 @@ var CatRecord = React.createClass({
       if (!!this.state.cat) {
         details =
         <div>
-          <CatSummary cat={cat} />
+          <RecordSummary cat={cat} />
           <RecordCategories cat={cat}/>
         </div>;
       }

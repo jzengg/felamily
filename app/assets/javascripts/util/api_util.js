@@ -17,7 +17,6 @@ ApiUtil = {
       type: 'GET',
       dataType: 'json',
       success: function (data) {
-        debugger
         ApiActions.receiveOneCat(data);
       }
     });
@@ -33,7 +32,7 @@ ApiUtil = {
       data: formData,
       success: function (data) {
         ApiActions.receiveNewCat(data);
-        callback && callback();
+        callback && callback(data.id);
       }
 
     });

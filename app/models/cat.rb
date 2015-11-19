@@ -4,7 +4,7 @@ class Cat < ActiveRecord::Base
   enum sex: [:male, :female, :unknown]
   enum available: [:temp_unavailable, :available, :unavailable]
 
-  has_attached_file :profile_image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "missing.jpg"
+  has_attached_file :profile_image, styles: { medium: "300x300>", thumb: "85x65>" }, default_url: "missing.jpg"
   validates_attachment_content_type :profile_image, content_type: /\Aimage\/.*\Z/
 
 
