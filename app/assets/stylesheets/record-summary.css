@@ -24,6 +24,7 @@
 .record-summary .profile-image {
   border: 1px solid black;
   margin-top: 3px;
+  margin-right: 1px;
   width: 73px;
   height: 50px;
 }
