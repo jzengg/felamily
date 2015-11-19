@@ -5,7 +5,7 @@ var QuickLinks = React.createClass({
   render: function () {
     return(
         <ul className="quicklinks-bar">
-          <Link to="/"> Homepage </Link>
+          <Link to="/"> <img id="logo" src="<%= asset_url('logo.png') %>"/> </Link>
           <Link to="cats/new"> Add a new cat </Link>
         </ul>
     );

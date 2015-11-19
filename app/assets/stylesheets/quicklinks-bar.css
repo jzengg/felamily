@@ -3,13 +3,22 @@
   float: left;
 }
 
-.quicklinks-bar a {
+.quicklinks-bar a:not(:first-child) {
   padding: 5px;
   border-radius: 5px;
   border: 1.5px solid lightgrey;
   float: left;
 }
 
-.quicklinks-bar a:after {
+.quicklinks-bar #logo {
+  float: left;
+  margin-right: 8px;
+  height: auto;
+  width: auto;
+  max-width: 27px;
+  max-height: 27px;
+}
+
+.quicklinks-bar a:not(:first-child):after {
   content:"►"
 }
