@@ -22,6 +22,7 @@ var CatForm = React.createClass({
   createFormData: function () {
     var name = this.linkState("name").value;
     var state = this.state
+    debugger
     var formData = new FormData();
     formData.append("cat[name]", state.name);
     formData.append("cat[available]", state.available);

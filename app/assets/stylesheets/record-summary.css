@@ -12,8 +12,22 @@
   font-weight: bold;
 }
 
-.record-summary .summary-columns {
+.record-summary .summary-columns ul{
+  display: block;
+  float: left;
+  width: 33%;
+}
 
+.record-summary .summary-left-column * {
+  display: block;
+  float: left;
+}
+
+.summary-left-column #name-sex li {
+  display: block;
+  float: none;
+  padding: 10px;
+  background: yellow;
 }
 
 .record-summary-available {
