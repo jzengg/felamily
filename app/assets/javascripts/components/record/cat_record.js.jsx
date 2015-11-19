@@ -30,7 +30,7 @@ var CatRecord = React.createClass({
         </div>;
       }
 
-    var childrenWithProps = React.Children.map(this.props.children,             function(child) {
+    var childrenWithProps = React.Children.map(this.props.children, function(child) {
              return React.cloneElement(child, { cat: cat });
            }
          );
