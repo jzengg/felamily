@@ -42,6 +42,10 @@ Push state can take args. Check whether can refactor by passing args
 //3. Replace homepage link with a logo via css?
 4. Add attributes
 5. Add record detail display as form
+6. make it possible to search for available cats
+
+add validations
+filter store sometimes still gets multiple copies of same record
 update shelter summary to show what time the cat was modified
 Add link to vaccine tab
 Add display for vaccine info

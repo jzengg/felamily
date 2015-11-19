@@ -9,7 +9,7 @@
   var _resetCats = function (cats) {
     _cats = cats;
   };
-  
+
   var _addCat = function (cat) {
     if (!_hasDup(cat)) {
       _cats.push(cat);
@@ -42,7 +42,11 @@
         return;
       }
       var filtered = _cats.filter( function (cat) {
-        return cat.name.toLowerCase().includes(searchString.toLowerCase());
+        return (
+          cat.name.toLowerCase().includes(searchString.toLowerCase())
+        ) ;
+
+
         // add support for including results if cat id matches
       });
       return filtered;

@@ -6,7 +6,6 @@ column name | data type | details
 id          | integer   | not null, primary key
 name        | string    | not null
 dob         | date      | not null
-dob_estimate         | boolean      | not null
 available         | boolean | not null
 altered         | boolean | not null
 declawed         | boolean | not null

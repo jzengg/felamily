@@ -22,8 +22,8 @@ $(function () {
         <Route path="cats/new" component={CatForm} />
         <Route path="cats/index" component={CatIndex} />
         <Route path="cats/:id" component={CatRecord}>
-          <IndexRoute component={RecordDetail} />
-          <Route path="animal" component={RecordDetail} />
+          <IndexRoute component={RecordAnimal} />
+          <Route path="animal" component={RecordAnimal} />
           <Route path="vaccine" component={RecordVac} />
         </Route>
       </Route>
