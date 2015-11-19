@@ -5,14 +5,15 @@ var RecordCategories = React.createClass({
 
   render: function () {
     var cat = this.props.cat;
-
+    var extra = ["medication", "test"];
+    var categories = ["animal", "vaccine"];
+    var links = categories.map(function (category) {
+      return <li>  <Link to={"/cats/" + cat.id + "/" + category}> {category} </Link> </li>;
+    });
     return(
       <ul>
       RecordCategories
-        <li> <Link to={"/cats/"+cat.id+"/animal"}> Animal </Link> </li>
-        <li> </li>
-        <li> </li>
-        <li> </li>
+        {links}
       </ul>
     );
   }

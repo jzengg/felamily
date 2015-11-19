@@ -23,8 +23,8 @@ $(function () {
         <Route path="cats/index" component={CatIndex} />
         <Route path="cats/:id" component={CatRecord}>
           <IndexRoute component={RecordDetail} />
-          <Route path ="animal" component={RecordDetail} />
-          <Route path="vaccination" component={RecordVac} />
+          <Route path="animal" component={RecordDetail} />
+          <Route path="vaccine" component={RecordVac} />
         </Route>
       </Route>
   );
