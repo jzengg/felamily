@@ -11,7 +11,9 @@ var CatSummary = React.createClass({
           </a>
         </li>
         <li className="record-summary-name"> Name: {cat.name} </li>
-        <li className="record-summary-available"> Available: {cat.available.toString()} </li>
+        <li className="record-summary-available"> Status: {cat.available.toString()} </li>
+        <li className="record-summary-sex"> Sex: {cat.sex} </li>
+        <li className="record-summary-location"> Location: {cat.location} </li>
       </ul>
     );
   }
