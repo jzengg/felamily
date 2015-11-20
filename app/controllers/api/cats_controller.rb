@@ -19,6 +19,10 @@ class Api::CatsController < ApplicationController
     render :show
   end
 
+  def destroy
+    @cat = Cat.find(params[:id])
+  end
+
   private
   def cat_params
     params.require(:cat).permit(:name, :available, :profile_image, :sex, :location)

@@ -35,7 +35,7 @@ BCrypt). There will be a basic landing page after signup that will contain the
 container for the application's root React component. Before building out the
 front end, I will begin by setting up a full JSON API for cats and people.
 
-Add new attributes for cat using enums
+<!-- Add new attributes for cat using enums -->
 Push state can take args. Check whether can refactor by passing args
 <!-- // 1. Fix search after cat create
 //2. Resize uploaded images
@@ -44,6 +44,8 @@ Push state can take args. Check whether can refactor by passing args
 <!-- Fix styling on action category -->
 <!-- 5. Add record detail display as form -->
 <!-- Add save category action on record detail -->
+<!-- 1. Fix edit record detail -->
+
 Add media category and figure out how to attach multiple images to a single cat
 Add destroy action for cat
 
