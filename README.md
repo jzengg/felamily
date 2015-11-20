@@ -47,8 +47,10 @@ front end, I will begin by setting up a full JSON API for cats and people.
 <!-- Add destroy action for cat -->
 <!-- add current user store -->
 <!-- attach user info on creating cat -->
+
 add user store to get username from id
 set up tabs in category content
+add error messages with util error callbacks
 Add link to vaccine tab
 Add display for vaccine info
 filter store sometimes still gets multiple copies of same record

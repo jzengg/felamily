@@ -3,14 +3,15 @@ class Api::CatsController < ApplicationController
 
   def index
     @cats = Cat.order(updated_at: :desc).all
+
   end
 
   def show
     @cat = Cat.find(params[:id])
+    @creator_name = @cat.creator.username || nil
   end
 
   def create
-    @creator_name = current_user.username
     @cat = current_user.cats.create(cat_params)
     render :show
   end
