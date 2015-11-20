@@ -3,7 +3,6 @@ var RecordAnimal = React.createClass({
     var cat = this.props.cat;
     return (
       <div>
-        <AnimalActions cat={cat} />
         <AnimalContent cat={cat} />
       </div>
     );

@@ -12,8 +12,8 @@ and React.js. MyShelterManager helps animal shelters manage the people and anima
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
 
-- [ ] Create an account
-- [ ] Log in / Log out
+- [x] Create an account
+- [x] Log in / Log out
 - [ ] Holds records for animals and owners.
 - [ ] CRUD for animal records, medical regiments, medical tests, and vaccinations.
 - [ ] Search by animal attributes (microchip number, id, owner, location)
@@ -36,7 +36,6 @@ container for the application's root React component. Before building out the
 front end, I will begin by setting up a full JSON API for cats and people.
 
 <!-- Add new attributes for cat using enums -->
-Push state can take args. Check whether can refactor by passing args
 <!-- // 1. Fix search after cat create
 //2. Resize uploaded images
 //3. Replace homepage link with a logo via css?
@@ -45,17 +44,20 @@ Push state can take args. Check whether can refactor by passing args
 <!-- 5. Add record detail display as form -->
 <!-- Add save category action on record detail -->
 <!-- 1. Fix edit record detail -->
+<!-- Add destroy action for cat -->
 
-Add media category and figure out how to attach multiple images to a single cat
-Add destroy action for cat
-
-auth using react
-make it possible to search for available cats
-add validations
-filter store sometimes still gets multiple copies of same record
-update shelter summary to show what time the cat was modified
+add current user store
+attach user info on creating cat
+set up tabs in category content
 Add link to vaccine tab
 Add display for vaccine info
+filter store sometimes still gets multiple copies of same record
+add validations
+Add media category and figure out how to attach multiple images to a single cat
+update shelter summary to show what time the cat was modified
+make it possible to search for available cats
+auth using react
+Push state can take args. Check whether can refactor by passing args
 
 
 [Details][phase-one]

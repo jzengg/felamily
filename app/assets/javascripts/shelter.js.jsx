@@ -6,11 +6,35 @@ $(function () {
   var IndexRoute = ReactRouter.IndexRoute;
 
   var App = React.createClass({
+    mixins: [ReactRouter.History],
+
+    getInitialState: function () {
+      return { currentUser: null };
+    },
+
+
+    componentWillMount: function () {
+      CurrentUserStore.addChangeHandler(this._ensureLoggedIn);
+      SessionsApiUtil.fetchCurrentUser();
+    },
+
+    _ensureLoggedIn: function () {
+      if (!CurrentUserStore.isLoggedIn()) {
+        this.history.pushState(null, "/login");
+      }
+
+      this.setState({currentUser: CurrentUserStore.currentUser()});
+    },
     render: function(){
+      var header;
+      if (CurrentUserStore.isLoggedIn()){
+        header = <Header />;
+      }
       return (
           <div className="app">
-            <Header />
+            {header}
             {this.props.children}
+            <SessionHeader />
           </div>
       );
     }
@@ -19,6 +43,8 @@ $(function () {
   var routes = (
       <Route path="/" component={App}>
         <IndexRoute component={ShelterSummary}/>
+        <Routh path="signup" component={ UserForm} />
+        <Route path="login" component={ SessionForm }/>
         <Route path="cats/new" component={CatForm} />
         <Route path="cats/index" component={SearchResults} />
         <Route path="cats/:id" component={CatRecord}>

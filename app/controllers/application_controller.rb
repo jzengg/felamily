@@ -4,9 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user, :logged_in?, :require_login
 
-  before_action :require_login
+  # before_action :require_login
 
   def current_user
+    return nil if self.session[:session_token].nil?
     @current_user ||= User.find_by_session_token(session[:session_token])
   end
 
@@ -16,16 +17,16 @@ class ApplicationController < ActionController::Base
   end
 
   def sign_out!
-    current_user.reset_session_token!
+    current_user.try(:reset_session_token!)
     session[:sesison_token] = nil
   end
 
-  def require_login
-    redirect_to new_session_url unless logged_in?
-  end
+  # def require_login
+  #   redirect_to new_session_url unless logged_in?
+  # end
 
-  def logged_in?
-    !!current_user
-  end
+  # def logged_in?
+  #   !!current_user
+  # end
 
 end
