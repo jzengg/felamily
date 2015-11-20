@@ -50,7 +50,20 @@ ApiUtil = {
         callback && callback();
       }
     });
+  },
+
+  destroyCat: function (id, callback) {
+    $.ajax({
+      url: 'api/cats/' + id,
+      type: 'DELETE',
+      dataType: 'json',
+      success: function () {
+        ApiActions.removeCat(id);
+        callback && callback();
+      }
+    });
   }
+
 
 
 

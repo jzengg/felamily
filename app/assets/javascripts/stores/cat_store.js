@@ -5,6 +5,7 @@
   var CHANGE_EVENT = 'change';
   var RECEIVE_ONE_CAT_EVENT = 'receive_one_cat';
   var UPDATE_CAT_EVENT = 'update_cat';
+  var REMOVE_CAT_EVENT = 'remove_cat';
 
   var _resetCats = function (cats) {
     _cats = cats;
@@ -21,6 +22,15 @@
     for (var i = 0; i < _cats.length; i++) {
       if (cat.id == _cats[i].id) {
         _cats[i] = cat;
+      }
+    }
+  };
+
+  var _removeCat = function (id) {
+    for (var i = 0; i < _cats.length; i++) {
+      if (_cats[i].id == id) {
+        _cats.splice(i, 1);
+        return;
       }
     }
   };
@@ -99,6 +109,10 @@
         case CatConstants.UPDATE_CAT:
           _updateCat(payload.cat);
           CatStore.emit(RECEIVE_ONE_CAT_EVENT);
+          break;
+        case CatConstants.REMOVE_CAT:
+          _removeCat(payload.id);
+          CatStore.emit(CHANGE_EVENT);
           break;
 
 

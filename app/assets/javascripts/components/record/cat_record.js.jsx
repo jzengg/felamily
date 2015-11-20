@@ -3,6 +3,8 @@ var CatRecord = React.createClass({
     return {cat: undefined};
   },
   componentDidMount: function () {
+    // receive one cat listener may be extraneous if the event is changed to
+    // a generic change event
     CatStore.addReceiveOneCatListener(this.receiveCat);
     ApiUtil.fetchOneCat(this.props.params.id);
   },

@@ -68,9 +68,19 @@ var EditForm = React.createClass({
     });
   },
 
+  handleDestroy: function () {
+    ApiUtil.destroyCat(this.state.id, this.destroySuccess);
+  },
+
+  destroySuccess: function () {
+    this.history.pushState(null, "/");
+  },
+
   render: function () {
     var updateField = this.updateField;
     return(
+      <div>
+
       <form className="cat-form" onSubmit={this.handleSubmit}>
         <label> Name
           <input type="text" value={this.state.name} onChange={updateField.bind(null, "name")} />
@@ -97,7 +107,10 @@ var EditForm = React.createClass({
         <input type="file" onChange={this.updateFile} />
         <img className="preview-image" src={this.state.imageUrl} />
         <button> Save changes </button>
+
       </form>
+      <button onClick={this.handleDestroy}> Destroy cat! </button>
+      </div>
     );
   }
 });

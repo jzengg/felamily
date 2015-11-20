@@ -26,6 +26,13 @@ ApiActions = {
       actionType: CatConstants.UPDATE_CAT,
       cat: data
     });
+  },
+
+  removeCat: function (id) {
+    AppDispatcher.dispatch({
+      actionType: CatConstants.REMOVE_CAT,
+      id: id
+    });
   }
 
 
