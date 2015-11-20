@@ -1,4 +1,5 @@
 class Api::CatsController < ApplicationController
+  
   def index
     @cats = Cat.order(updated_at: :desc).all
   end

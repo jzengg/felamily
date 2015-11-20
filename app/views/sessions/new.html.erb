@@ -1,15 +1,13 @@
-<h1>Sign In</h1>
-
-<form action="<%= session_url %>" method="post">
+<form class="sign-up-form" action="<%= session_url %>" method="post">
   <%= auth_token %>
   <label> Username
-  <input type="text" name="user[username]" value="<%= @user.username %>">
-  </label>
+  <input id="username" type="text" name="user[username]" value="<%= @user.username %>">
+</label> <br>
   <label> Password
-  <input type="password" name="user[password]" value="<%= @user.password %>">
-  </label>
+  <input id="password" type="password" name="user[password]" value="<%= @user.password %>">
+</label> <br>
 
 
-  <input type="submit" value="Sign In">
-
+  <input type="submit" id="submit" value="Sign In"> <br>
+  Don't have an account? <%= link_to("Sign Up", new_user_url) %>
 </form>
