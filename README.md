@@ -42,12 +42,12 @@ Push state can take args. Check whether can refactor by passing args
 //3. Replace homepage link with a logo via css?
 //4. Add attributes -->
 <!-- Fix styling on action category -->
-5. Add record detail display as form
-Add save category action on record detail
+<!-- 5. Add record detail display as form -->
+<!-- Add save category action on record detail -->
 Add media category and figure out how to attach multiple images to a single cat
 Add destroy action for cat
 
-auth using react 
+auth using react
 make it possible to search for available cats
 add validations
 filter store sometimes still gets multiple copies of same record
