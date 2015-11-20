@@ -21,6 +21,13 @@ ApiActions = {
     });
   },
 
+  updateCat: function (data) {
+    AppDispatcher.dispatch({
+      actionType: CatConstants.UPDATE_CAT,
+      cat: data
+    });
+  }
+
 
 
 

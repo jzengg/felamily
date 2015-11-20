@@ -21,26 +21,30 @@ var CatRecord = React.createClass({
 
   render: function () {
     var cat = this.state.cat;
+
     var details;
+
       if (!!this.state.cat) {
+        var childrenWithProps = React.Children.map(this.props.children, function(child)
+          {
+
+           return React.cloneElement(child, { cat: cat });
+          });
+
         details =
         <div>
           <div className="record-summary group">
             <RecordSummary cat={cat} />
           </div>
           <RecordCategories cat={cat}/>
-        </div>;
-      }
+          {childrenWithProps}
+      </div>;
 
-    var childrenWithProps = React.Children.map(this.props.children, function(child)
-      {
-       return React.cloneElement(child, { cat: cat });
-      });
+      }
 
     return (
       <div className="record">
         {details}
-        {childrenWithProps}
       </div>
     );
   }

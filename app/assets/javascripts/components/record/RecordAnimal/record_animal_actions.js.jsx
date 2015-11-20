@@ -1,6 +1,5 @@
 var AnimalActions = React.createClass({
   render: function () {
-    console.log(this.props.cat);
     return (
       <div>
         <ul>

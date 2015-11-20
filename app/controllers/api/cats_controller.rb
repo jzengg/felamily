@@ -1,5 +1,5 @@
 class Api::CatsController < ApplicationController
-  
+
   def index
     @cats = Cat.order(updated_at: :desc).all
   end
@@ -10,6 +10,12 @@ class Api::CatsController < ApplicationController
 
   def create
     @cat = Cat.create!(cat_params)
+    render :show
+  end
+
+  def update
+    @cat = Cat.find(params[:id])
+    @cat.update!(cat_params)
     render :show
   end
 

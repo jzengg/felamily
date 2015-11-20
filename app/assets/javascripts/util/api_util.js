@@ -34,7 +34,21 @@ ApiUtil = {
         ApiActions.receiveNewCat(data);
         callback && callback(data.id);
       }
+    });
+  },
 
+  updateCat: function (id, formData, callback) {
+    $.ajax({
+      url: 'api/cats/' + id,
+      type: 'PATCH',
+      processData: false,
+      contentType: false,
+      dataType: 'json',
+      data: formData,
+      success: function (data) {
+        ApiActions.updateCat(data);
+        callback && callback();
+      }
     });
   }
 

@@ -4,6 +4,7 @@
   var _cats = [];
   var CHANGE_EVENT = 'change';
   var RECEIVE_ONE_CAT_EVENT = 'receive_one_cat';
+  var UPDATE_CAT_EVENT = 'update_cat';
 
   var _resetCats = function (cats) {
     _cats = cats;
@@ -12,6 +13,15 @@
   var _addCat = function (cat) {
     if (!_hasDup(cat)) {
       _cats.push(cat);
+    }
+  };
+
+  var _updateCat = function (cat) {
+    var id = cat.id;
+    for (var i = 0; i < _cats.length; i++) {
+      if (cat.id == _cats[i].id) {
+        _cats[i] = cat;
+      }
     }
   };
 
@@ -58,6 +68,13 @@
       this.removeListener(CHANGE_EVENT, callback);
     },
 
+    addUpdateCatListener: function(callback){
+      this.on(UPDATE_CAT_EVENT, callback);
+    },
+    removeUpdateCatListener: function(callback){
+      this.removeListener(UPDATE_CAT_EVENT, callback);
+    },
+
     addReceiveOneCatListener: function(callback){
       this.on(RECEIVE_ONE_CAT_EVENT, callback);
     },
@@ -79,6 +96,11 @@
           _addCat(payload.cat);
           CatStore.emit(RECEIVE_ONE_CAT_EVENT);
           break;
+        case CatConstants.UPDATE_CAT:
+          _updateCat(payload.cat);
+          CatStore.emit(RECEIVE_ONE_CAT_EVENT);
+          break;
+
 
       }
     })
