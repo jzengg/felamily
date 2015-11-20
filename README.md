@@ -48,6 +48,7 @@ front end, I will begin by setting up a full JSON API for cats and people.
 <!-- add current user store -->
 <!-- attach user info on creating cat -->
 
+add a flash store to display notices
 add user store to get username from id
 set up tabs in category content
 add error messages with util error callbacks
