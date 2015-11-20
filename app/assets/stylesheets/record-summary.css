@@ -40,23 +40,10 @@
 }
 
 .record-summary .profile-image {
-  border: 1px solid black;
+  /*border: 0px solid black;
+  border-radius: 100%;*/
   margin-top: 3px;
   margin-right: 1px;
   width: 73px;
   height: 50px;
-}
-
-.record-summary .profile-image-container {
-  border-radius: 2px;
-  display: block;
-  margin: 0px auto;
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-  padding: 2px;
-  width: 80px;
-  height: 60px;
-  box-shadow: 2px 2px 2px grey;
-  border: 1px solid black;
 }

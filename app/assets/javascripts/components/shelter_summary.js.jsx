@@ -1,3 +1,4 @@
+var Link = ReactRouter.Link
 var ShelterSummary = React.createClass({
   getInitialState: function () {
     return {cats: CatStore.all()};
@@ -21,7 +22,7 @@ var ShelterSummary = React.createClass({
     var recentCats;
     if (cats.length > 0) {
         recentCats = cats.slice(0, 5).map(function (cat) {
-          return <li className="summary-items" key={cat.id}> {cat.name} </li>;
+          return <li><Link to={"/cats/" + cat.id} className="summary-items" key={cat.id}> {cat.name} </Link> </li>;
       });
     }
 

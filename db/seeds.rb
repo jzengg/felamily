@@ -7,6 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 cats = Cat.create([
-  {name: "Emmanuel", available: true},
-  {name: "Jose", available: false }
+  {name: "Emmanuel", available: "available", location: "quarantine" },
+  {name: "Jose", available: "unavailable", location: "kittens" }
   ])
