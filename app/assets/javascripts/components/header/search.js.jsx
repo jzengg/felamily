@@ -5,8 +5,6 @@ var Search = React.createClass({
     return {input: ""};
   },
 
-
-
   handleChange: function (e) {
     e.preventDefault();
     var searchString = e.currentTarget.value;

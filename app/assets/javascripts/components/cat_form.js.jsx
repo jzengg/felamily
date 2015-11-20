@@ -5,7 +5,6 @@ var CatForm = React.createClass({
     return {name: "", available: "temp_unavailable", sex: "unknown", location: "cats", imageUrl: "", imageFile: undefined};
   },
 
-
   handleSubmit: function (e) {
     e.preventDefault();
 
@@ -22,7 +21,6 @@ var CatForm = React.createClass({
   createFormData: function () {
     var name = this.linkState("name").value;
     var state = this.state
-    debugger
     var formData = new FormData();
     formData.append("cat[name]", state.name);
     formData.append("cat[available]", state.available);
@@ -44,20 +42,11 @@ var CatForm = React.createClass({
     this.setState({name: "", available: "temp_unavailable", sex: "unknown", location: "cats", imageUrl: "", imageFile: undefined})
   },
 
-  updateAvailability: function (e) {
+  updateField: function (field, e) {
     e.preventDefault();
-    this.setState({available: e.currentTarget.value});
-  },
-
-  updateLocation: function (e) {
-    e.preventDefault();
-    this.setState({location: e.currentTarget.value});
-
-  },
-
-  updateSex: function (e) {
-    e.preventDefault();
-    this.setState({sex: e.currentTarget.value});
+    var change = {}
+    change[field] = e.currentTarget.value
+    this.setState(change);
   },
 
   updateFile: function (e) {
@@ -68,26 +57,24 @@ var CatForm = React.createClass({
     reader.onloadend = function() {
       that.setState({ imageUrl: reader.result, imageFile: file });
     }
-
     reader.readAsDataURL(file);
-
   },
 
-  sexOptions: function () {
+  _sexOptions: function () {
     var sex = ["unknown", "male", "female"]
     return sex.map(function (sex, i) {
       return <option key={sex + i} value={sex}> {sex} </option>
     })
   },
 
-  locationOptions: function () {
+  _locationOptions: function () {
     var locations = ["cats", "kittens", "quarantine", "isolation", "foster"]
     return locations.map(function (location, i) {
       return <option key={location + i} value={location}> {location} </option>
     })
   },
 
-  availabilityOptions: function () {
+  _availabilityOptions: function () {
     var availables = ["temp_unavailable", "available", "unavailable"]
     return availables.map(function (status, i) {
       return <option key={status + i} value={status}> {status} </option>
@@ -95,7 +82,7 @@ var CatForm = React.createClass({
   },
 
   render: function () {
-
+    var updateField = this.updateField;
     return(
       <form className="cat-form" onSubmit={this.handleSubmit}>
         <heading> Add a new animal </heading>
@@ -104,21 +91,21 @@ var CatForm = React.createClass({
         </label>
 
         <label> Availability
-        <select onChange={this.updateAvailability} value={this.state.available}>
-          {this.availabilityOptions()}
-        </select>
+          <select onChange={updateField.bind(null, "available")} value={this.state.available}>
+            {this._availabilityOptions()}
+          </select>
         </label>
 
         <label> Location
-        <select onChange={this.updateLocation} value={this.state.location}>
-          {this.locationOptions()}
-        </select>
+          <select onChange={updateField.bind(null, "location")} value={this.state.location}>
+            {this._locationOptions()}
+          </select>
         </label>
 
         <label> Sex
-        <select onChange={this.updateSex} value={this.state.sex}>
-          {this.sexOptions()}
-        </select>
+          <select onChange={updateField.bind(null, "sex")} value={this.state.sex}>
+            {this._sexOptions()}
+          </select>
         </label>
 
         <input type="file" onChange={this.updateFile} />

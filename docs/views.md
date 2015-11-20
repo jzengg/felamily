@@ -12,11 +12,11 @@
 ## Individual Record
 ![record]
 
-## SearchResult
-![searchresult]
+## SearchResults
+![SearchResults]
 
 [new-user]: ./wireframes/sign_up.png
 [new-session]: ./wireframes/sign_in.png
 [homepage]: ./wireframes/home_page.png
 [record]: ./wireframes/record.png
-[searchresult]: ./wireframes/search_result.png
+[SearchResults]: ./wireframes/search_result.png
