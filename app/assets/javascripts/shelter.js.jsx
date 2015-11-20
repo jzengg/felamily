@@ -43,9 +43,9 @@ $(function () {
   var routes = (
       <Route path="/" component={App}>
         <IndexRoute component={ShelterSummary}/>
-        <Routh path="signup" component={ UserForm} />
+        <Route path="signup" component={ UserForm} />
         <Route path="login" component={ SessionForm }/>
-        <Route path="cats/new" component={CatForm} />
+        <Route path="cats/new" component={CatForm} />bv
         <Route path="cats/index" component={SearchResults} />
         <Route path="cats/:id" component={CatRecord}>
           <IndexRoute component={RecordAnimal} />

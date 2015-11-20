@@ -21,14 +21,14 @@ var UsersApiUtil = {
     });
   },
 
-  createUser: function (attrs, callback) {
+  createUser: function (user, callback) {
     $.ajax({
       url: '/api/users',
       type: 'POST',
       dataType: 'json',
-      data: attrs,
+      data: user,
       success: function (user) {
-        UserActions.receiveUser(user);
+        CurrentUserActions.receiveCurrentUser(user);
         callback && callback();
       }
     });

@@ -26,7 +26,7 @@
       if (CurrentUserStore.isLoggedIn()) {
         return (
           <div>
-            Logged in as
+            Logged in as 
             { this.state.currentUser.username }
             <button onClick={ this.logout }>LOG OUT</button>
           </div>
@@ -34,7 +34,7 @@
       } else {
         return (
           <div>
-            <a href="#/login">Login</a>
+            <a href="#/signup">Sign Up</a>
           </div>
         );
       }

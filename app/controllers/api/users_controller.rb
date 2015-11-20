@@ -5,6 +5,11 @@ class Api::UsersController < ApplicationController
     render :index
   end
 
+  def create
+    @user = User.create!(user_params)
+    render :show
+  end
+
   def show
     @user = User.find(params[:id])
     render :show
