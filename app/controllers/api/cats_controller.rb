@@ -22,7 +22,7 @@ class Api::CatsController < ApplicationController
   def destroy
     @cat = Cat.find(params[:id])
     @cat.destroy!
-    render :index
+    render json: {}
   end
 
   private
