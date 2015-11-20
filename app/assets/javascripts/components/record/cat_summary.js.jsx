@@ -21,6 +21,7 @@ var RecordSummary = React.createClass({
 
         <ul className="summary-right-column">
           <li className="record-summary-available"> Status: {cat.available.toString()} </li>
+          <li> Created By: {cat.creator_id}</li>
         </ul>
       </ul>
     );

@@ -1,5 +1,6 @@
 class Api::CatsController < ApplicationController
 
+
   def index
     @cats = Cat.order(updated_at: :desc).all
   end
@@ -9,7 +10,8 @@ class Api::CatsController < ApplicationController
   end
 
   def create
-    @cat = Cat.create!(cat_params)
+    @creator_name = current_user.username
+    @cat = current_user.cats.create(cat_params)
     render :show
   end
 
@@ -27,7 +29,7 @@ class Api::CatsController < ApplicationController
 
   private
   def cat_params
-    params.require(:cat).permit(:name, :available, :profile_image, :sex, :location)
+    params.require(:cat).permit(:name, :available, :profile_image, :sex, :location, :creator_id)
   end
 
 end

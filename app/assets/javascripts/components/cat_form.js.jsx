@@ -7,7 +7,6 @@ var CatForm = React.createClass({
 
   handleSubmit: function (e) {
     e.preventDefault();
-
     var file = this.state.imageFile;
     var formData = this.createFormData();
 

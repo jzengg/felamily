@@ -2,6 +2,12 @@ class User < ActiveRecord::Base
   attr_reader :password
   validates :username, presence: true
   validates :password, length: {minimum: 6, allow_nil: true}
+  has_many(
+    :cats,
+    class_name: "Cat",
+    foreign_key: :creator_id,
+    primary_key: :id
+  )
 
 
   def self.find_by_credentials(username, password)

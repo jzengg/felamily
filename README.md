@@ -45,9 +45,9 @@ front end, I will begin by setting up a full JSON API for cats and people.
 <!-- Add save category action on record detail -->
 <!-- 1. Fix edit record detail -->
 <!-- Add destroy action for cat -->
-
-add current user store
-attach user info on creating cat
+<!-- add current user store -->
+<!-- attach user info on creating cat -->
+add user store to get username from id
 set up tabs in category content
 Add link to vaccine tab
 Add display for vaccine info
