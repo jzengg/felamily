@@ -22,7 +22,7 @@ var ShelterSummary = React.createClass({
     var recentCats;
     if (cats.length > 0) {
         recentCats = cats.slice(0, 5).map(function (cat) {
-          return <li key={cat.id}><Link to={"/cats/" + cat.id} className="summary-items" > {cat.name} </Link> </li>;
+          return <li key={cat.id}><Link to={"/cats/" + cat.id} className="summary-items" >{cat.name}</Link></li>;
       });
     }
 
@@ -31,7 +31,10 @@ var ShelterSummary = React.createClass({
       <div className="shelter-summary">
         <ul>
           <li><h3>There are {cats.length} cats in the database</h3></li>
-            <li><h3>Recently modified cats</h3>{recentCats}</li>
+            <li><h3>Recently modified cats</h3></li>
+            <ul>
+              {recentCats}
+            </ul>
         </ul>
       </div>
     );
