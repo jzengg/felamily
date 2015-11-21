@@ -31,11 +31,9 @@ var Search = React.createClass({
 
   render: function () {
     return (
-      <div className="search-bar">
-        <form onSubmit={this.handleSubmit}>
+        <form className="search-bar" onSubmit={this.handleSubmit}>
           <input onChange={this.handleChange} type="search" value={this.state.input} placeholder="Search by name"/>
         </form>
-      </div>
 
 
     );

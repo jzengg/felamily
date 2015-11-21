@@ -19,18 +19,18 @@ var CatForm = React.createClass({
 
   createFormData: function () {
     var name = this.linkState("name").value;
-    var state = this.state
+    var state = this.state;
     var formData = new FormData();
     formData.append("cat[name]", state.name);
     formData.append("cat[available]", state.available);
     formData.append("cat[sex]", state.sex);
     formData.append("cat[location]", state.location);
-    return formData
+    return formData;
   },
 
   handleSubmitSuccess: function (id) {
-    this.resetForm()
-    this.redirectToShow(id)
+    this.resetForm();
+    this.redirectToShow(id);
   },
 
   redirectToShow: function (id) {
@@ -38,13 +38,13 @@ var CatForm = React.createClass({
   },
 
   resetForm: function () {
-    this.setState({name: "", available: "temp_unavailable", sex: "unknown", location: "cats", imageUrl: "", imageFile: undefined})
+    this.setState({name: "", available: "temp_unavailable", sex: "unknown", location: "cats", imageUrl: "", imageFile: undefined});
   },
 
   updateField: function (field, e) {
     e.preventDefault();
-    var change = {}
-    change[field] = e.currentTarget.value
+    var change = {};
+    change[field] = e.currentTarget.value;
     this.setState(change);
   },
 
@@ -55,36 +55,36 @@ var CatForm = React.createClass({
 
     reader.onloadend = function() {
       that.setState({ imageUrl: reader.result, imageFile: file });
-    }
+    };
     reader.readAsDataURL(file);
   },
 
   _sexOptions: function () {
-    var sex = ["unknown", "male", "female"]
+    var sex = ["unknown", "male", "female"];
     return sex.map(function (sex, i) {
-      return <option key={sex + i} value={sex}> {sex} </option>
-    })
+      return <option key={sex + i} value={sex}> {sex} </option>;
+    });
   },
 
   _locationOptions: function () {
-    var locations = ["cats", "kittens", "quarantine", "isolation", "foster"]
+    var locations = ["cats", "kittens", "quarantine", "isolation", "foster"];
     return locations.map(function (location, i) {
-      return <option key={location + i} value={location}> {location} </option>
-    })
+      return <option key={location + i} value={location}> {location} </option>;
+    });
   },
 
   _availabilityOptions: function () {
-    var availables = ["temp_unavailable", "available", "unavailable"]
+    var availables = ["temp_unavailable", "available", "unavailable"];
     return availables.map(function (status, i) {
-      return <option key={status + i} value={status}> {status} </option>
-    })
+      return <option key={status + i} value={status}> {status} </option>;
+    });
   },
 
   render: function () {
     var updateField = this.updateField;
     return(
       <form className="cat-form" onSubmit={this.handleSubmit}>
-        <heading> Add a new animal </heading>
+        <heading> Add a new animal</heading>
         <label> Name
           <input type="text" valueLink={this.linkState("name")} />
         </label>

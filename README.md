@@ -47,10 +47,15 @@ front end, I will begin by setting up a full JSON API for cats and people.
 <!-- Add destroy action for cat -->
 <!-- add current user store -->
 <!-- attach user info on creating cat -->
+<!-- bug: create sometimes bugs out on current_user.cats.create -->
+<!-- report: for some reason current_user doesn't always register -->
+<!-- bug: edit form lags behind in some situations -->
 
-bug: create sometimes bugs out on current_user.cats.create
-report: for some reason current_user doesn't always register
-bug: edit form lags behind in some situations
+<!-- dom / react render error after create cat and try to go to homepage
+  error happens in shelter summary -->
+<!-- error occurs because you can't have spaces between text and h3 / p tag -->
+
+check why changing tag to heading in cat form fixes invariant error
 
 add a flash store to display notices
 add user store to get username from id
