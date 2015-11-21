@@ -8,7 +8,7 @@ class Api::CatsController < ApplicationController
 
   def show
     @cat = Cat.find(params[:id])
-    @creator_name = @cat.creator.username || nil
+    @creator_name = @cat.creator.username || ""
   end
 
   def create
