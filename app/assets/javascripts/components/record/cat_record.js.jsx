@@ -25,7 +25,6 @@ var CatRecord = React.createClass({
     var cat = this.state.cat;
 
     var details;
-
       if (!!this.state.cat) {
         var childrenWithProps = React.Children.map(this.props.children, function(child)
           {

@@ -2,7 +2,7 @@ var EditForm = React.createClass({
   mixins: [React.addons.LinkedStateMixin, ReactRouter.History],
 
   getInitialState: function () {
-    var cat = CatStore.all()[0];
+    var cat = this.props.cat
     return{id: cat.id, name: cat.name, available: cat.available, sex: cat.sex, location: cat.location, imageUrl: "", imageFile: undefined};
   },
 

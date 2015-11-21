@@ -49,6 +49,7 @@ front end, I will begin by setting up a full JSON API for cats and people.
 <!-- attach user info on creating cat -->
 
 bug: create sometimes bugs out on current_user.cats.create
+report: for some reason current_user doesn't always register
 bug: edit form lags behind in some situations
 
 add a flash store to display notices

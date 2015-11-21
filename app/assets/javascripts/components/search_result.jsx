@@ -33,9 +33,7 @@ var SearchResults = React.createClass({
         results = cats.map(function (cat)
           {
             return(
-              <Link key={cat.id} to={"cats/"+cat.id}>
-                <li> {cat.name} </li>
-              </Link>
+              <li key={cat.id}><Link to={"cats/"+cat.id}>{cat.name}</Link></li>
             );
           });
     }
