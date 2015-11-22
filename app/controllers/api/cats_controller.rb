@@ -3,12 +3,13 @@ class Api::CatsController < ApplicationController
 
   def index
     @cats = Cat.order(updated_at: :desc).all
-
+    @available = Cat.available
   end
 
   def show
     @cat = Cat.find(params[:id])
     @creator_name = @cat.creator.username if @cat.creator
+    debugger
   end
 
   def create
@@ -30,7 +31,7 @@ class Api::CatsController < ApplicationController
 
   private
   def cat_params
-    params.require(:cat).permit(:name, :available, :profile_image, :sex, :location, :creator_id)
+    params.require(:cat).permit(:name, :available, :profile_image, :sex, :location, :creator_id, :description)
   end
 
 end

@@ -55,10 +55,12 @@ front end, I will begin by setting up a full JSON API for cats and people.
   error happens in shelter summary -->
 <!-- error occurs because you can't have spaces between text and h3 / p tag -->
 <!-- check why changing tag to heading in cat form fixes invariant error -->
+<!-- update shelter summary to show what time the cat was modified -->
+<!-- auth using react -->
+<!-- add user store to get username from id -->
 
 
 add a flash store to display notices
-add user store to get username from id
 set up tabs in category content
 add error messages with util error callbacks
 Add link to vaccine tab
@@ -66,9 +68,7 @@ Add display for vaccine info
 filter store sometimes still gets multiple copies of same record
 add validations
 Add media category and figure out how to attach multiple images to a single cat
-update shelter summary to show what time the cat was modified
 make it possible to search for available cats
-auth using react
 Push state can take args. Check whether can refactor by passing args
 
 

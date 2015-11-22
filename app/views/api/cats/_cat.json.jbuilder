@@ -1,4 +1,4 @@
-json.extract! cat, :id, :name, :available, :location, :sex, :creator_id
+json.extract! cat, :id, :name, :available, :location, :sex, :creator_id, :description
 json.updated_at cat.updated_at.to_formatted_s(:short)
 json.created_at cat.created_at.to_formatted_s(:short)
 json.creator_name @creator_name

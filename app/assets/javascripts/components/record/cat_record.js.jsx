@@ -23,6 +23,7 @@ var CatRecord = React.createClass({
 
   render: function () {
     var cat = this.state.cat;
+    debugger
 
     var details;
       if (!!this.state.cat) {
