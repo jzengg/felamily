@@ -5,6 +5,7 @@ var Header = React.createClass({
       <div className="header group">
         <QuickLinks />
         <Search />
+        <SessionHeader />
       </div>
     );
   }

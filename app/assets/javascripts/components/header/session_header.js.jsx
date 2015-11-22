@@ -4,7 +4,8 @@
 
     getInitialState: function () {
       return {
-        currentUser: CurrentUserStore.currentUser()
+        currentUser: CurrentUserStore.currentUser(),
+        expanded: false
       };
     },
 
@@ -22,23 +23,22 @@
       }.bind(this));
     },
 
-    render: function() {
-      if (CurrentUserStore.isLoggedIn()) {
-        return (
-          <div>
-            Logged in as 
-            { this.state.currentUser.username }
-            <button onClick={ this.logout }>LOG OUT</button>
-          </div>
-        );
-      } else {
-        return (
-          <div>
-            <a href="#/signup">Sign Up</a>
-          </div>
-        );
-      }
-
+    expand: function () {
+      this.setState({expanded: !this.state.expanded});
     },
+
+    render: function() {
+      var button;
+      if (this.state.expanded) {
+        button = <button onClick={ this.logout }>LOG OUT</button>;
+        }
+
+      return (
+        <div>
+          <div onClick={this.expand}> { this.state.currentUser.username } </div>
+          {button}
+        </div>
+      );
+    }
 
   });

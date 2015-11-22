@@ -18,13 +18,17 @@ var ShelterSummary = React.createClass({
   },
 
   render: function () {
-    var cats = this.state.cats;
-    var recentCats;
-    if (cats.length > 0) {
-        recentCats = cats.slice(0, 5).map(function (cat) {
-          return <li key={cat.id}><Link to={"/cats/" + cat.id} className="summary-items" >{cat.name}</Link></li>;
-      });
-    }
+    var cats = this.state.cats || [];
+    var recentCats = cats.slice(0, 5).map(function (cat)
+        {
+          return(
+            <li key={cat.id}>
+              <caption> {cat.updated_at} </caption><Link to={"/cats/" + cat.id} className="summary-items" >{cat.name}</Link>
+
+            </li>
+          );
+        });
+
 
 
     return (

@@ -16,6 +16,8 @@
     render: function() {
 
       return (
+        <div>
+
         <form onSubmit={ this.submit }>
 
           <h1>Log In!</h1>
@@ -31,7 +33,11 @@
           </label>
 
           <button>Log In!</button>
+
+
         </form>
+          <div> Don't have an account? <a href="#/signup">Sign Up</a> </div>
+        </div>
       );
     },
 

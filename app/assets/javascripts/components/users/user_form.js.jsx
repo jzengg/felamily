@@ -21,22 +21,27 @@ var UserForm = React.createClass({
     render: function() {
 
       return (
-        <form onSubmit={ this.submit }>
+        <div>
+          <form onSubmit={ this.submit }>
 
-          <h1>Sign Up!</h1>
 
-          <label>
-            Username
-            <input type="text" valueLink={this.linkState("username")} />
-          </label>
+            <h1>Sign Up!</h1>
 
-          <label>
-            Password
-            <input type="password" valueLink={this.linkState("password")} />
-          </label>
+            <label>
+              Username
+              <input type="text" valueLink={this.linkState("username")} />
+            </label>
 
-          <button>Join!</button>
-        </form>
+            <label>
+              Password
+              <input type="password" valueLink={this.linkState("password")} />
+            </label>
+
+            <button>Join!</button>
+          </form>
+          <div> Already have an account? <a href="#/login">Login</a> </div>
+
+        </div>
       );
     },
 

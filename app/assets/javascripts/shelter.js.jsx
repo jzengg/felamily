@@ -34,7 +34,6 @@ $(function () {
           <div className="app">
             {header}
             {this.props.children}
-            <SessionHeader />
           </div>
       );
     }
