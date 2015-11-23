@@ -22,6 +22,7 @@ var AnimalNotes = React.createClass({
 
   render: function() {
     var content = "";
+    var text = "▶Notes";
     var cat = this.props.cat;
     if (this.state.expanded) {
         content =
@@ -29,11 +30,13 @@ var AnimalNotes = React.createClass({
           <textarea onChange={this.handleChange} value={this.state.description} />
           <button> Save changes </button>
         </form>;
+        text = "▼Notes";
+
     }
 
     return (
-      <div >
-        <h3 onClick={this.handleClick}> AnimalNotes </h3>
+      <div>
+        <h3 className="record-subcategories" onClick={this.handleClick}> {text} </h3>
         {content}
       </div>
     );

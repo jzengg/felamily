@@ -79,34 +79,34 @@ var EditForm = React.createClass({
   render: function () {
     var updateField = this.updateField;
     return(
-      <div>
+      <div className="edit-cat-form-container">
 
-      <form className="cat-form" onSubmit={this.handleSubmit}>
+      <form className="edit-cat-form" onSubmit={this.handleSubmit}>
         <label> Name
           <input type="text" value={this.state.name} onChange={updateField.bind(null, "name")} />
-        </label>
+        </label> <br/>
 
         <label> Availability
           <select onChange={updateField.bind(null, "available")} value={this.state.available}>
             {this._availabilityOptions()}
           </select>
-        </label>
+        </label> <br/>
 
         <label> Location
           <select onChange={updateField.bind(null, "location")} value={this.state.location}>
             {this._locationOptions()}
           </select>
-        </label>
+        </label> <br/>
 
         <label> Sex
           <select onChange={updateField.bind(null, "sex")} value={this.state.sex}>
             {this._sexOptions()}
           </select>
-        </label>
+        </label> <br/>
 
         <input type="file" onChange={this.updateFile} />
         <img className="preview-image" src={this.state.imageUrl} />
-        <button> Save changes </button>
+        <button className="save-changes"> Save changes </button>
 
       </form>
       <button onClick={this.handleDestroy}> Destroy cat! </button>

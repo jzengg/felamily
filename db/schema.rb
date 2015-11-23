@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151122223257) do
+ActiveRecord::Schema.define(version: 20151123192318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,14 @@ ActiveRecord::Schema.define(version: 20151122223257) do
     t.text     "description"
   end
 
+  create_table "cats_vaccines", force: :cascade do |t|
+    t.integer "cat_id",     null: false
+    t.integer "vaccine_id", null: false
+  end
+
+  add_index "cats_vaccines", ["cat_id"], name: "index_cats_vaccines_on_cat_id", using: :btree
+  add_index "cats_vaccines", ["vaccine_id"], name: "index_cats_vaccines_on_vaccine_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
     t.string   "password_digest", null: false
@@ -40,5 +48,14 @@ ActiveRecord::Schema.define(version: 20151122223257) do
   end
 
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
+
+  create_table "vaccines", force: :cascade do |t|
+    t.integer  "category",   default: 0, null: false
+    t.date     "given"
+    t.date     "expires"
+    t.text     "comments"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
 end

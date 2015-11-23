@@ -8,13 +8,16 @@ var AnimalDetails = React.createClass({
   },
 
   render: function() {
+    var text = "▶ Details";
+
     var content = "";
     if (this.state.expanded) {
         content = <EditForm cat={this.props.cat}/>;
+        text = "▼ Details";
     }
     return (
       <div className="">
-        <h3 onClick={this.handleClick}> Details </h3>
+        <h3 onClick={this.handleClick}> {text} </h3>
         {content}
       </div>
     );

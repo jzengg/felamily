@@ -7,6 +7,8 @@ class Cat < ActiveRecord::Base
     primary_key: :id
   )
 
+  has_many :vaccines
+
   enum location: [:cats, :kittens, :quarantine, :isolation, :foster]
   enum sex: [:male, :female, :unknown]
   enum available: [:temp_unavailable, :available, :unavailable]
