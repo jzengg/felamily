@@ -17,6 +17,14 @@
     }
   };
 
+  var _addVaccine = function (cat, vaccine) {
+    for (var i = 0; i < _cats.length; i++) {
+      if (cat.id == _cats[i].id) {
+        _cats[i].vaccines.push(vaccine);
+      }
+    }
+  };
+
   var _updateCat = function (cat) {
     var id = cat.id;
     for (var i = 0; i < _cats.length; i++) {
@@ -112,6 +120,11 @@
           break;
         case CatConstants.REMOVE_CAT:
           _removeCat(payload.id);
+          CatStore.emit(CHANGE_EVENT);
+          break;
+        case VaccineConstants.UPDATE_CAT_VACCINES:
+        debugger
+          _addVaccine(payload.data.cat, payload.data.vaccine);
           CatStore.emit(CHANGE_EVENT);
           break;
 

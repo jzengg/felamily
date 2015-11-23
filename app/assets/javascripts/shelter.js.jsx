@@ -18,6 +18,10 @@ $(function () {
       SessionsApiUtil.fetchCurrentUser();
     },
 
+    componentDidUnmount: function () {
+      CurrentUserStore.removeChangeHandler(this._ensureLoggedIn);
+    },
+
     _ensureLoggedIn: function () {
       if (!CurrentUserStore.isLoggedIn()) {
         this.history.pushState(null, "/login");

@@ -11,11 +11,12 @@ var CatRecord = React.createClass({
   },
 
   componentWillReceiveProps: function (newprops) {
-      ApiUtil.fetchOneCat(newprops.params.id);
+    ApiUtil.fetchOneCat(newprops.params.id);
   },
 
   componentWillUnmount: function () {
     CatStore.removeReceiveOneCatListener(this.receiveCat);
+    UsersStore.removeChangeHandler(this.receiveCreator);
   },
 
   receiveCat: function () {

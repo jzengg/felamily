@@ -1,21 +1,11 @@
 var VaccineResults = React.createClass({
 
   getInitialState: function () {
-    return {vaccines: VaccineStore.all()};
-  },
-
-  componentDidMount: function () {
-    VaccineApiUtil.fetchVaccines(this.props.cat.id);
-    VaccineStore.addChangeHandler(this.updateVaccines);
-  },
-
-  updateVaccines: function () {
-    this.setState({ vaccines: VaccineStore.all() });
+    return {vaccines: this.props.cat.vaccines};
   },
 
   render: function() {
-    var cat = this.props.cat;
-    var vaccines = cat.vaccines;
+    var vaccines = this.props.cat.vaccines;
     var result = vaccines.map(function (vaccine) {
       return(
       <tr className="vaccine-result-row group" key={vaccine.id}>

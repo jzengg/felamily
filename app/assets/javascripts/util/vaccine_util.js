@@ -1,13 +1,14 @@
 var VaccinesApiUtil = {
 
-  addVaccine: function (catId, vaccine) {
+  addVaccine: function (cat, vaccine) {
     $.ajax({
-      url: "/api/cats/" + catId + "/vaccines",
+      url: "/api/cats/" + cat.id + "/vaccines",
       type: 'POST',
       dataType: 'json',
       data: {vaccine: vaccine},
-      success: function () {
+      success: function (data) {
         console.log("added vaccine to db");
+        VaccineActions.updateCatVaccine(cat, data);
       }
     });
   },

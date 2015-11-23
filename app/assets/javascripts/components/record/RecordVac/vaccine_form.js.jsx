@@ -17,9 +17,10 @@ var VaccineForm = React.createClass({
   },
 
   handleSubmit: function (e) {
+    e.preventDefault();
     var vaccine = {comments: this.state.comments};
 
-    ApiUtil.addVaccine(this.props.cat, vaccine);
+    VaccinesApiUtil.addVaccine(this.props.cat, vaccine);
   },
   render: function() {
     return (

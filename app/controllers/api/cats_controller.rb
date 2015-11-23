@@ -8,7 +8,6 @@ class Api::CatsController < ApplicationController
 
   def show
     @cat = Cat.find(params[:id])
-    @vaccines = @cat.vaccines
   end
 
   def create

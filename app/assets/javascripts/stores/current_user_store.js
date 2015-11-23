@@ -13,7 +13,7 @@
       this.on(CHANGE_EVENT, callback);
     },
 
-    removeChangeHandler: function () {
+    removeChangeHandler: function (callback) {
       this.removeListener(CHANGE_EVENT, callback);
     },
 
