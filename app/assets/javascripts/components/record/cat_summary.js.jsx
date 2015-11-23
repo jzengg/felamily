@@ -20,7 +20,7 @@ var RecordSummary = React.createClass({
         </ul>
 
         <ul className="summary-right-column">
-          <li> Added by <strong>{cat.creator_name || "unknown"}</strong> at <strong> {cat.created_at} </strong> </li>
+          <li> Added by <strong>{this.props.creator.username || "unknown"}</strong> at <strong> {cat.created_at} </strong> </li>
           <li> Last changed <strong> {cat.updated_at} </strong> </li>
           <li className="record-summary-available"> Status: {cat.available.toString()} </li>
         </ul>

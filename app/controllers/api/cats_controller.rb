@@ -8,8 +8,6 @@ class Api::CatsController < ApplicationController
 
   def show
     @cat = Cat.find(params[:id])
-    @creator_name = @cat.creator.username if @cat.creator
-    debugger
   end
 
   def create
