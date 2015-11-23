@@ -1,5 +1,8 @@
 class Vaccine < ActiveRecord::Base
-  belongs_to :cat
+  has_many :vaccinations
+  has_many :cats, through: :vaccinations
+
+  
   enum category: [:first_round, :second_round, :temporary, :parvovirus, :leukaemia, :booster]
 
 end
