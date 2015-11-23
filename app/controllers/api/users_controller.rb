@@ -6,9 +6,15 @@ class Api::UsersController < ApplicationController
   end
 
   def create
+
     @user = User.create!(user_params)
     sign_in!(@user)
     render :show
+    # @user = User.new(user_params)
+    # if @user.save
+    #   render json: { errors: @user.errors.full_messages }, error: 400
+    #
+    # end
   end
 
   def show

@@ -29,7 +29,7 @@ var UserForm = React.createClass({
 
             <label>
               Username
-              <input type="text" valueLink={this.linkState("username")} />
+              <input type="text" valueLink={this.linkState("username")} autofocus/>
             </label>
 
             <label>

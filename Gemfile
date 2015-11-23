@@ -26,7 +26,6 @@ gem 'pry-rails'
 gem 'paperclip'
 gem 'aws-sdk', '~> 1.6'
 gem 'figaro'
-
 gem 'react-rails', '~> 1.3.0'
 gem 'flux-rails-assets'
 
@@ -41,6 +40,7 @@ gem 'flux-rails-assets'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+gem 'seed_dump'
   gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views

@@ -59,7 +59,7 @@ front end, I will begin by setting up a full JSON API for cats and people.
 <!-- auth using react -->
 <!-- add user store to get username from id -->
 
-
+getting error about setting state on mounted or mounting component
 add a flash store to display notices
 set up tabs in category content
 add error messages with util error callbacks
