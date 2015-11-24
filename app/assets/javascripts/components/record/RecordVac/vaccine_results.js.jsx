@@ -1,21 +1,38 @@
-var VaccineResults = React.createClass({
+var Link = ReactRouter.Link;
 
-  getInitialState: function () {
-    return {vaccines: this.props.cat.vaccines};
+var VaccineResults = React.createClass({
+  mixins: [ReactRouter.History],
+
+  showEdit: function (vaccineId) {
+    this.history.pushState(null, "/cats/" + this.props.cat.id + "/vaccine/" + "edit/" + vaccineId);
+  },
+
+  _generateResultsTable: function () {
+    var vaccines = this.props.cat.vaccines;
+    return vaccines.map(function (vaccine) {
+      return(
+        <tr className="vaccine-result-row group" key={vaccine.id}>
+          <td onClick={this.showEdit.bind(null, vaccine.id)}> {vaccine.category} </td>
+          <td> {vaccine.comments} </td>
+          <td> {vaccine.given} </td>
+          <td> {vaccine.expires} </td>
+        </tr>
+      );
+    }.bind(this));
   },
 
   render: function() {
+    var results = this._generateResultsTable();
     var vaccines = this.props.cat.vaccines;
-    var result = vaccines.map(function (vaccine) {
-      return(
-      <tr className="vaccine-result-row group" key={vaccine.id}>
-        <td> {vaccine.category} </td>
-        <td> {vaccine.comments} </td>
-        <td> {vaccine.given} </td>
-        <td> {vaccine.expires} </td>
-      </tr>
-    );
-  });
+
+    var childrenWithProps;
+    if (!!vaccines) {
+      childrenWithProps = React.Children.map(this.props.children, function(child)
+      {
+       return React.cloneElement(child, { vaccines: vaccines });
+      });
+    }
+
     return (
       <div>
       <table className="vaccine-results">
@@ -25,9 +42,10 @@ var VaccineResults = React.createClass({
           <th>Given</th>
           <th>Expires</th>
         </tr>
-        {result}
+        {results}
       </table>
       <VaccineForm cat={this.props.cat}/>
+        {childrenWithProps}
       </div>
     );
   }

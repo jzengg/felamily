@@ -51,9 +51,11 @@ $(function () {
         <Route path="cats/new" component={CatForm} />bv
         <Route path="cats/index" component={SearchResults} />
         <Route path="cats/:id" component={CatRecord}>
-          <IndexRoute component={RecordAnimal} />
-          <Route path="animal" component={RecordAnimal} />
-          <Route path="vaccine" component={RecordVac} />
+          <IndexRoute component={AnimalContent} />
+          <Route path="animal" component={AnimalContent} />
+          <Route path="vaccine" component={VaccineResults}>
+            <Route path="edit/:vaccine_id" component={EditVaccine} />
+          </Route>
         </Route>
       </Route>
   );

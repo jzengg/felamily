@@ -3,6 +3,7 @@ var EditForm = React.createClass({
 
   getInitialState: function () {
     var cat = this.props.cat;
+    
     return{id: cat.id, name: cat.name, available: cat.available, sex: cat.sex, location: cat.location, imageUrl: "", imageFile: undefined};
   },
 
