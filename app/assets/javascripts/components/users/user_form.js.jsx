@@ -31,14 +31,14 @@ var UserForm = React.createClass({
                 Username
               </label>
                 <div className="login-username">
-                  <input id="login-username" type="text" name="username" autofocus/>
+                  <input id="login-username" type="text" valueLink={this.linkState("username")}/>
                 </div>
 
               <label htmlFor="login-password">
                 Password
               </label>
                 <div className="login-password">
-                  <input id="login-username" type="password" name="password" />
+                  <input id="login-username" type="password" valueLink={this.linkState("password")}/>
                 </div>
 
             <button>Join!</button>
