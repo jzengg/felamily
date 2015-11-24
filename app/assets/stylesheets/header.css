@@ -5,3 +5,19 @@
   padding: 5px;
   font-size: 14px;
 }
+
+.user-button {
+  position: relative;
+  display: block;
+  float: left;
+  margin-left: 10px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.user-logout {
+  position: absolute;
+  top: 35px;
+  left: 30%;
+}

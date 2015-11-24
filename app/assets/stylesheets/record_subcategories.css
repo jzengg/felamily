@@ -1,4 +1,7 @@
 .animal-content h3 {
   background: navy;
   color: white;
+  margin-left: 10px;
+  padding: 8px;
+  font-weight: 300;
 }

@@ -11,12 +11,12 @@ var RecordSummary = React.createClass({
           </a>
           <div id="name-sex">
             <li className="record-summary-name"> {cat.name} </li>
-            <li className="record-summary-sex"> {cat.sex} </li>
+            <li className="record-summary-sex"> {cat.sex + " cat"} </li>
           </div>
         </ul>
 
         <ul className="summary-middle-column">
-          <li className="record-summary-location"> Location: {cat.location} </li>
+          <li className="record-summary-location"> Location: <strong> {cat.location} </strong> </li>
         </ul>
 
         <ul className="summary-right-column">

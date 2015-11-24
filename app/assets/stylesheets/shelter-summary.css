@@ -7,9 +7,18 @@
   font-weight: bold;
   display: block;
   border-bottom: 1px solid black;
+  margin-bottom: 25px;
 }
 
-.shelter-items {
-  line-height: 150%;
 
+.shelter-items {
+  line-height: 15px;
+}
+
+.summary-updated-at {
+  font-size: 13px;
+  font-weight: lighter;
+  display: inline;
+  color: gray;
+  margin-right: 3px;
 }

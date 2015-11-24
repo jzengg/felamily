@@ -82,30 +82,31 @@ var EditForm = React.createClass({
       <div className="edit-cat-form-container">
 
       <form className="edit-cat-form" onSubmit={this.handleSubmit}>
-        <label> Name
-          <input type="text" value={this.state.name} onChange={updateField.bind(null, "name")} />
-        </label> <br/>
+        <label htmlFor="name"> Name </label>
+          <input id="name" type="text" value={this.state.name} onChange={updateField.bind(null, "name")} />
+        <br/>
 
-        <label> Availability
-          <select onChange={updateField.bind(null, "available")} value={this.state.available}>
+        <label htmlFor="availability"> Availability </label>
+          <select id="availability" onChange={updateField.bind(null, "available")} value={this.state.available}>
             {this._availabilityOptions()}
           </select>
-        </label> <br/>
+        <br/>
 
-        <label> Location
-          <select onChange={updateField.bind(null, "location")} value={this.state.location}>
+        <label htmlFor="location"> Location </label>
+          <select id="location" onChange={updateField.bind(null, "location")} value={this.state.location}>
             {this._locationOptions()}
           </select>
-        </label> <br/>
+        <br/>
 
-        <label> Sex
-          <select onChange={updateField.bind(null, "sex")} value={this.state.sex}>
+        <label htmlFor="sex"> Sex </label>
+          <select id="sex" onChange={updateField.bind(null, "sex")} value={this.state.sex}>
             {this._sexOptions()}
           </select>
-        </label> <br/>
+        <br/>
+        <label htmlFor="profile-picture"> Upload a profile picture </label>
+        <input id="profile-picture" type="file" onChange={this.updateFile} />
 
-        <input type="file" onChange={this.updateFile} />
-        <img className="preview-image" src={this.state.imageUrl} />
+        <img id="preview-image" className="preview-image" src={this.state.imageUrl} />
         <button className="save-changes"> Save changes </button>
 
       </form>

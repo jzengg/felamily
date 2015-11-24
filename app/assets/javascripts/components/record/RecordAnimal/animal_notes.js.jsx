@@ -27,7 +27,9 @@ var AnimalNotes = React.createClass({
     if (this.state.expanded) {
         content =
         <form onSubmit={this.handleSubmit}>
+          <label> Description
           <textarea onChange={this.handleChange} value={this.state.description} />
+          </label>
           <button> Save changes </button>
         </form>;
         text = "▼Notes";

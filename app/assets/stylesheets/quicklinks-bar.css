@@ -1,5 +1,5 @@
 .quicklinks-bar {
-  width: 600px;
+  width: 450px;
   float: left;
 }
 
@@ -17,8 +17,4 @@
   width: auto;
   max-width: 27px;
   max-height: 27px;
-}
-
-.quicklinks-bar a:not(:first-child):after {
-  content:"►"
 }

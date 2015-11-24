@@ -2,4 +2,22 @@
   display: block;
   width: 500px;
   margin: 0 auto;
+  padding: 10px;
+}
+
+.edit-cat-form label {
+display: block;
+}
+
+.edit-cat-form select {
+  display: block;
+  border: 1px solid black;
+}
+.edit-cat-form input {
+  display: block;
+  border: 1px solid black;
+}
+
+.edit-cat-form button {
+  margin: 10px 0 10px 0;
 }

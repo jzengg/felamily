@@ -29,14 +29,16 @@
 
     render: function() {
       var button;
+      var text = this.state.currentUser.username + " ▶";
       if (this.state.expanded) {
-        button = <button onClick={ this.logout }>LOG OUT</button>;
+        text = this.state.currentUser.username + " ▼";
+        button = <button className="user-logout" onClick={ this.logout }>Log Out</button>;
         }
 
       return (
         <div>
-          <div onClick={this.expand}> { this.state.currentUser.username } </div>
-          {button}
+          <div className="user-button" onClick={this.expand}> {text} {button} </div>
+
         </div>
       );
     }

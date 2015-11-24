@@ -123,7 +123,6 @@
           CatStore.emit(CHANGE_EVENT);
           break;
         case VaccineConstants.UPDATE_CAT_VACCINES:
-        debugger
           _addVaccine(payload.data.cat, payload.data.vaccine);
           CatStore.emit(CHANGE_EVENT);
           break;

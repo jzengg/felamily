@@ -23,7 +23,7 @@ var ShelterSummary = React.createClass({
         {
           return(
             <li key={cat.id}>
-              <caption> {cat.updated_at} </caption><Link to={"/cats/" + cat.id} className="summary-items" >{cat.name}</Link>
+              <h5 className="summary-updated-at"> {cat.updated_at} </h5><Link to={"/cats/" + cat.id} className="summary-items" >{cat.name}</Link>
 
             </li>
           );
