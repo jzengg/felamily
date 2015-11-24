@@ -11,8 +11,12 @@ class Api::CatsController < ApplicationController
   end
 
   def create
-    @cat = current_user.cats.create(cat_params)
-    render :show
+    @cat = current_user.cats.new(cat_params)
+    if @cat.save
+      render :show
+    else
+      render json: @cat.errors.full_messages.first, status: 422
+    end
   end
 
   def update

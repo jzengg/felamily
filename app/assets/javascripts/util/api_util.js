@@ -33,6 +33,9 @@ ApiUtil = {
       success: function (data) {
         ApiActions.receiveNewCat(data);
         callback && callback(data.id);
+      },
+      error: function (data) {
+        FlashActions.receiveErrors(data.responseText);
       }
     });
   },

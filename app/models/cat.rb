@@ -1,5 +1,5 @@
 class Cat < ActiveRecord::Base
-  validates :name, length: {minimum: 3}
+  validates :name, length: {minimum: 2}
   belongs_to(
     :creator,
     class_name: "User",
