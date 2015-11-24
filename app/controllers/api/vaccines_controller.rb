@@ -13,6 +13,13 @@ class Api::VaccinesController < ApplicationController
     render 'api/cats/show'
   end
 
+  def destroy
+    @vaccine = Vaccine.find(params[:id])
+    @cat = @vaccine.cats.first
+    @vaccine.destroy
+    render 'api/cats/show'
+  end
+
   private
   def vaccine_params
     params.require(:vaccine).permit(:category, :given, :expires, :comments)

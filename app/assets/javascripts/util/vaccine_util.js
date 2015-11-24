@@ -26,9 +26,16 @@ var VaccinesApiUtil = {
     });
   },
 
-  destroyVaccine: function () {
+  destroyVaccine: function (cat, vaccine, vaccineId) {
     $.ajax({
-      url: ""
+      url: "/api/cats/" + cat.id + "/vaccines/" + vaccineId,
+      type: 'DELETE',
+      dataType: 'json',
+      data: {vaccine: vaccine},
+      success: function (data) {
+        console.log("deleted vaccine to db");
+        VaccineActions.updateCatVaccine(data);
+      }
     });
   }
 

@@ -41,7 +41,10 @@ var EditVaccine = React.createClass({
     },
 
     handleDestroy: function () {
-      VaccineUtil.destroyVaccine();
+      var state = this.state;
+      var vaccine = {category: state.category, comments: state.comments, given: state.given, expires: state.expires};
+      VaccinesApiUtil.destroyVaccine(this.props.cat, vaccine, this.state.id);
+      this.history.pushState(null, "/cats/" + this.props.cat.id + "/vaccine");
     },
 
     render: function() {
@@ -63,8 +66,8 @@ var EditVaccine = React.createClass({
             <textarea id="vaccine-comments" onChange={this.updateField.bind(null, "comments")} value={this.state.comments}/>
 
           <button> Save changes </button>
-          <button onClick={this.handleDestroy}> Delete record </button>
         </form>
+          <button onClick={this.handleDestroy}> Delete record </button>
           <Link to={"/cats/" + this.props.cat.id + "/vaccine"}> Cancel </Link>
         </div>
       );

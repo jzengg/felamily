@@ -11,6 +11,6 @@ var VaccineActions = {
       actionType: VaccineConstants.UPDATE_CAT_VACCINES,
       cat: cat
     });
-  }
+  },
 
 };
