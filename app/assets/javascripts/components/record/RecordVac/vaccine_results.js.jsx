@@ -44,7 +44,9 @@ var VaccineResults = React.createClass({
           <th>Given</th>
           <th>Expires</th>
         </tr>
+        <tbody>
         {results}
+        </tbody>
       </table>
       <VaccineForm cat={this.props.cat}/>
         {childrenWithProps}
