@@ -10,6 +10,8 @@
 .cat-form input {
   display: block;
   border: 1px solid grey;
+  border-radius: 3px;
+  padding: 3px;
 }
 
 .cat-form heading {

@@ -14,7 +14,9 @@ display: block;
   border: 1px solid black;
 }
 .edit-cat-form input {
+  padding: 3px;
   display: block;
+  border-radius: 3px;
   border: 1px solid black;
 }
 

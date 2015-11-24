@@ -24,7 +24,6 @@ var VaccineForm = React.createClass({
   },
 
   handleChange: function (e) {
-    debugger
   },
 
   render: function() {
