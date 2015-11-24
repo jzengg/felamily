@@ -1,11 +1,20 @@
 var EditVaccine = React.createClass({
 
     getInitialState: function() {
-      var vaccineId = parseInt(this.props.params.vaccine_id);
-      var vaccine = this.props.vaccines.find(function (vaccine) {
+      var vaccine = this._getVaccineFromParams(this.props);
+      return {category: vaccine.category, comments: vaccine.comments, given: vaccine.given, expires: vaccine.expires};
+    },
+
+    _getVaccineFromParams: function (props) {
+      var vaccineId = parseInt(props.params.vaccine_id);
+      return props.vaccines.find(function (vaccine) {
         return vaccine.id == vaccineId;
       });
-      return {category: vaccine.category, comments: vaccine.comments, given: vaccine.given, expires: vaccine.expires};
+    },
+
+    componentWillReceiveProps: function (newProps) {
+      var vaccine = this._getVaccineFromParams(newProps);
+      this.setState({category: vaccine.category, comments: vaccine.comments, given: vaccine.given, expires: vaccine.expires});
     },
 
     handleSubmit: function (e) {
