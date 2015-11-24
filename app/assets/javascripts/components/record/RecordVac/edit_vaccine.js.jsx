@@ -1,11 +1,12 @@
 var EditVaccine = React.createClass({
+    mixins: [ReactRouter.History],
 
     getInitialState: function() {
-      var vaccine = this._getVaccineFromParams(this.props);
-      return {category: vaccine.category, comments: vaccine.comments, given: vaccine.given, expires: vaccine.expires};
+      var vaccine = this._getVaccineFromProps(this.props);
+      return {id: vaccine.id, category: vaccine.category, comments: vaccine.comments, given: vaccine.given, expires: vaccine.expires};
     },
 
-    _getVaccineFromParams: function (props) {
+    _getVaccineFromProps: function (props) {
       var vaccineId = parseInt(props.params.vaccine_id);
       return props.vaccines.find(function (vaccine) {
         return vaccine.id == vaccineId;
@@ -13,16 +14,17 @@ var EditVaccine = React.createClass({
     },
 
     componentWillReceiveProps: function (newProps) {
-      var vaccine = this._getVaccineFromParams(newProps);
+      var vaccine = this._getVaccineFromProps(newProps);
       this.setState({category: vaccine.category, comments: vaccine.comments, given: vaccine.given, expires: vaccine.expires});
     },
 
     handleSubmit: function (e) {
       e.preventDefault();
       var state = this.state;
-      var vaccine = {category: state.category, comments: state.comments, given: state.given, expires: state.expires};
+      var vaccine = {vaccine:{category: state.category, comments: state.comments, given: state.given, expires: state.expires}};
 
-      VaccinesApiUtil.addVaccine(this.props.cat, vaccine);
+      VaccinesApiUtil.updateVaccine(this.props.cat, vaccine, this.state.id);
+      this.history.pushState(null, "/cats/" + this.props.cat.id + "/vaccine");
     },
 
     updateField: function (field, e) {
@@ -54,7 +56,7 @@ var EditVaccine = React.createClass({
           <label htmlFor="vaccine-comments"> Comments </label>
             <textarea id="vaccine-comments" onChange={this.updateField.bind(null, "comments")} value={this.state.comments}/>
 
-          <button> Add new vaccine </button>
+          <button> Save changes </button>
         </form>
       );
     }

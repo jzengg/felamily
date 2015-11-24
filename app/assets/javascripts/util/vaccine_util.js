@@ -8,7 +8,7 @@ var VaccinesApiUtil = {
       data: {vaccine: vaccine},
       success: function (data) {
         console.log("added vaccine to db");
-        VaccineActions.updateCatVaccine(cat, data);
+        VaccineActions.addCatVaccine(cat, data);
       }
     });
   },
@@ -21,8 +21,17 @@ var VaccinesApiUtil = {
     });
   },
 
-  updateVaccine: function () {
-
+  updateVaccine: function (cat, vaccine, vaccineId) {
+    $.ajax({
+      url: "/api/cats/" + cat.id + "/vaccines/" + vaccineId,
+      type: 'PATCH',
+      dataType: 'json',
+      data: {vaccine: vaccine},
+      success: function (data) {
+        console.log("updated vaccine to db");
+        VaccineActions.updateCatVaccine(cat, data);
+      }
+    });
   },
 
   destroyVaccine: function () {

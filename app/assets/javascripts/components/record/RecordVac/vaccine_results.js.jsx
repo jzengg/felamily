@@ -29,8 +29,8 @@ var VaccineResults = React.createClass({
     if (!!vaccines) {
       childrenWithProps = React.Children.map(this.props.children, function(child)
       {
-       return React.cloneElement(child, { vaccines: vaccines });
-      });
+       return React.cloneElement(child, { vaccines: vaccines, cat: this.props.cat});
+     }.bind(this));
     }
 
     return (

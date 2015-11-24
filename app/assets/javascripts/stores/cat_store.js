@@ -25,6 +25,26 @@
     }
   };
 
+  var _findCat = function (cat) {
+    for (var i = 0; i < _cats.length; i++) {
+      if (_cats[i].id == cat.id) {
+        return i;
+      }
+    }
+  };
+
+  var _updateVaccine = function (cat, vaccine) {
+    for (var i = 0; i < _cats.length; i++) {
+      if (cat.id == _cats[i].id) {
+        for (var j = 0; j < _cats.vaccines.length; j++) {
+          if (_cats.vaccines[j] == vaccine.id) {
+            _cats.vaccines[j] = vaccine;
+          }
+        }
+      }
+    }
+  };
+
   var _updateCat = function (cat) {
     var id = cat.id;
     for (var i = 0; i < _cats.length; i++) {
@@ -122,8 +142,12 @@
           _removeCat(payload.id);
           CatStore.emit(CHANGE_EVENT);
           break;
-        case VaccineConstants.UPDATE_CAT_VACCINES:
+        case VaccineConstants.ADD_CAT_VACCINES:
           _addVaccine(payload.data.cat, payload.data.vaccine);
+          CatStore.emit(RECEIVE_ONE_CAT_EVENT);
+          break;
+        case VaccineConstants.UPDATE_CAT_VACCINES:
+          _updateVaccine(payload.data.cat, payload.data.vaccine);
           CatStore.emit(RECEIVE_ONE_CAT_EVENT);
           break;
 
