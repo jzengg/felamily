@@ -85,30 +85,31 @@ var CatForm = React.createClass({
     return(
       <form className="cat-form" onSubmit={this.handleSubmit}>
         <heading> Add a new animal</heading>
-        <label> Name
-          <input type="text" valueLink={this.linkState("name")} />
-        </label>
+          <label htmlFor="name"> Name </label>
+            <input id="name" type="text" value={this.state.name} onChange={updateField.bind(null, "name")} />
+          <br/>
 
-        <label> Availability
-          <select onChange={updateField.bind(null, "available")} value={this.state.available}>
-            {this._availabilityOptions()}
-          </select>
-        </label>
+          <label htmlFor="availability"> Availability </label>
+            <select id="availability" onChange={updateField.bind(null, "available")} value={this.state.available}>
+              {this._availabilityOptions()}
+            </select>
+          <br/>
 
-        <label> Location
-          <select onChange={updateField.bind(null, "location")} value={this.state.location}>
-            {this._locationOptions()}
-          </select>
-        </label>
+          <label htmlFor="location"> Location </label>
+            <select id="location" onChange={updateField.bind(null, "location")} value={this.state.location}>
+              {this._locationOptions()}
+            </select>
+          <br/>
 
-        <label> Sex
-          <select onChange={updateField.bind(null, "sex")} value={this.state.sex}>
-            {this._sexOptions()}
-          </select>
-        </label>
+          <label htmlFor="sex"> Sex </label>
+            <select id="sex" onChange={updateField.bind(null, "sex")} value={this.state.sex}>
+              {this._sexOptions()}
+            </select>
+          <br/>
+          <label htmlFor="profile-picture"> Upload a profile picture </label>
+          <input id="profile-picture" type="file" onChange={this.updateFile} />
 
-        <input type="file" onChange={this.updateFile} />
-        <img className="preview-image" src={this.state.imageUrl} />
+          <img id="preview-image" className="preview-image" src={this.state.imageUrl} />
         <button> Add new cat </button>
       </form>
     );

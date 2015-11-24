@@ -5,3 +5,13 @@
   padding: 8px;
   font-weight: 300;
 }
+
+.animal-content .details-description {
+  display: block;
+  width: 500px;
+  margin: 25px auto;
+}
+.animal-content .details-description textarea {
+  width: 400px;
+  height: 150px;
+}

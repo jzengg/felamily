@@ -22,22 +22,22 @@ var AnimalNotes = React.createClass({
 
   render: function() {
     var content = "";
-    var text = "▶Notes";
+    var text = "▶ Notes";
     var cat = this.props.cat;
     if (this.state.expanded) {
         content =
-        <form onSubmit={this.handleSubmit}>
+        <form className="details-description" onSubmit={this.handleSubmit}>
           <label> Description
-          <textarea onChange={this.handleChange} value={this.state.description} />
+          <div> <textarea onChange={this.handleChange} value={this.state.description} /> </div>
           </label>
           <button> Save changes </button>
         </form>;
-        text = "▼Notes";
+        text = "▼ Notes";
 
     }
 
     return (
-      <div>
+      <div className="details-description-container">
         <h3 className="record-subcategories" onClick={this.handleClick}> {text} </h3>
         {content}
       </div>

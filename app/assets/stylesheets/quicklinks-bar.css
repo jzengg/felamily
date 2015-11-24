@@ -18,3 +18,9 @@
   max-width: 27px;
   max-height: 27px;
 }
+
+.quicklinks-bar a:hover {
+  background: lightblue;
+  color: white;
+
+}

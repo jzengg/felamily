@@ -10,7 +10,6 @@
 .cat-form input {
   display: block;
   border: 1px solid grey;
-  border-radius: 3px;
 }
 
 .cat-form heading {
@@ -20,4 +19,17 @@
   height: 35px;
   color: white;
   background: darkblue;
+}
+
+.cat-form label {
+display: block;
+}
+
+.cat-form select {
+  display: block;
+  border: 1px solid black;
+}
+
+.cat-form button {
+  margin: 10px 0 10px 0;
 }
