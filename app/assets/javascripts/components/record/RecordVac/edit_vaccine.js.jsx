@@ -48,6 +48,8 @@ var EditVaccine = React.createClass({
 
 
       return (
+        <div>
+        <h4> Edit vaccination </h4>
         <form onSubmit={this.handleSubmit}>
         <label htmlFor="vaccine-category"> Category </label>
           <select id="vaccine-category" onChange={this.updateField.bind(null, "category")} value={this.state.category}>
@@ -63,6 +65,8 @@ var EditVaccine = React.createClass({
           <button> Save changes </button>
           <button onClick={this.handleDestroy}> Delete record </button>
         </form>
+          <Link to={"/cats/" + this.props.cat.id + "/vaccine"}> Cancel </Link>
+        </div>
       );
     }
   });

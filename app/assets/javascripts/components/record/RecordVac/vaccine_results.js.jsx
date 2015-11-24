@@ -3,6 +3,8 @@ var Link = ReactRouter.Link;
 var VaccineResults = React.createClass({
   mixins: [ReactRouter.History],
 
+
+
   showEdit: function (vaccineId) {
     this.history.pushState(null, "/cats/" + this.props.cat.id + "/vaccine/" + "edit/" + vaccineId);
   },

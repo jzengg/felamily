@@ -6,7 +6,7 @@ var VaccineForm = React.createClass({
     var year = date.getFullYear();
     var initialDate = year + "-" + month + "-" + day;
     var nextYear = year + 1 + "-" + month + "-" + day;
-    return {category: "first_round", comments: "", given: initialDate, expires: nextYear};
+    return {category: "first_round", comments: "", given: initialDate, expires: nextYear, expanded: false};
   },
 
   updateComments: function (e) {
@@ -34,10 +34,15 @@ var VaccineForm = React.createClass({
     });
   },
 
+  toggleExpanded: function () {
+    this.setState({expanded: !this.state.expanded});
+  },
+
   render: function() {
-
-
-    return (
+    var form;
+    if (this.state.expanded) {
+      form =
+      <div>
       <form onSubmit={this.handleSubmit}>
       <label htmlFor="vaccine-category"> Category </label>
         <select id="vaccine-category" onChange={this.updateField.bind(null, "category")} value={this.state.category}>
@@ -52,6 +57,15 @@ var VaccineForm = React.createClass({
 
         <button> Add new vaccine </button>
       </form>
+        <button onClick={this.toggleExpanded}> Cancel </button>
+      </div>;
+    }
+
+    return (
+      <div>
+      <button onClick={this.toggleExpanded}> New Vaccination </button>
+      {form}
+      </div>
     );
   }
 });
