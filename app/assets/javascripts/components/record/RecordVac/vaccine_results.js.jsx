@@ -12,7 +12,7 @@ var VaccineResults = React.createClass({
     return vaccines.map(function (vaccine) {
       return(
         <tr className="vaccine-result-row group" key={vaccine.id}>
-          <td onClick={this.showEdit.bind(null, vaccine.id)}> {vaccine.category} </td>
+          <td> <Link to={"/cats/" + this.props.cat.id + "/vaccine/" + "edit/" + vaccine.id}> {vaccine.category} </Link> </td>
           <td> {vaccine.comments} </td>
           <td> {vaccine.given} </td>
           <td> {vaccine.expires} </td>

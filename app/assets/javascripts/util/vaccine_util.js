@@ -13,14 +13,6 @@ var VaccinesApiUtil = {
     });
   },
 
-  fetchVaccines: function (catId) {
-    $.ajax({
-      url: "api/cats/" +catId,
-      type: "GET",
-
-    });
-  },
-
   updateVaccine: function (cat, vaccine, vaccineId) {
     $.ajax({
       url: "/api/cats/" + cat.id + "/vaccines/" + vaccineId,
@@ -29,13 +21,15 @@ var VaccinesApiUtil = {
       data: {vaccine: vaccine},
       success: function (data) {
         console.log("updated vaccine to db");
-        VaccineActions.updateCatVaccine(cat, data);
+        VaccineActions.updateCatVaccine(data);
       }
     });
   },
 
   destroyVaccine: function () {
-
+    $.ajax({
+      url: ""
+    });
   }
 
 

@@ -21,7 +21,7 @@ var EditVaccine = React.createClass({
     handleSubmit: function (e) {
       e.preventDefault();
       var state = this.state;
-      var vaccine = {vaccine:{category: state.category, comments: state.comments, given: state.given, expires: state.expires}};
+      var vaccine = {category: state.category, comments: state.comments, given: state.given, expires: state.expires};
 
       VaccinesApiUtil.updateVaccine(this.props.cat, vaccine, this.state.id);
       this.history.pushState(null, "/cats/" + this.props.cat.id + "/vaccine");
@@ -38,6 +38,10 @@ var EditVaccine = React.createClass({
       return categories.map(function (category, i) {
         return <option key={category + i} value={category}> {category} </option>;
       });
+    },
+
+    handleDestroy: function () {
+      VaccineUtil.destroyVaccine();
     },
 
     render: function() {
@@ -57,6 +61,7 @@ var EditVaccine = React.createClass({
             <textarea id="vaccine-comments" onChange={this.updateField.bind(null, "comments")} value={this.state.comments}/>
 
           <button> Save changes </button>
+          <button onClick={this.handleDestroy}> Delete record </button>
         </form>
       );
     }

@@ -21,26 +21,16 @@
     for (var i = 0; i < _cats.length; i++) {
       if (cat.id == _cats[i].id) {
         _cats[i].vaccines.push(vaccine);
+        return;
       }
     }
   };
 
-  var _findCat = function (cat) {
-    for (var i = 0; i < _cats.length; i++) {
-      if (_cats[i].id == cat.id) {
-        return i;
-      }
-    }
-  };
-
-  var _updateVaccine = function (cat, vaccine) {
+  var _updateVaccine = function (cat) {
     for (var i = 0; i < _cats.length; i++) {
       if (cat.id == _cats[i].id) {
-        for (var j = 0; j < _cats.vaccines.length; j++) {
-          if (_cats.vaccines[j] == vaccine.id) {
-            _cats.vaccines[j] = vaccine;
-          }
-        }
+        _cats[i] = cat;
+        return;
       }
     }
   };
@@ -50,6 +40,7 @@
     for (var i = 0; i < _cats.length; i++) {
       if (cat.id == _cats[i].id) {
         _cats[i] = cat;
+        return;
       }
     }
   };
@@ -147,7 +138,7 @@
           CatStore.emit(RECEIVE_ONE_CAT_EVENT);
           break;
         case VaccineConstants.UPDATE_CAT_VACCINES:
-          _updateVaccine(payload.data.cat, payload.data.vaccine);
+          _updateVaccine(payload.cat);
           CatStore.emit(RECEIVE_ONE_CAT_EVENT);
           break;
 

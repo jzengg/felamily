@@ -9,7 +9,8 @@ class Api::VaccinesController < ApplicationController
   def update
     @vaccine = Vaccine.find(params[:id])
     @vaccine.update!(vaccine_params)
-    render json: @vaccine
+    @cat = @vaccine.cats.first
+    render 'api/cats/show'
   end
 
   private
