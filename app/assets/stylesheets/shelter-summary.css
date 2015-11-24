@@ -4,10 +4,12 @@
 }
 
 .shelter-summary h3 {
+  width: 85%;
   font-weight: bold;
   display: block;
-  border-bottom: 1px solid black;
-  margin-bottom: 25px;
+  border-bottom: 1px dotted black;
+  padding: 5px;
+  margin-bottom: 15px;
 }
 
 

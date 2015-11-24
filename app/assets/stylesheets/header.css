@@ -1,7 +1,6 @@
 .header {
   margin: 5px 5px 5px 10px;
   width: 900px;
-  /*border: 1px solid black;*/
   padding: 5px;
   font-size: 14px;
 }
@@ -18,6 +17,8 @@
 
 .user-logout {
   position: absolute;
-  top: 35px;
-  left: 30%;
+  color: white;
+  top: 30px;
+  left: 5%;
+  border-radius: 5px;
 }

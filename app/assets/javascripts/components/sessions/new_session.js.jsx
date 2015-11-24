@@ -18,25 +18,29 @@
       return (
         <div>
 
-        <form onSubmit={ this.submit }>
+        <form className="sign-up-form" onSubmit={ this.submit }>
 
-          <h1>Log In!</h1>
+          <h1>Shelter Manager </h1>
 
-          <label>
+          <label htmlFor="login-username">
             Username
-            <input type="text" name="username" autofocus/>
           </label>
+            <div className="login-username">
+              <input id="login-username" type="text" name="username" autofocus/>
+            </div>
 
-          <label>
+          <label htmlFor="login-password">
             Password
-            <input type="password" name="password" />
           </label>
+            <div className="login-password">
+              <input id="login-username" type="password" name="password" />
+            </div>
 
           <button>Log In!</button>
 
+          <h4> Don't have an account? <a href="#/signup">Sign Up</a> </h4>
 
         </form>
-          <div> Don't have an account? <a href="#/signup">Sign Up</a> </div>
         </div>
       );
     },

@@ -12,19 +12,34 @@
 
 }
 
+.sign-up-form h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: -15px;
+}
+
 .sign-up-form input {
   border: 1px solid black;
   margin: 2px;
   padding: 5px;
-  left: 5
 }
 
 
-.sign-up-form #submit {
+.sign-up-form button {
+  margin-top: 10px;
+  margin-bottom: 10px;
   border-radius: 3px;
   left: 50px;
   padding: 5px;
-  background: lightblue;
   font-size: 14px;
   color: white;
+}
+
+.sign-up-form h4 {
+  font-weight: 400;
+}
+
+.sign-up-form h4 > a {
+  font-weight: bold;
+  color: blue;
 }

@@ -22,24 +22,28 @@ var UserForm = React.createClass({
 
       return (
         <div>
-          <form onSubmit={ this.submit }>
+          <form className="sign-up-form" onSubmit={ this.submit }>
 
 
             <h1>Sign Up!</h1>
 
-            <label>
-              Username
-              <input type="text" valueLink={this.linkState("username")} autofocus/>
-            </label>
+              <label htmlFor="login-username">
+                Username
+              </label>
+                <div className="login-username">
+                  <input id="login-username" type="text" name="username" autofocus/>
+                </div>
 
-            <label>
-              Password
-              <input type="password" valueLink={this.linkState("password")} />
-            </label>
+              <label htmlFor="login-password">
+                Password
+              </label>
+                <div className="login-password">
+                  <input id="login-username" type="password" name="password" />
+                </div>
 
             <button>Join!</button>
+          <h4> Already have an account? <a href="#/login">Login</a> </h4>
           </form>
-          <div> Already have an account? <a href="#/login">Login</a> </div>
 
         </div>
       );
