@@ -12,6 +12,7 @@ var VaccineResults = React.createClass({
         <td> {vaccine.category} </td>
         <td> {vaccine.comments} </td>
         <td> {vaccine.given} </td>
+        <td> {vaccine.expires} </td>
       </tr>
     );
   });
@@ -22,7 +23,7 @@ var VaccineResults = React.createClass({
           <th>Type</th>
           <th>Comments</th>
           <th>Given</th>
-          <th>Required</th>
+          <th>Expires</th>
         </tr>
         {result}
       </table>

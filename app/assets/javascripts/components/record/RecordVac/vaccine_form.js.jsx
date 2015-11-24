@@ -5,7 +5,8 @@ var VaccineForm = React.createClass({
     var month = (date.getMonth() + 1) % 12;
     var year = date.getFullYear();
     var initialDate = year + "-" + month + "-" + day;
-    return {comments: "", given: initialDate};
+    var nextYear = year + 1 + "-" + month + "-" + day;
+    return {category: "first_round", comments: "", given: initialDate, expires: nextYear};
   },
   componentWillMount: function() {
 
@@ -23,13 +24,23 @@ var VaccineForm = React.createClass({
 
   handleSubmit: function (e) {
     e.preventDefault();
-    var vaccine = {comments: this.state.comments, given: this.state.given };
+    var state = this.state;
+    var vaccine = {category: state.category, comments: state.comments, given: state.given, expires: state.expires};
 
     VaccinesApiUtil.addVaccine(this.props.cat, vaccine);
   },
 
-  handleChange: function (e) {
-    this.setState({given: e.currentTarget.value});
+  updateField: function (field, e) {
+    var change = {};
+    change[field] = e.currentTarget.value;
+    this.setState(change);
+  },
+
+  _categoryOptions: function () {
+    var categories = ["first_round", "second_round", "temporary", "parvovirus", "leukaemia", "booster"];
+    return categories.map(function (category, i) {
+      return <option key={category + i} value={category}> {category} </option>;
+    });
   },
 
   render: function() {
@@ -37,13 +48,17 @@ var VaccineForm = React.createClass({
 
     return (
       <form onSubmit={this.handleSubmit}>
-      <label> Comments
-        <textarea onChange={this.updateComments} value={this.state.comments}/>
-        </label>
-        <label> Given
-          <input onChange={this.handleChange} type="date" format="DD/MM/YYYY" value={this.state.given} />,
+      <label htmlFor="vaccine-category"> Category </label>
+        <select id="vaccine-category" onChange={this.updateField.bind(null, "category")} value={this.state.category}>
+          {this._categoryOptions()}
+        </select>
+      <label htmlFor="vaccine-comments"> Comments </label>
+        <textarea id="vaccine-comments" onChange={this.updateField.bind(null, "comments")} value={this.state.comments}/>
+        <label htmlFor="vaccine-given"> Date Given </label>
+          <input id="vaccine-given" onChange={this.updateField.bind(null, "given")} type="date" format="DD/MM/YYYY" value={this.state.given} />,
+        <label htmlFor="vaccine-expires"> Date Vaccination Expires </label>
+          <input id="vaccine-given" onChange={this.updateField.bind(null, "expires")} type="date" format="DD/MM/YYYY" value={this.state.expires} />,
 
-        </label>
         <button> Add new vaccine </button>
       </form>
     );
