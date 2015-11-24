@@ -11,6 +11,7 @@ var VaccineResults = React.createClass({
       <tr className="vaccine-result-row group" key={vaccine.id}>
         <td> {vaccine.category} </td>
         <td> {vaccine.comments} </td>
+        <td> {vaccine.given} </td>
       </tr>
     );
   });

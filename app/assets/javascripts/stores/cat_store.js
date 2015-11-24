@@ -124,7 +124,7 @@
           break;
         case VaccineConstants.UPDATE_CAT_VACCINES:
           _addVaccine(payload.data.cat, payload.data.vaccine);
-          CatStore.emit(CHANGE_EVENT);
+          CatStore.emit(RECEIVE_ONE_CAT_EVENT);
           break;
 
 
