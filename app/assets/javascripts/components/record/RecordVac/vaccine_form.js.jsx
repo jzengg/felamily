@@ -43,6 +43,7 @@ var VaccineForm = React.createClass({
     if (this.state.expanded) {
       form =
       <div>
+      <h4> Add Vaccination </h4>
       <form onSubmit={this.handleSubmit}>
       <label htmlFor="vaccine-category"> Category </label>
         <select id="vaccine-category" onChange={this.updateField.bind(null, "category")} value={this.state.category}>

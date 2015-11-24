@@ -43,3 +43,7 @@
   font-weight: bold;
   color: blue;
 }
+
+.sign-up-form h4 #guest {
+  color: red;
+}
