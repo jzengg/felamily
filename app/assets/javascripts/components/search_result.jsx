@@ -34,7 +34,10 @@ var SearchResults = React.createClass({
         results = cats.map(function (cat)
           {
             return(
-              <li key={cat.id}><Link to={"cats/"+cat.id}>{cat.name}</Link></li>
+              <li className="search-result-result group" key={cat.id}><Link to={"cats/"+cat.id}>{cat.name}</Link>
+              <h5> Location: {cat.location} </h5>
+              <img className="search-result-picture" src={cat.profile_image_url_thumb} />
+              </li>
             );
           });
     }
