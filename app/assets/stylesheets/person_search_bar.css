@@ -1,8 +1,24 @@
 .person-search-bar input {
   border: 1px solid black;
   border-radius: 3px;
-  display: block;
   width: 165px;
   height: 25px;
+  margin: 5px;
+}
+
+.person-search-bar {
+  display: block;
+  width: 250px;
   margin: 0 auto;
+}
+
+.person-search-results-container h5{
+  font-size: 13px;
+  display: block;
+  width: 95%;
+  text-align: center;
+  padding: 15px;
+  color: white;
+  margin-bottom: 25px;
+  background: darkblue;
 }

@@ -32,7 +32,7 @@ var PersonSearch = React.createClass({
   render: function () {
     return (
         <form className="person-search-bar" onSubmit={this.handleSubmit}>
-          <label for="person-search"> Search
+          <label htmlFor="person-search"> Search
           <input id="person-search" onChange={this.handleChange} type="search" value={this.state.input} />
           </label>
         </form>
