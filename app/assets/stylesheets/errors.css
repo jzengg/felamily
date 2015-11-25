@@ -1,0 +1,42 @@
+/*html, body {
+    height:100%;
+    width:100%;
+    margin:0;
+    padding:0;
+}*/
+.errors {
+    animation: cssAnimation 1.5s ease-in 1s forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+  0% {
+   opacity: 1;
+ }
+ 50% {
+   opacity: 0;
+ }
+ 99.9% {
+   opacity: 0;
+   height: 200px;
+ }
+ 100% {
+   opacity: 0;
+   height: 0;
+ }
+}
+@-webkit-keyframes cssAnimation {
+  0% {
+   opacity: 1;
+ }
+ 50% {
+   opacity: 0;
+ }
+ 99.9% {
+   opacity: 0;
+   height: 200px;
+ }
+ 100% {
+   opacity: 0;
+   height: 0;
+ }
+}

@@ -32,10 +32,11 @@ ApiUtil = {
       data: formData,
       success: function (data) {
         ApiActions.receiveNewCat(data);
+        var success = [""]
         callback && callback(data.id);
       },
       error: function (data) {
-        FlashActions.receiveErrors(JSON.parse(data.responseText));
+        FlashActions.receiveErrors(data.responseJSON);
       }
     });
   },
@@ -50,6 +51,7 @@ ApiUtil = {
       data: formData,
       success: function (data) {
         ApiActions.updateCat(data);
+        FlashActions.receiveErrors(["Changes saved"]);
         callback && callback();
       }
     });

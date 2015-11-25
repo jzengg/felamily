@@ -17,10 +17,10 @@ var Errors = React.createClass({
 
   render: function() {
     var errors = this.state.errors.map(function (error, i) {
-      return <li key={i}> {error} </li>;
+      return <li className="errors" key={i}> {error} </li>;
     });
     return (
-      <div className="errors">
+      <div>
         <ul>
         {errors}
         </ul>

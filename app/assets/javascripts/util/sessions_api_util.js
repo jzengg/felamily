@@ -10,7 +10,7 @@ var SessionsApiUtil = {
         success && success();
       },
       error: function (data) {
-        FlashActions.receiveErrors(JSON.parse(data.responseText));
+        FlashActions.receiveErrors(data.responseJSON);
       }
     });
   },
