@@ -29,7 +29,7 @@ var SearchResults = React.createClass({
     var results;
 
     if (cats.length === 0) {
-      results = <li> "No results found" </li>;
+      results = <li> No results found </li>;
     } else {
         results = cats.map(function (cat)
           {
