@@ -47,7 +47,7 @@ var ShelterView = React.createClass({
     return (
       <ul>
         <li>
-          <h2> Shelterview</h2>
+          <h2> Shelter View</h2>
         </li>
 
         <li>

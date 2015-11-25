@@ -9,6 +9,7 @@
 
 .record-categories li > a {
   display: block;
+  font-size: 15px;
   float: left;
   border: 1.5px solid grey;
   border-bottom: 0;

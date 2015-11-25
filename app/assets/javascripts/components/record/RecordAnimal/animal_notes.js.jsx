@@ -23,6 +23,7 @@ var AnimalNotes = React.createClass({
 
   render: function() {
     var content = "";
+    var className = "";
     var text = "▶ Notes";
     var cat = this.props.cat;
     if (this.state.expanded) {
@@ -33,13 +34,14 @@ var AnimalNotes = React.createClass({
           </label>
           <button> Save changes </button>
         </form>;
+        className = "active-subcategory";
         text = "▼ Notes";
 
     }
 
     return (
       <div className="details-description-container">
-        <h3 className="record-subcategories" onClick={this.handleClick}> {text} </h3>
+        <h5 className={className} onClick={this.handleClick}> {text} </h5>
         {content}
       </div>
     );

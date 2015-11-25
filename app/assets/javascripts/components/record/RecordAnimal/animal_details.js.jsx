@@ -10,15 +10,17 @@ var AnimalDetails = React.createClass({
 
   render: function() {
     var text = "▶ Details";
-
     var content = "";
+    var className = "";
+
     if (this.state.expanded) {
         content = <EditForm cat={this.props.cat}/>;
         text = "▼ Details";
+        className = "active-subcategory"
     }
     return (
       <div className="">
-        <h3 onClick={this.handleClick}> {text} </h3>
+        <h5 className={className} onClick={this.handleClick}> {text} </h5>
         {content}
       </div>
     );
