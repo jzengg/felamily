@@ -32,8 +32,7 @@ var UsersApiUtil = {
         callback && callback();
       },
       error: function (data) {
-        console.log("error callback of createuser api")
-        FlashActions.receiveErrors(data.responseText);
+        FlashActions.receiveErrors(data.responseJSON);
       }
     });
   }

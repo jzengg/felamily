@@ -59,14 +59,14 @@ front end, I will begin by setting up a full JSON API for cats and people.
 <!-- auth using react -->
 <!-- add user store to get username from id -->
 
-getting error about setting state on mounted or mounting component
-add a flash store to display notices
-set up tabs in category content
-add error messages with util error callbacks
-Add link to vaccine tab
-Add display for vaccine info
+<!-- getting error about setting state on mounted or mounting component -->
+<!-- add a flash store to display notices -->
+<!-- set up tabs in category content -->
+<!-- add error messages with util error callbacks -->
+<!-- Add link to vaccine tab -->
+<!-- Add display for vaccine info -->
 filter store sometimes still gets multiple copies of same record
-add validations
+<!-- add validations -->
 Add media category and figure out how to attach multiple images to a single cat
 make it possible to search for available cats
 Push state can take args. Check whether can refactor by passing args
