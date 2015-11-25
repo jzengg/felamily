@@ -9,6 +9,7 @@ var VaccinesApiUtil = {
       success: function (data) {
         console.log("added vaccine to db");
         VaccineActions.addCatVaccine(cat, data);
+
       }
     });
   },
@@ -22,6 +23,9 @@ var VaccinesApiUtil = {
       success: function (data) {
         console.log("updated vaccine to db");
         VaccineActions.updateCatVaccine(data);
+      },
+      error: function (data) {
+
       }
     });
   },

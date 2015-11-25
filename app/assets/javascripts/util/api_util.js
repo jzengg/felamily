@@ -32,7 +32,6 @@ ApiUtil = {
       data: formData,
       success: function (data) {
         ApiActions.receiveNewCat(data);
-        var success = [""]
         callback && callback(data.id);
       },
       error: function (data) {

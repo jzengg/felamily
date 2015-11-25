@@ -3,5 +3,6 @@ Cat.create!([
   {name: "Emmanuel", location: 2, available: 1, sex: 0, creator_id: 1, description: "The one that's big"}
 ])
 User.create!([
-  {username: "jzengg", password_digest: "$2a$10$lWbuesmTXmSaQzvZE4cwau6mxp/6Ny/TntPKe7LKYD46f34laidYK", session_token: "Ok3Y3ICKmHoPXofd-bQmuw"}
+  {username: "jzengg", password_digest: "$2a$10$lWbuesmTXmSaQzvZE4cwau6mxp/6Ny/TntPKe7LKYD46f34laidYK"},
+  {username: "guest", password_digest: "$2a$10$lWbuesmTXmSaQzvZE4cwau6mxp/6Ny/TntPKe7LKYD46f34laidYK"}
 ])

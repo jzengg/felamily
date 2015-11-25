@@ -9,7 +9,7 @@ $(function () {
     mixins: [ReactRouter.History],
 
     getInitialState: function () {
-      return { currentUser: null, errors: ""};
+      return { currentUser: null};
     },
 
     componentWillMount: function () {

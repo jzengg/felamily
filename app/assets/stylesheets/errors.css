@@ -1,12 +1,9 @@
-/*html, body {
-    height:100%;
-    width:100%;
-    margin:0;
-    padding:0;
-}*/
 .errors {
     animation: cssAnimation 1.5s ease-in 1s forwards;
     animation-fill-mode: forwards;
+    color: red;
+    padding: 10px;
+
 }
 @keyframes cssAnimation {
   0% {

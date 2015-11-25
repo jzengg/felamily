@@ -5,6 +5,7 @@ var Errors = React.createClass({
   componentDidMount: function() {
     FlashStore.addChangeHandler(this.handleErrors);
     CatStore.addChangeListener(this.handleErrors);
+    CatStore.addReceiveOneCatListener(this.handleErrors);
   },
   componentWillUnmount: function() {
     FlashStore.removeChangeHandler(this.handleErrors);
@@ -17,6 +18,7 @@ var Errors = React.createClass({
   },
 
   render: function() {
+
     var errors = this.state.errors.map(function (error, i) {
       return <li className="errors" key={i}> {error} </li>;
     });

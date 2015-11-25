@@ -65,12 +65,16 @@ front end, I will begin by setting up a full JSON API for cats and people.
 <!-- add error messages with util error callbacks -->
 <!-- Add link to vaccine tab -->
 <!-- Add display for vaccine info -->
-filter store sometimes still gets multiple copies of same record
 <!-- add validations -->
+filter store sometimes still gets multiple copies of same record
 Add media category and figure out how to attach multiple images to a single cat
 make it possible to search for available cats
 Push state can take args. Check whether can refactor by passing args
 
+
+fix flash errors
+style them
+refactor making edit form show up to be state on parent?
 
 [Details][phase-one]
 

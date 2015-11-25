@@ -5,6 +5,7 @@ var AnimalNotes = React.createClass({
 
   handleClick: function (e) {
     this.setState({expanded: !this.state.expanded});
+    FlashActions.resetErrors();
   },
 
   handleChange: function (e) {

@@ -5,6 +5,7 @@ var AnimalDetails = React.createClass({
 
   handleClick: function (e) {
     this.setState({expanded: !this.state.expanded});
+    FlashActions.resetErrors();
   },
 
   render: function() {

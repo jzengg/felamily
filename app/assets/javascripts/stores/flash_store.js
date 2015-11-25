@@ -25,6 +25,10 @@
       return errors;
     },
 
+    resetErrors: function () {
+      _flash = [];
+    },
+
     dispatcherId: AppDispatcher.register(function (payload) {
       switch (payload.actionType) {
         case FlashConstants.RECEIVE_ERRORS:
