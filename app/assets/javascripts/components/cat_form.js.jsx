@@ -82,6 +82,10 @@ var CatForm = React.createClass({
 
   render: function () {
     var updateField = this.updateField;
+    var preview;
+    if (typeof this.state.imageFile != "undefined") {
+      preview = <img id="preview-image" className="preview-image" src={this.state.imageUrl} />
+    }
     return(
       <form className="cat-form" onSubmit={this.handleSubmit}>
         <heading> Add a new animal</heading>
@@ -109,7 +113,7 @@ var CatForm = React.createClass({
           <label htmlFor="profile-picture"> Upload a profile picture </label>
           <input id="profile-picture" type="file" onChange={this.updateFile} />
 
-          <img id="preview-image" className="preview-image" src={this.state.imageUrl} />
+        {preview}
         <button> Add new cat </button>
       </form>
     );
