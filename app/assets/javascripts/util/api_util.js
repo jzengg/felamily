@@ -52,6 +52,9 @@ ApiUtil = {
         ApiActions.updateCat(data);
         FlashActions.receiveErrors(["Changes saved"]);
         callback && callback();
+      },
+      error: function (data) {
+        FlashActions.receiveErrors(data.responseJSON);
       }
     });
   },

@@ -1,6 +1,13 @@
 class Cat < ActiveRecord::Base
   validates :name, length: {minimum: 2}
   belongs_to(
+    :owner,
+    class_name: "Person",
+    foreign_key: :owner_id,
+    primary_key: :id
+  )
+
+  belongs_to(
     :creator,
     class_name: "User",
     foreign_key: :creator_id,

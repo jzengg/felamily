@@ -48,7 +48,7 @@ $(function () {
         <IndexRoute component={ShelterSummary}/>
         <Route path="signup" component={ UserForm} />
         <Route path="login" component={ SessionForm }/>
-        <Route path="cats/new" component={CatForm} />bv
+        <Route path="cats/new" component={CatForm} />
         <Route path="cats/index" component={SearchResults} />
         <Route path="cats/shelterview" component={ShelterView} />
         <Route path="cats/:id" component={CatRecord}>

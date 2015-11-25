@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :cats do
       resources :vaccines
     end
+    resources :people
     resource :session
     resources :users
   end

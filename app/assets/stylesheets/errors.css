@@ -3,7 +3,6 @@
     animation-fill-mode: forwards;
     color: red;
     padding: 10px;
-
 }
 @keyframes cssAnimation {
   0% {

@@ -1,4 +1,3 @@
-# Schema Information
 
 ## cats
 column name | data type | details

@@ -21,8 +21,11 @@ class Api::CatsController < ApplicationController
 
   def update
     @cat = Cat.find(params[:id])
-    @cat.update!(cat_params)
-    render :show
+    if @cat.update(cat_params)
+      render :show
+    else
+      render json: @cat.errors.full_messages, status: 422
+    end
   end
 
   def destroy

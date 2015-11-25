@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125164655) do
+ActiveRecord::Schema.define(version: 20151125201129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,20 @@ ActiveRecord::Schema.define(version: 20151125164655) do
     t.integer  "creator_id"
     t.text     "description"
     t.date     "dob",                        default: '1915-11-25'
+    t.integer  "owner_id"
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.integer  "zipcode"
+    t.string   "email"
+    t.string   "fname",                      null: false
+    t.string   "lname",                      null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "profile_image_file_name"
+    t.string   "profile_image_content_type"
+    t.integer  "profile_image_file_size"
+    t.datetime "profile_image_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
