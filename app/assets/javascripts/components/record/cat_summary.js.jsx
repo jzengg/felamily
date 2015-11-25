@@ -11,7 +11,7 @@ var RecordSummary = React.createClass({
           </a>
           <div id="name-sex">
             <li className="record-summary-name"> {cat.name} </li>
-            <li className="record-summary-sex"> {cat.sex + " cat"} </li>
+            <li className="record-summary-sex"> {cat.sex +" cat" + " aged " + cat.age} </li>
           </div>
         </ul>
 
