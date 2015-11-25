@@ -4,6 +4,7 @@ var Errors = React.createClass({
   },
   componentDidMount: function() {
     FlashStore.addChangeHandler(this.handleErrors);
+    CatStore.addChangeListener(this.handleErrors);
   },
   componentWillUnmount: function() {
     FlashStore.removeChangeHandler(this.handleErrors);
