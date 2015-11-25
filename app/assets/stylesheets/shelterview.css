@@ -1,0 +1,30 @@
+.shelterview {
+  padding: 20px;
+}
+
+.shelterview-list {
+  margin-bottom: 25px;
+}
+
+.shelterview-list-item {
+  display: block;
+  float: left;
+  width: 100px;
+  margin: 5px;
+  padding: 15px 15px 3px 15px;
+  border: 1px dotted black;
+}
+
+.shelterview-list-item-picture {
+  width: 100%;
+  height: 100%;
+  max-height: 100px;
+  max-width: 100px;
+  border: 1px solid black;
+  margin-bottom: 3px;
+  box-shadow: 2px 2px 2px grey;
+}
+
+.shelterview-list-item h5 {
+  text-align: center;
+}

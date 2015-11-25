@@ -1,3 +1,5 @@
+var Link = ReactRouter.Link;
+
 var ShelterView = React.createClass({
   getInitialState: function() {
     return {cats: []};
@@ -19,71 +21,45 @@ var ShelterView = React.createClass({
     });
   },
 
-  _cats: function () {
-    return this._atLocation("cats").map(function (cat) {
-      return <li key={cat.id}>{cat.name} </li>;
+  _generateList: function (location) {
+    return this._atLocation(location).map(function (cat) {
+      return(
+        <li className="shelterview-list-item" key={cat.id}>
+          <Link to={"cats/" + cat.id}>
+            <img className="shelterview-list-item-picture" src={cat.profile_image_url_thumb} />
+          </Link>
+            <h5> {cat.name} </h5>
+        </li>
+      );
     });
   },
-  _kittens: function () {
-    return this._atLocation("kittens").map(function (cat) {
-      return <li key={cat.id}> {cat.name} </li>;
-    });
+
+  _generateAll: function () {
+    var locations = ["kittens", "cats", "foster", "quarantine", "isolation"];
+    return locations.map(function (location) {
+      return(
+        <div key={location}>
+          <h3> {location} ({this._generateList(location).length}) </h3>
+          <ul className="shelterview-list group">
+            {this._generateList(location)}
+          </ul>
+
+        </div>
+      );
+    }.bind(this));
   },
-  _foster: function () {
-    return this._atLocation("foster").map(function (cat) {
-      return <li key={cat.id}>{cat.name} </li>;
-    });
-  },
-  _isolation: function () {
-    return this._atLocation("isolation").map(function (cat) {
-      return <li key={cat.id}>{cat.name} </li>;
-    });  },
-  _quarantine: function () {
-    return this._atLocation("quarantine").map(function (cat) {
-      return <li key={cat.id}>{cat.name} </li>;
-    });  },
+
 
   render: function() {
     return (
-      <ul>
-        <li>
-          <h2> Shelter View</h2>
-        </li>
-
-        <li>
-          <h3>Kittens ({this._kittens().length})</h3>
-          <ul>
-            {this._kittens()}
-          </ul>
-        </li>
-        <li>
-          <h3>Cats ({this._cats().length})</h3>
-          <ul>
-            {this._cats()}
-          </ul>
-        </li>
-        <li>
-          <h3>Foster ({this._foster().length})</h3>
-          <ul>
-            {this._foster()}
-          </ul>
-        </li>
-        <li>
-          <h3>Quarantine ({this._quarantine().length})</h3>
-          <ul>
-            {this._quarantine()}
-          </ul>
-        </li>
-        <li>
-          <h3>Isolation ({this._isolation().length})</h3>
-          <ul>
-            {this._isolation()}
-          </ul>
-        </li>
+      <div className="shelterview">
+        {this._generateAll()}
 
 
 
-      </ul>
+
+
+      </div>
     );
   }
 });
