@@ -3,7 +3,7 @@ var EditForm = React.createClass({
 
   getInitialState: function () {
     var cat = this.props.cat;
-    
+
     return{id: cat.id, name: cat.name, available: cat.available, sex: cat.sex, location: cat.location, imageUrl: "", imageFile: undefined};
   },
 
@@ -79,6 +79,10 @@ var EditForm = React.createClass({
 
   render: function () {
     var updateField = this.updateField;
+    var preview;
+    if (typeof this.state.imageFile != "undefined") {
+      preview = <img id="preview-image" className="preview-image" src={this.state.imageUrl} />;
+    }
     return(
       <div className="edit-cat-form-container">
 
@@ -107,7 +111,7 @@ var EditForm = React.createClass({
         <label htmlFor="profile-picture"> Upload a profile picture </label>
         <input id="profile-picture" type="file" onChange={this.updateFile} />
 
-        <img id="preview-image" className="preview-image" src={this.state.imageUrl} />
+        {preview}
         <button className="save-changes"> Save changes </button>
 
       </form>

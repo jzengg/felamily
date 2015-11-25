@@ -66,6 +66,11 @@ front end, I will begin by setting up a full JSON API for cats and people.
 <!-- Add link to vaccine tab -->
 <!-- Add display for vaccine info -->
 <!-- add validations -->
+quicklinks:
+available cats
+shelter view
+adopt a cat
+
 filter store sometimes still gets multiple copies of same record
 Add media category and figure out how to attach multiple images to a single cat
 make it possible to search for available cats

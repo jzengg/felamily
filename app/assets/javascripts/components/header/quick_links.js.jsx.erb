@@ -2,11 +2,19 @@ var Link = ReactRouter.Link;
 
 var QuickLinks = React.createClass({
 
+  fetch: function (type) {
+    FilterActions.receiveParams(type);
+  },
+
   render: function () {
     return(
         <ul className="quicklinks-bar">
           <Link to="/"> <img id="logo" src="<%= asset_url('logo.png') %>"/> </Link>
           <Link to="cats/new">Add a new cat</Link>
+          <Link onClick={this.fetch.bind(null, "available")} to="cats/index"> Available Cats </Link>
+          <Link onClick={this.fetch.bind(null, "cats")} to="cats/index"> Cats </Link>
+          <Link onClick={this.fetch.bind(null, "kittens")} to="cats/index"> Kittens </Link>
+          <Link to="cats/shelterview"> Shelter View </Link>
         </ul>
     );
   }

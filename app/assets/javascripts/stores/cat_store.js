@@ -79,9 +79,12 @@
       if (typeof searchString == "undefined") {
         return;
       }
+      var attributes = ["name", "available", "location"];
       var filtered = _cats.filter( function (cat) {
         return (
-          cat.name.toLowerCase().includes(searchString.toLowerCase())
+          cat.name.toLowerCase().includes(searchString.toLowerCase()) ||
+          cat.available == searchString ||
+          cat.location.toLowerCase().includes(searchString.toLowerCase())
         ) ;
 
 
