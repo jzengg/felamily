@@ -1,6 +1,6 @@
 var Errors = React.createClass({
   getInitialState: function() {
-    return {errors: ""};
+    return {errors: []};
   },
   componentDidMount: function() {
     FlashStore.addChangeHandler(this.handleErrors);
@@ -16,9 +16,14 @@ var Errors = React.createClass({
   },
 
   render: function() {
+    var errors = this.state.errors.map(function (error, i) {
+      return <li key={i}> {error} </li>;
+    });
     return (
       <div className="errors">
-        {this.state.errors}
+        <ul>
+        {errors}
+        </ul>
       </div>
     );
   }

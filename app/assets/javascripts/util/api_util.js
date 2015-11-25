@@ -35,7 +35,7 @@ ApiUtil = {
         callback && callback(data.id);
       },
       error: function (data) {
-        FlashActions.receiveErrors(data.responseText);
+        FlashActions.receiveErrors(JSON.parse(data.responseText));
       }
     });
   },

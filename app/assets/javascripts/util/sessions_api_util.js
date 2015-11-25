@@ -8,6 +8,9 @@ var SessionsApiUtil = {
       success: function (currentUser) {
         CurrentUserActions.receiveCurrentUser(currentUser);
         success && success();
+      },
+      error: function (data) {
+        FlashActions.receiveErrors(JSON.parse(data.responseText));
       }
     });
   },
