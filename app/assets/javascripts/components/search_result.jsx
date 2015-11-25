@@ -4,7 +4,6 @@ var SearchResults = React.createClass({
 
   getInitialState: function () {
     var filters = FilterStore.all();
-    console.log(filters, "filters");
     return ({cats: CatStore.filtered(filters)});
   },
 

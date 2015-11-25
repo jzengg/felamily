@@ -7,7 +7,7 @@ var VaccinesApiUtil = {
       dataType: 'json',
       data: {vaccine: vaccine},
       success: function (data) {
-        console.log("added vaccine to db");
+        // console.log("added vaccine to db");
         VaccineActions.addCatVaccine(cat, data);
 
       }
@@ -21,7 +21,7 @@ var VaccinesApiUtil = {
       dataType: 'json',
       data: {vaccine: vaccine},
       success: function (data) {
-        console.log("updated vaccine to db");
+        // console.log("updated vaccine to db");
         VaccineActions.updateCatVaccine(data);
       },
       error: function (data) {
@@ -37,7 +37,7 @@ var VaccinesApiUtil = {
       dataType: 'json',
       data: {vaccine: vaccine},
       success: function (data) {
-        console.log("deleted vaccine to db");
+        // console.log("deleted vaccine to db");
         VaccineActions.updateCatVaccine(data);
       }
     });

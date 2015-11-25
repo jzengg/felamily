@@ -1,4 +1,4 @@
-var Search = React.createClass({
+var PersonSearch = React.createClass({
   mixins: [ReactRouter.History],
 
   getInitialState: function () {
@@ -31,8 +31,10 @@ var Search = React.createClass({
 
   render: function () {
     return (
-        <form className="search-bar" onSubmit={this.handleSubmit}>
-          <input onChange={this.handleChange} type="search" value={this.state.input} placeholder="Search for a cat"/>
+        <form className="person-search-bar" onSubmit={this.handleSubmit}>
+          <label for="person-search"> Search
+          <input id="person-search" onChange={this.handleChange} type="search" value={this.state.input} />
+          </label>
         </form>
 
 

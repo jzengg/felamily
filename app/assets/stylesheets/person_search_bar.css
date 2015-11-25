@@ -1,0 +1,8 @@
+.person-search-bar input {
+  border: 1px solid black;
+  border-radius: 3px;
+  display: block;
+  width: 165px;
+  height: 25px;
+  margin: 0 auto;
+}
