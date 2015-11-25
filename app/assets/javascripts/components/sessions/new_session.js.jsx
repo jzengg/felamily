@@ -35,7 +35,7 @@
 
         <form className="sign-up-form" onSubmit={ this.submit }>
 
-          <h1>Shelter Manager </h1>
+          <h2>Shelter Manager </h2>
 
           <label htmlFor="login-username">
             Username

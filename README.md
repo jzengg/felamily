@@ -66,14 +66,15 @@ front end, I will begin by setting up a full JSON API for cats and people.
 <!-- Add link to vaccine tab -->
 <!-- Add display for vaccine info -->
 <!-- add validations -->
-quicklinks:
+<!-- quicklinks:
 available cats
-shelter view
+shelter view -->
+<!-- filter store sometimes still gets multiple copies of same record -->
+<!-- make it possible to search for available cats -->
+add person model / controller / store
 adopt a cat
 
-filter store sometimes still gets multiple copies of same record
 Add media category and figure out how to attach multiple images to a single cat
-make it possible to search for available cats
 Push state can take args. Check whether can refactor by passing args
 
 

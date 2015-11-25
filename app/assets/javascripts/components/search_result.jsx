@@ -35,6 +35,7 @@ var SearchResults = React.createClass({
           {
             return(
               <li className="search-result-result group" key={cat.id}><Link to={"cats/"+cat.id}>{cat.name}</Link>
+              <h5 className="search-result-age-sex"> {cat.sex +" cat" + " aged " + cat.age} </h5>
               <h5> Location: {cat.location} </h5>
               <img className="search-result-picture" src={cat.profile_image_url_thumb} />
               </li>

@@ -22,7 +22,7 @@ var UserForm = React.createClass({
           <form className="sign-up-form" onSubmit={ this.submit }>
 
 
-            <h1>Sign Up!</h1>
+            <h2>Sign Up!</h2>
 
               <label htmlFor="login-username">
                 Username

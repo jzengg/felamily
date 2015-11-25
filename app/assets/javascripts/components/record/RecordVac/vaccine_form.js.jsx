@@ -56,7 +56,7 @@ var VaccineForm = React.createClass({
         <label htmlFor="vaccine-comments"> Comments </label>
           <textarea id="vaccine-comments" onChange={this.updateField.bind(null, "comments")} value={this.state.comments}/>
 
-        <button> Add new vaccine </button>
+        <button> Add </button>
       </form>
         <button onClick={this.toggleExpanded}> Cancel </button>
       </div>;

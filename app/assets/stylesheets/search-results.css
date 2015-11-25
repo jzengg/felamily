@@ -29,5 +29,10 @@
   float: right;
 }
 
-.search-results h5 {
+.search-results h5.search-result-age-sex {
+  font-weight: lighter;
+  font-size: 12px;
+  color: black;
+  font-style: italic;
+  margin-right: 3px;
 }
