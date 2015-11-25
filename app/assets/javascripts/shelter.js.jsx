@@ -9,18 +9,15 @@ $(function () {
     mixins: [ReactRouter.History],
 
     getInitialState: function () {
-      return { currentUser: null };
+      return { currentUser: null, errors: ""};
     },
-
 
     componentWillMount: function () {
       CurrentUserStore.addChangeHandler(this._ensureLoggedIn);
-      FlashStore.addChangeHandler(this.handleErrors);
       SessionsApiUtil.fetchCurrentUser();
     },
 
     componentDidUnmount: function () {
-      FlashStore.removeChangeHandler(this.handleErrors);
       CurrentUserStore.removeChangeHandler(this._ensureLoggedIn);
     },
 
@@ -29,10 +26,6 @@ $(function () {
         this.history.pushState(null, "/login");
       }
       this.setState({currentUser: CurrentUserStore.currentUser()});
-    },
-
-    handleErrors: function () {
-      this.setState({errors: FlashStore.all()});
     },
 
     render: function(){
@@ -44,9 +37,7 @@ $(function () {
           <div className="app">
             {header}
             {this.props.children}
-            <section className="errors">
-              {this.state.errors}
-            </section>
+            <Errors />
           </div>
       );
     }

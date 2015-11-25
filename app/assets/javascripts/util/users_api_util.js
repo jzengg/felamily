@@ -30,6 +30,10 @@ var UsersApiUtil = {
       success: function (user) {
         CurrentUserActions.receiveCurrentUser(user);
         callback && callback();
+      },
+      error: function (data) {
+        console.log("error callback of createuser api")
+        FlashActions.receiveErrors(data.responseText);
       }
     });
   }

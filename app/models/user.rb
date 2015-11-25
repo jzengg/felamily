@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_reader :password
-  validates :username, presence: true
+  validates :username, presence: true, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
   has_many(
     :cats,

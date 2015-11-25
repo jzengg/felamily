@@ -15,9 +15,6 @@ var UserForm = React.createClass({
       }.bind(this));
     },
 
-    login: function () {
-    },
-
     render: function() {
 
       return (

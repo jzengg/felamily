@@ -5,6 +5,9 @@
   var _addError = function (error) {
     _flash = _flash.concat(error);
   };
+  var _resetErrors = function () {
+     _flash = [];
+  };
 
   var FlashStore = root.FlashStore = $.extend({}, EventEmitter.prototype, {
 
@@ -17,7 +20,9 @@
     },
 
     all: function () {
-      return _flash.slice();
+      var errors = _flash.slice();
+      _flash = [];
+      return errors;
     },
 
     dispatcherId: AppDispatcher.register(function (payload) {
@@ -25,6 +30,10 @@
         case FlashConstants.RECEIVE_ERRORS:
             _addError(payload.errors);
             FlashStore.emit(CHANGE_EVENT);
+          break;
+        case FlashConstants.RESET_ERRORS:
+          _resetErrors();
+          FlashStore.emit(CHANGE_EVENT);
           break;
 
       }

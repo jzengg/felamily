@@ -17,7 +17,7 @@ class Api::SessionsController < ApplicationController
     )
 
     if @user.nil?
-      render json: {errors: ["Wrong!"]}, status: 401
+      render json: {errors: ["Invalid username or password"]}, status: 401
     else
       sign_in!(@user)
       render "api/users/show"

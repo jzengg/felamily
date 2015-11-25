@@ -5,5 +5,11 @@ var FlashActions = {
         errors: errors
       });
 
+    },
+
+    resetErrors: function () {
+      AppDispatcher.dispatch({
+        actionType: FlashConstants.RESET_ERRORS,
+      });
     }
 };

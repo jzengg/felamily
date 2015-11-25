@@ -15,7 +15,7 @@ class Api::CatsController < ApplicationController
     if @cat.save
       render :show
     else
-      render json: @cat.errors.full_messages.first, status: 422
+      render json: @cat.errors.full_messages, status: 422
     end
   end
 

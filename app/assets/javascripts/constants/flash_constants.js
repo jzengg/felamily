@@ -1,3 +1,4 @@
 var FlashConstants = {
+  RESET_ERRORS: 'RESET_ERRORS',
   RECEIVE_ERRORS: 'RECEIVE_ERRORS'
 };
