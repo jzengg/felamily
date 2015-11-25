@@ -71,6 +71,8 @@ available cats
 shelter view -->
 <!-- filter store sometimes still gets multiple copies of same record -->
 <!-- make it possible to search for available cats -->
+
+https://css-tricks.com/complete-guide-table-element/
 add person model / controller / store
 adopt a cat
 

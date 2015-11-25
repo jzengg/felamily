@@ -1,7 +1,10 @@
 cats = Cat.create!([
-  {name: "Jose", location: "cats", available: 2, sex: 0, creator_id: 1, description: "The one that's never gonna play", dob: 27.months.ago},
-  {name: "Emmanuel", location: "quarantine", available: "temp_unavailable", sex: 0, creator_id: 1, description: "The one that's big", dob: 3.years.ago},
-  {name: "Willa", location: "kittens", available: "available", creator_id: 2, sex: 1, description: "The kitten", dob: 3.weeks.ago}
+  {name: "Jose", location: "cats", available: 2, sex: 0, creator_id: 1, description: "The one that's never gonna play", dob: 27.months.ago,
+    profile_image: File.new("#{Rails.root}/app/assets/images/jose.jpg")},
+  {name: "Emmanuel", location: "quarantine", available: "temp_unavailable", sex: 0, creator_id: 1, description: "The one that's big", dob: 3.years.ago,
+    profile_image: File.new("#{Rails.root}/app/assets/images/emmanuel.gif")},
+  {name: "Willa", location: "kittens", available: "available", creator_id: 2, sex: 1, description: "The kitten", dob: 3.weeks.ago,
+    profile_image: File.new("#{Rails.root}/app/assets/images/willa.jpg")}
 ])
 
 users = User.create!([
