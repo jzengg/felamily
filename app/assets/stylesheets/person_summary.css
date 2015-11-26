@@ -1,0 +1,12 @@
+.person-summary-pets {
+  display: block;
+  border: 1px solid black;
+  width: 97%;
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  border-radius: 5px;
+}
+
+.person-summary-pets h5 {
+  font-weight: bold;
+}

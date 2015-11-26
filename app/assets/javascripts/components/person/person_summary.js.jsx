@@ -33,7 +33,7 @@ var PersonSummary = React.createClass({
         <ul className="summary-right-column">
           <li> Added by <strong>{this.props.creator.username}</strong> at <strong> {person.created_at} </strong> </li>
           <li> Last changed <strong> {person.updated_at} </strong> </li>
-          <li className="record-summary-available"> Pets: {petLink} </li>
+          <li className="person-summary-pets group"> <h5>Pets: </h5> {petLink} </li>
 
         </ul>
       </ul>
