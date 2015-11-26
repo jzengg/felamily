@@ -19,6 +19,10 @@ var AdoptionPersonSearch = React.createClass({
 
   handleSubmit: function (e) {
     e.preventDefault();
+    var filtered = PersonStore.filtered(this.state.input);
+    if (filtered.length == 1) {
+      this.props.updateParent("person", filtered[0]);
+    }
   },
 
   render: function () {

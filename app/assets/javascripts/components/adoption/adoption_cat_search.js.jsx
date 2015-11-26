@@ -19,6 +19,10 @@ var AdoptionCatSearch = React.createClass({
 
   handleSubmit: function (e) {
     e.preventDefault();
+    var filtered = CatStore.filtered(this.state.input);
+    if (filtered.length == 1) {
+      this.props.updateParent("cat", filtered[0]);
+    }
   },
 
   render: function () {
