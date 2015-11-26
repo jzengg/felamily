@@ -7,7 +7,6 @@ var PersonSearch = React.createClass({
 
   handleChange: function (e) {
     e.preventDefault();
-    debugger
     var searchString = e.currentTarget.value;
     this.setState({input: searchString});
 
@@ -31,7 +30,7 @@ var PersonSearch = React.createClass({
   },
 
   render: function () {
-  
+
     return (
         <form className="person-search-bar" onSubmit={this.handleSubmit}>
           <label htmlFor="person-search"> Search

@@ -1,1 +1,1 @@
-json.partial! 'api/people/person', collection: @people, as: :people
+json.partial! 'api/people/person', collection: @people, as: :person

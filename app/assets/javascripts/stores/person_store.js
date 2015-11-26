@@ -115,7 +115,7 @@
       switch (payload.actionType) {
         case PeopleConstants.PEOPLE_RECEIVED:
           _resetPeople(payload.people);
-          PeopleStore.emit(CHANGE_EVENT);
+          PersonStore.emit(CHANGE_EVENT);
           break;
         // case CatConstants.NEW_CAT:
         //   _addCat(payload.cat);

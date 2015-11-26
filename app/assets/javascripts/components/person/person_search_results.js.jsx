@@ -21,6 +21,7 @@ var PersonSearchResults = React.createClass({
   },
 
   render: function() {
+    console.log(this.state.people, "state: people");
     var people = this.state.people || [];
     var results;
     if (people.length === 0) {
