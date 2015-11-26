@@ -81,7 +81,7 @@ var EditPersonForm = React.createClass({
 
 
       </form>
-      <button onClick={this.handleDestroy}> Destroy cat! </button>
+      <button onClick={this.handleDestroy}> Delete record </button>
       </div>
     );
   }

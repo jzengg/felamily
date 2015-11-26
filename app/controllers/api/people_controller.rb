@@ -27,7 +27,7 @@ class Api::PeopleController < ApplicationController
   end
 
   def destroy
-    @person = person.find(params[:id])
+    @person = Person.find(params[:id])
     @person.destroy!
     render json: {}
   end

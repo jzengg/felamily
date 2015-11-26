@@ -96,13 +96,6 @@
       this.removeListener(CHANGE_EVENT, callback);
     },
 
-    addUpdatePersonListener: function(callback){
-      this.on(UPDATE_PERSON_EVENT, callback);
-    },
-    removeUpdatePersonListener: function(callback){
-      this.removeListener(UPDATE_PERSON_EVENT, callback);
-    },
-
     addReceiveOnePersonListener: function(callback){
       this.on(RECEIVE_ONE_PERSON_EVENT, callback);
     },

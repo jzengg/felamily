@@ -28,7 +28,7 @@ var PersonSearchResults = React.createClass({
       results = <li> No results found </li>;
       }  else {
         results = this.state.people.map(function (person) {
-          return <li key={person.id}> <Link to={"people/"+person.id}> {person.fname + person.lname} </Link> </li>;
+          return <li key={person.id}> <Link to={"people/"+person.id}> {person.fname + " " + person.lname} </Link> </li>;
         });
 
       }
