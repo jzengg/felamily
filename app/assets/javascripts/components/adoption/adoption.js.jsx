@@ -31,10 +31,10 @@ var Adoption = React.createClass({
     var catSearch;
     var personSearch;
     if (this.state.catExpanded) {
-      catSearch = <CatSearch updateParent={this.updateParent}/>;
+      catSearch = <AdoptionCatSearch updateParent={this.updateParent}/>;
     }
     if (this.state.personExpanded) {
-      personSearch = <SearchForPerson updateParent={this.updateParent}/>;
+      personSearch = <AdoptionPersonSearch updateParent={this.updateParent}/>;
     }
 
     return (

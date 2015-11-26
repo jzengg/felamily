@@ -1,5 +1,5 @@
   var Link = ReactRouter.Link;
-  var CatSearchResults = React.createClass({
+  var AdoptionCatSearchResults = React.createClass({
 
     getInitialState: function () {
       var filters = FilterStore.all();

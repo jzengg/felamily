@@ -1,4 +1,4 @@
-var CatSearch = React.createClass({
+var AdoptionCatSearch = React.createClass({
   mixins: [ReactRouter.History],
 
   getInitialState: function () {
@@ -29,7 +29,7 @@ var CatSearch = React.createClass({
           <input onChange={this.handleChange} type="search" value={this.state.input} placeholder="Search for a cat"/>
         </form>
 
-        <CatSearchResults updateParent={this.props.updateParent} />
+        <AdoptionCatSearchResults updateParent={this.props.updateParent} />
 
 
 

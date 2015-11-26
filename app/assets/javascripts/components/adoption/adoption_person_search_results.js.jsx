@@ -1,0 +1,59 @@
+var Link = ReactRouter.Link;
+var AdoptionPersonSearchResults = React.createClass({
+
+  getInitialState: function () {
+    var filters = FilterStore.all();
+    return ({people: PersonStore.filtered(filters)});
+  },
+
+  componentDidMount: function () {
+    PersonStore.addChangeListener(this.onChange);
+    FilterStore.addChangeListener(this.onChange);
+    PersonApiUtil.fetchPeople();
+  },
+
+  componentWillUnmount: function () {
+    PersonStore.removeChangeListener(this.onChange);
+    FilterStore.removeChangeListener(this.onChange);
+  },
+
+  onChange: function () {
+    var filters = FilterStore.all();
+    this.setState({people: PersonStore.filtered(filters)});
+  },
+
+  render: function () {
+    var people = this.state.people || [];
+    var results;
+
+     if (people.length > 0) {
+        results = people.map(function (person)
+          {
+            return(
+              <tr>
+                <td onClick={this.props.updateParent.bind(null, "person", person)}> {person.fname} </td>
+                <td> {person.lname}</td>
+                <td> {person.zipcode} </td>
+              </tr>
+            );
+          }.bind(this));
+    }
+
+    return (
+        <table className="search-results">
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Zipcode</th>
+          </tr>
+          <tbody>
+            {results}
+
+          </tbody>
+        </table>
+
+    );
+  }
+
+
+});
