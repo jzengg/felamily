@@ -18,7 +18,7 @@ class Cat < ActiveRecord::Base
 
   has_many :vaccines, through: :vaccinations, dependent: :destroy
 
-  enum location: [:cats, :kittens, :quarantine, :isolation, :foster]
+  enum location: [:cats, :kittens, :quarantine, :isolation, :foster, :adopted]
   enum sex: [:male, :female, :unknown]
   enum available: [:temp_unavailable, :available, :unavailable]
 

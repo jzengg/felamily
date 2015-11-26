@@ -28,12 +28,12 @@ var Adoption = React.createClass({
   },
 
   handleAdopt: function () {
-    if (typeof this.state.person == "undefined" || typeof this.state.cat == "undefined") {
+    if (typeof this.state.person.id == "undefined" || typeof this.state.cat.id == "undefined") {
         FlashActions.receiveErrors("Please select both a person and a cat");
     } else {
       var formData = new FormData();
       formData.append("cat[owner_id]", this.state.person.id);
-      formData.append("cat[location]", "foster");
+      formData.append("cat[location]", "adopted");
       ApiUtil.updateCat(this.state.cat.id, formData, this.handleSuccess);
     }
   },

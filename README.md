@@ -75,7 +75,11 @@ shelter view -->
 style them -->
 <!-- add person model / controller / store -->
 
-adopt a cat
+<!-- adopt a cat -->
+add location "adopted"
+cat show page displays a link to owner if owned
+person show page displays list of cats owned
+
 https://css-tricks.com/complete-guide-table-element/
 polymorphic association for images ?
 how to get multiple images for a model?

@@ -68,7 +68,7 @@ var CatForm = React.createClass({
   },
 
   _locationOptions: function () {
-    var locations = ["cats", "kittens", "quarantine", "isolation", "foster"];
+    var locations = ["cats", "kittens", "quarantine", "isolation", "foster", "adopted"];
     return locations.map(function (location, i) {
       return <option key={location + i} value={location}> {location} </option>;
     });
