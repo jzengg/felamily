@@ -36,7 +36,7 @@ class Api::CatsController < ApplicationController
 
   private
   def cat_params
-    params.require(:cat).permit(:name, :available, :profile_image, :sex, :location, :creator_id, :description)
+    params.require(:cat).permit(:name, :available, :profile_image, :sex, :location, :creator_id, :description, :dob)
   end
 
 end

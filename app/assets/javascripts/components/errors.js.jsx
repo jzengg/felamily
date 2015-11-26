@@ -22,7 +22,6 @@ var Errors = React.createClass({
   },
 
   render: function() {
-    console.log(this.state.errors, "errors")
     var errors = this.state.errors.map(function (error, i) {
       return <li className="errors" key={i}> {error} </li>;
     });

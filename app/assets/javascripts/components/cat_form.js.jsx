@@ -2,7 +2,7 @@ var CatForm = React.createClass({
   mixins: [React.addons.LinkedStateMixin, ReactRouter.History],
 
   getInitialState: function () {
-    return {name: "", available: "temp_unavailable", sex: "unknown", location: "cats", imageUrl: "", imageFile: undefined};
+    return {name: "", available: "temp_unavailable", sex: "unknown", location: "cats", dob: "", imageUrl: "", imageFile: undefined};
   },
 
   handleSubmit: function (e) {
@@ -25,6 +25,7 @@ var CatForm = React.createClass({
     formData.append("cat[available]", state.available);
     formData.append("cat[sex]", state.sex);
     formData.append("cat[location]", state.location);
+    formData.append("cat[dob]", state.dob);
     return formData;
   },
 
@@ -91,6 +92,10 @@ var CatForm = React.createClass({
         <heading> Add a new animal</heading>
           <label htmlFor="name"> Name </label>
             <input id="name" type="text" value={this.state.name} onChange={updateField.bind(null, "name")} />
+          <br/>
+
+        <label htmlFor="dob"> Date of birth </label>
+            <input id="dob" type="date" value={this.state.dob} onChange={updateField.bind(null, "dob")} />
           <br/>
 
           <label htmlFor="availability"> Availability </label>

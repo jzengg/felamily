@@ -14,7 +14,7 @@ and React.js. MyShelterManager helps animal shelters manage the people and anima
 
 - [x] Create an account
 - [x] Log in / Log out
-- [ ] Holds records for animals and owners.
+- [x] Holds records for animals and owners.
 - [ ] CRUD for animal records, medical regiments, medical tests, and vaccinations.
 - [ ] Search by animal attributes (microchip number, id, owner, location)
 
@@ -73,8 +73,8 @@ shelter view -->
 <!-- make it possible to search for available cats -->
 <!-- fix flash errors
 style them -->
+<!-- add person model / controller / store -->
 
-add person model / controller / store
 adopt a cat
 https://css-tricks.com/complete-guide-table-element/
 polymorphic association for images ?
@@ -127,7 +127,7 @@ I will style with CSS and possibly bootstrap. Add seed data
 - [ ] Can associate media and owners with animals
 - [ ] Role-based permissions management
 - [ ] Can take database info and insert into templates
-- [ ] Can sort animals by their location and display them (shelter view)
+- [x] Can sort animals by their location and display them (shelter view)
 - [ ] full word processor and online application form
 - [ ] standard adoption contracts, invoices, cage cards included and fully editable
 - [ ] automatic daily publishing to petfinder.com, adoptapet.com, rescuegroups.org and other partner adoption sites

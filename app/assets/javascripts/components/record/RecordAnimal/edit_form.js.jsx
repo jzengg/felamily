@@ -4,7 +4,7 @@ var EditForm = React.createClass({
   getInitialState: function () {
     var cat = this.props.cat;
 
-    return{id: cat.id, name: cat.name, available: cat.available, sex: cat.sex, location: cat.location, imageUrl: "", imageFile: undefined};
+    return{id: cat.id, name: cat.name, available: cat.available, sex: cat.sex, location: cat.location, dob: cat.dob, imageUrl: "", imageFile: undefined};
   },
 
   handleSubmit: function (e) {
@@ -26,6 +26,7 @@ var EditForm = React.createClass({
     formData.append("cat[available]", state.available);
     formData.append("cat[sex]", state.sex);
     formData.append("cat[location]", state.location);
+    formData.append("cat[dob]", state.dob);
     return formData;
   },
 
@@ -91,6 +92,10 @@ var EditForm = React.createClass({
           <input id="name" type="text" value={this.state.name} onChange={updateField.bind(null, "name")} />
         <br/>
 
+      <label htmlFor="dob"> Date of birth </label>
+          <input id="dob" type="date" value={this.state.dob} onChange={updateField.bind(null, "dob")} />
+        <br/>
+
         <label htmlFor="availability"> Availability </label>
           <select id="availability" onChange={updateField.bind(null, "available")} value={this.state.available}>
             {this._availabilityOptions()}
@@ -115,7 +120,7 @@ var EditForm = React.createClass({
         <button className="save-changes"> Save changes </button>
 
       </form>
-      <button onClick={this.handleDestroy}> Destroy cat! </button>
+      <button onClick={this.handleDestroy}> Delete record </button>
       </div>
     );
   }

@@ -10,7 +10,7 @@ module ApplicationHelper
     days = (Date.today - cat.dob).to_i
     years = (days / 365).to_i
     days = days % 365
-    months = (days / 30).to_i
+    months = (days / 30).to_i - 1
     days = days % 30
 
     if years < 1
