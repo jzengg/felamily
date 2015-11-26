@@ -7,12 +7,13 @@ var PersonSearchResults = React.createClass({
   componentDidMount: function () {
     PersonStore.addChangeListener(this.onChange);
     FilterStore.addChangeListener(this.onChange);
-    PeopleApiUtil.fetchPeople();
+    PersonApiUtil.fetchPeople();
   },
 
   componentWillUnmount: function () {
     PersonStore.removeChangeListener(this.onChange);
     FilterStore.removeChangeListener(this.onChange);
+    FilterActions.resetParams();
   },
 
   onChange: function () {

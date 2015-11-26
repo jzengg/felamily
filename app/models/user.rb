@@ -8,6 +8,12 @@ class User < ActiveRecord::Base
     foreign_key: :creator_id,
     primary_key: :id
   )
+  has_many(
+    :people,
+    class_name: "Person",
+    foreign_key: :creator_id,
+    primary_key: :id
+  )
 
 
   def self.find_by_credentials(username, password)

@@ -1,9 +1,10 @@
 (function (root) {
 
-  // array of cat objects
   var _people = [];
   var CHANGE_EVENT = 'change';
-
+  var RECEIVE_ONE_PERSON_EVENT = 'receive_one_person';
+  var UPDATE_PERSON_EVENT = 'update_person';
+  var REMOVE_PERSON_EVENT = 'remove_person';
 
   var _resetPeople = function (people) {
     _people = people;
@@ -95,26 +96,43 @@
       this.removeListener(CHANGE_EVENT, callback);
     },
 
-    // addUpdateCatListener: function(callback){
-    //   this.on(UPDATE_CAT_EVENT, callback);
-    // },
-    // removeUpdateCatListener: function(callback){
-    //   this.removeListener(UPDATE_CAT_EVENT, callback);
-    // },
-    //
-    // addReceiveOneCatListener: function(callback){
-    //   this.on(RECEIVE_ONE_CAT_EVENT, callback);
-    // },
-    // removeReceiveOneCatListener: function(callback){
-    //   this.removeListener(RECEIVE_ONE_CAT_EVENT, callback);
-    // },
+    addUpdatePersonListener: function(callback){
+      this.on(UPDATE_PERSON_EVENT, callback);
+    },
+    removeUpdatePersonListener: function(callback){
+      this.removeListener(UPDATE_PERSON_EVENT, callback);
+    },
+
+    addReceiveOnePersonListener: function(callback){
+      this.on(RECEIVE_ONE_PERSON_EVENT, callback);
+    },
+    removeReceiveOnePersonListener: function(callback){
+      this.removeListener(RECEIVE_ONE_PERSON_EVENT, callback);
+    },
 
     dispatcherId: AppDispatcher.register( function (payload) {
       switch (payload.actionType) {
-        case PeopleConstants.PEOPLE_RECEIVED:
+        case PersonConstants.PEOPLE_RECEIVED:
           _resetPeople(payload.people);
           PersonStore.emit(CHANGE_EVENT);
           break;
+          case PersonConstants.NEW_PERSON:
+            _addPerson(payload.person);
+            PersonStore.emit(CHANGE_EVENT);
+            break;
+          case PersonConstants.RECEIVE_ONE_PERSON:
+            _addPerson(payload.person);
+            PersonStore.emit(RECEIVE_ONE_PERSON_EVENT);
+            break;
+          case PersonConstants.UPDATE_PERSON:
+            _updatePerson(payload.person);
+            PersonStore.emit(RECEIVE_ONE_PERSON_EVENT);
+            break;
+          case PersonConstants.REMOVE_PERSON:
+            _removePerson(payload.id);
+            PersonStore.emit(CHANGE_EVENT);
+            break;
+      
 
       }
     })
