@@ -3,9 +3,7 @@
   // array of cat objects
   var _people = [];
   var CHANGE_EVENT = 'change';
-  var RECEIVE_ONE_CAT_EVENT = 'receive_one_cat';
-  var UPDATE_CAT_EVENT = 'update_cat';
-  var REMOVE_CAT_EVENT = 'remove_cat';
+
 
   var _resetPeople = function (people) {
     _people = people;
@@ -117,31 +115,6 @@
           _resetPeople(payload.people);
           PersonStore.emit(CHANGE_EVENT);
           break;
-        // case CatConstants.NEW_CAT:
-        //   _addCat(payload.cat);
-        //   CatStore.emit(CHANGE_EVENT);
-        //   break;
-        // case CatConstants.RECEIVE_ONE_CAT:
-        //   _addCat(payload.cat);
-        //   CatStore.emit(RECEIVE_ONE_CAT_EVENT);
-        //   break;
-        // case CatConstants.UPDATE_CAT:
-        //   _updateCat(payload.cat);
-        //   CatStore.emit(RECEIVE_ONE_CAT_EVENT);
-        //   break;
-        // case CatConstants.REMOVE_CAT:
-        //   _removeCat(payload.id);
-        //   CatStore.emit(CHANGE_EVENT);
-        //   break;
-        // case VaccineConstants.ADD_CAT_VACCINES:
-        //   _addVaccine(payload.data.cat, payload.data.vaccine);
-        //   CatStore.emit(RECEIVE_ONE_CAT_EVENT);
-        //   break;
-        // case VaccineConstants.UPDATE_CAT_VACCINES:
-        //   _updateVaccine(payload.cat);
-        //   CatStore.emit(RECEIVE_ONE_CAT_EVENT);
-        //   break;
-
 
       }
     })

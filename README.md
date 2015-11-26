@@ -71,6 +71,8 @@ available cats
 shelter view -->
 <!-- filter store sometimes still gets multiple copies of same record -->
 <!-- make it possible to search for available cats -->
+<!-- fix flash errors
+style them -->
 
 add person model / controller / store
 adopt a cat
@@ -84,8 +86,6 @@ Add media category and figure out how to attach multiple images to a single cat
 Push state can take args. Check whether can refactor by passing args
 
 
-<!-- fix flash errors
-style them -->
 refactor making edit form show up to be state on parent?
 
 [Details][phase-one]

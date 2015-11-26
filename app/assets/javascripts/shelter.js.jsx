@@ -50,7 +50,7 @@ $(function () {
         <Route path="login" component={ SessionForm }/>
         <Route path="cats/new" component={CatForm} />
         <Route path="people/index" component={PersonSearchResults} />
-        <Route path="person/new" component={PersonForm} />
+        <Route path="people/new" component={PersonForm} />
         <Route path="people/:id" component={PersonRecord} />
         <Route path="cats/index" component={SearchResults} />
         <Route path="cats/shelterview" component={ShelterView} />

@@ -1,7 +1,7 @@
 var PersonSearchResults = React.createClass({
   getInitialState: function () {
     var filters = FilterStore.all();
-    return ({cats: CatStore.filtered(filters)});
+    return ({people: PersonStore.filtered(filters)});
   },
 
   componentDidMount: function () {
@@ -21,14 +21,13 @@ var PersonSearchResults = React.createClass({
   },
 
   render: function() {
-    console.log(this.state.people, "state: people");
     var people = this.state.people || [];
     var results;
     if (people.length === 0) {
       results = <li> No results found </li>;
       }  else {
         results = this.state.people.map(function (person) {
-          return person.fname + person.lname;
+          return <li key={person.id}> <Link to={"people/"+person.id}> {person.fname + person.lname} </Link> </li>;
         });
 
       }

@@ -1,4 +1,4 @@
-ApiActions = {
+var ApiActions = {
 
   receiveCats: function (data) {
     AppDispatcher.dispatch({

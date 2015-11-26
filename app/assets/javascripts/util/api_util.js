@@ -1,4 +1,4 @@
-ApiUtil = {
+var ApiUtil = {
 
   fetchCats: function () {
     $.ajax({

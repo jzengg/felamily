@@ -19,7 +19,7 @@ var PersonSearch = React.createClass({
 
   handleSubmit: function (e) {
     e.preventDefault();
-    var filtered = CatStore.filtered(this.state.input);
+    var filtered = PersonStore.filtered(this.state.input);
     if (filtered.length == 1) {
       this.history.pushState(null, "people/" + filtered[0].id);
     } else {
