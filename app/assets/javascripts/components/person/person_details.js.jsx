@@ -12,8 +12,12 @@ var PersonDetails = React.createClass({
     var text = "▶ Details";
     var content = "";
     var className = "";
+    if (this.state.expanded) {
+        content = <EditPersonForm person={this.props.person}/>;
+        text = "▼ Details";
+        className = "active-subcategory"
+    }
 
-    
     return (
       <div className="">
         <h5 className={className} onClick={this.handleClick}> {text} </h5>
