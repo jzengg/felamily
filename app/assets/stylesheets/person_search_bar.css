@@ -12,7 +12,7 @@
   margin: 0 auto;
 }
 
-.person-search-results-container h5{
+.person-search-results-container > h5{
   font-size: 13px;
   display: block;
   width: 95%;

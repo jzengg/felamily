@@ -8,7 +8,7 @@ cats = Cat.create!([
     profile_image: File.new("#{Rails.root}/app/assets/images/jose.jpg")},
   {name: "Emmanuel", location: "quarantine", available: "temp_unavailable", sex: 0, creator_id: 1, description: "The one that's big", dob: 3.years.ago,
     profile_image: File.new("#{Rails.root}/app/assets/images/emmanuel.gif")},
-  {name: "Willa", location: "kittens", available: "available", creator_id: 2, sex: 1, description: "The kitten", dob: 3.weeks.ago, owner_id: 2,
+  {name: "Willa", location: "adopted", available: "unavailable", creator_id: 2, sex: 1, description: "The kitten", dob: 3.weeks.ago, owner_id: 2,
     profile_image: File.new("#{Rails.root}/app/assets/images/willa.jpg")}
 ])
 

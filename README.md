@@ -78,8 +78,11 @@ style them -->
 <!-- adopt a cat -->
 <!-- add location "adopted" -->
 
-cat show page displays a link to owner if owned
-person show page displays list of cats owned
+<!-- cat show page displays a link to owner if owned -->
+<!-- person show page displays list of cats owned -->
+bug: on person search page, typing in cat search bar still returns results..
+
+refactor results pages to have a component to render a cat or a person
 
 https://css-tricks.com/complete-guide-table-element/
 polymorphic association for images ?
