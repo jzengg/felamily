@@ -1,4 +1,4 @@
-json.extract! cat, :id, :name, :available, :location, :sex, :creator_id, :description, :owner, :dob
+json.extract! cat, :id, :name, :available, :location, :sex, :creator_id, :description, :owner, :dob, :owner_id
 json.vaccines cat.vaccines
 json.age humanize_age(cat)
 json.updated_at cat.updated_at.to_formatted_s(:short)

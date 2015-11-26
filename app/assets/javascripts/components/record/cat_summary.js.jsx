@@ -3,6 +3,10 @@ var RecordSummary = React.createClass({
 
   render: function () {
     var cat = this.props.cat;
+    var ownerLink;
+    if (typeof cat.owner_id == "number") {
+      ownerLink = <Link to={"people/" + cat.owner_id}> {" → " + cat.owner.fname + " " + cat.owner.lname} </Link>;
+    }
     return(
       <ul className="summary-columns group">
         <ul className="summary-left-column">
@@ -16,7 +20,7 @@ var RecordSummary = React.createClass({
         </ul>
 
         <ul className="summary-middle-column">
-          <li className="record-summary-location"> Location: <strong> {cat.location} </strong> </li>
+          <li className="record-summary-location"> Location: <strong> {cat.location} {ownerLink}</strong> </li>
         </ul>
 
         <ul className="summary-right-column">

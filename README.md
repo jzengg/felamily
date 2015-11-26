@@ -76,7 +76,8 @@ style them -->
 <!-- add person model / controller / store -->
 
 <!-- adopt a cat -->
-add location "adopted"
+<!-- add location "adopted" -->
+
 cat show page displays a link to owner if owned
 person show page displays list of cats owned
 

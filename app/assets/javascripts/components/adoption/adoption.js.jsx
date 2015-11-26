@@ -33,15 +33,20 @@ var Adoption = React.createClass({
 
   },
 
+  isAvailable: function () {
+    return this.state.cat.available == "available";
+  },
+
   handleAdopt: function () {
     if (typeof this.state.person.id == "undefined" || typeof this.state.cat.id == "undefined") {
         FlashActions.receiveErrors("Please select both a person and a cat");
     }
-    else if (!this.isValidLocation()) {
+    else if (!this.isValidLocation() || !this.isAvailable) {
       FlashActions.receiveErrors("Cannot adopt a cat that is in isolation, quarantine, or already adopted");
     } else {
       var formData = new FormData();
       formData.append("cat[owner_id]", this.state.person.id);
+      formData.append("cat[available]", "unavailable");
       formData.append("cat[location]", "adopted");
       ApiUtil.updateCat(this.state.cat.id, formData, this.handleSuccess);
     }
