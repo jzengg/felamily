@@ -72,9 +72,13 @@ shelter view -->
 <!-- filter store sometimes still gets multiple copies of same record -->
 <!-- make it possible to search for available cats -->
 
-https://css-tricks.com/complete-guide-table-element/
 add person model / controller / store
 adopt a cat
+https://css-tricks.com/complete-guide-table-element/
+polymorphic association for images ?
+how to get multiple images for a model?
+http://stackoverflow.com/questions/19279553/multiple-images-for-multiple-models-paperclip-rails
+http://www.railscook.com/recipes/multiple-files-upload-with-nested-resource-using-paperclip-in-rails/
 
 Add media category and figure out how to attach multiple images to a single cat
 Push state can take args. Check whether can refactor by passing args
