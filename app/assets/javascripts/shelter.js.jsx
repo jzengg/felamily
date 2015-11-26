@@ -51,7 +51,10 @@ $(function () {
         <Route path="cats/new" component={CatForm} />
         <Route path="people/index" component={PersonSearchResults} />
         <Route path="people/new" component={PersonForm} />
-        <Route path="people/:id" component={PersonRecord} />
+        <Route path="people/:id" component={PersonRecord} >
+          <IndexRoute component={PersonContent} />
+          <Route path="person" component={PersonContent} />
+        </Route>
         <Route path="cats/index" component={SearchResults} />
         <Route path="cats/shelterview" component={ShelterView} />
         <Route path="cats/:id" component={CatRecord}>

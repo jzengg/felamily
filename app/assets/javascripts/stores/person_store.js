@@ -68,7 +68,7 @@
     },
 
     findPerson: function (id) {
-      return people.find( function (person) {
+      return _people.find( function (person) {
         return person.id == id;
       });
     },
@@ -132,7 +132,7 @@
             _removePerson(payload.id);
             PersonStore.emit(CHANGE_EVENT);
             break;
-      
+
 
       }
     })

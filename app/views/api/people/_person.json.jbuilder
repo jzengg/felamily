@@ -1,4 +1,4 @@
-json.extract! person, :id, :fname, :lname, :zipcode, :email
+json.extract! person, :id, :fname, :lname, :zipcode, :email, :creator_id
 json.cats person.cats
 json.updated_at person.updated_at.to_formatted_s(:short)
 json.created_at person.created_at.to_formatted_s(:short)

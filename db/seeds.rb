@@ -1,8 +1,8 @@
 people = Person.create!([
-  {fname: "James", lname: "McAdoo", email: "jmaccer@gmail.com", zipcode: 98105},
-  {fname: "Arron", lname: "Affalo", email: "aaffalo@gmail.com", zipcode: 85812},
+  {fname: "James", lname: "McAdoo", email: "jmaccer@gmail.com", zipcode: 98105, creator_id: 2},
+  {fname: "Arron", lname: "Affalo", email: "aaffalo@gmail.com", zipcode: 85812, creator_id: 1}
   ])
-  
+
 cats = Cat.create!([
   {name: "Jose", location: "cats", available: 2, sex: 0, creator_id: 1, description: "The one that's never gonna play", dob: 27.months.ago,
     profile_image: File.new("#{Rails.root}/app/assets/images/jose.jpg")},
