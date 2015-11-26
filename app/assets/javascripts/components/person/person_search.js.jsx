@@ -7,6 +7,7 @@ var PersonSearch = React.createClass({
 
   handleChange: function (e) {
     e.preventDefault();
+    debugger
     var searchString = e.currentTarget.value;
     this.setState({input: searchString});
 
@@ -21,15 +22,16 @@ var PersonSearch = React.createClass({
     e.preventDefault();
     var filtered = CatStore.filtered(this.state.input);
     if (filtered.length == 1) {
-      this.history.pushState(null, "cats/" + filtered[0].id);
+      this.history.pushState(null, "people/" + filtered[0].id);
     } else {
-      this.history.pushState(null, "/cats/index");
+      this.history.pushState(null, "/people/index");
     }
 
     this.setState({input: ""});
   },
 
   render: function () {
+  
     return (
         <form className="person-search-bar" onSubmit={this.handleSubmit}>
           <label htmlFor="person-search"> Search

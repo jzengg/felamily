@@ -5,6 +5,7 @@ var PeopleApiUtil = {
       type: 'GET',
       dataType: 'json',
       success: function (data) {
+        debugger
         PersonApiActions.receivePeople(data);
       }
     });

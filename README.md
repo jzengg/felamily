@@ -80,8 +80,8 @@ Add media category and figure out how to attach multiple images to a single cat
 Push state can take args. Check whether can refactor by passing args
 
 
-fix flash errors
-style them
+<!-- fix flash errors
+style them -->
 refactor making edit form show up to be state on parent?
 
 [Details][phase-one]

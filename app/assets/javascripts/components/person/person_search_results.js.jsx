@@ -5,13 +5,13 @@ var PersonSearchResults = React.createClass({
   },
 
   componentDidMount: function () {
-    CatStore.addChangeListener(this.onChange);
+    PersonStore.addChangeListener(this.onChange);
     FilterStore.addChangeListener(this.onChange);
-    ApiUtil.fetchCats();
+    PeopleApiUtil.fetchPeople();
   },
 
   componentWillUnmount: function () {
-    CatStore.removeChangeListener(this.onChange);
+    PersonStore.removeChangeListener(this.onChange);
     FilterStore.removeChangeListener(this.onChange);
   },
 
@@ -21,11 +21,24 @@ var PersonSearchResults = React.createClass({
   },
 
   render: function() {
+    var people = this.state.people || [];
+    var results;
+    if (people.length === 0) {
+      results = <li> No results found </li>;
+      }  else {
+        results = this.state.people.map(function (person) {
+          return person.fname + person.lname;
+        });
+
+      }
+
     return (
       <div className="person-search-results-container">
         <h5> Find a person</h5>
         <PersonSearch />
-        person search results
+        <ul>
+          {results}
+        </ul>
       </div>
     );
   }
