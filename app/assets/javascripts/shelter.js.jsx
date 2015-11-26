@@ -49,6 +49,7 @@ $(function () {
         <Route path="signup" component={ UserForm} />
         <Route path="login" component={ SessionForm }/>
         <Route path="cats/new" component={CatForm} />
+        <Route path="adopt" component={Adoption} />
         <Route path="people/index" component={PersonSearchResults} />
         <Route path="people/new" component={PersonForm} />
         <Route path="people/:id" component={PersonRecord} >

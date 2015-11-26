@@ -82,6 +82,9 @@ how to get multiple images for a model?
 http://stackoverflow.com/questions/19279553/multiple-images-for-multiple-models-paperclip-rails
 http://www.railscook.com/recipes/multiple-files-upload-with-nested-resource-using-paperclip-in-rails/
 
+style table
+
+
 Add media category and figure out how to attach multiple images to a single cat
 Push state can take args. Check whether can refactor by passing args
 
