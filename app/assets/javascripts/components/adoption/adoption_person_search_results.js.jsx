@@ -22,6 +22,11 @@ var AdoptionPersonSearchResults = React.createClass({
     this.setState({people: PersonStore.filtered(filters)});
   },
 
+  handleClick: function (person) {
+    this.props.updateParent("person", person);
+    FilterActions.resetParams();
+  },
+
   render: function () {
     var people = this.state.people || [];
     var results;
@@ -30,8 +35,8 @@ var AdoptionPersonSearchResults = React.createClass({
         results = people.map(function (person)
           {
             return(
-              <tr>
-                <td onClick={this.props.updateParent.bind(null, "person", person)}> {person.fname} </td>
+              <tr key={person.id}>
+                <td onClick={this.handleClick.bind(null, person)}> {person.fname} </td>
                 <td> {person.lname}</td>
                 <td> {person.zipcode} </td>
               </tr>

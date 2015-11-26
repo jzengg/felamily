@@ -1,5 +1,5 @@
 var Adoption = React.createClass({
-
+  mixins: [ReactRouter.History],
   getInitialState: function () {
     return {cat: {}, person: {}, catExpanded: false, personExpanded: false};
   },
@@ -25,6 +25,21 @@ var Adoption = React.createClass({
     } else {
       return this.state.person.fname + " " + this.state.person.lname;
     }
+  },
+
+  handleAdopt: function () {
+    if (typeof this.state.person == "undefined" || typeof this.state.cat == "undefined") {
+        FlashActions.receiveErrors("Please select both a person and a cat");
+    } else {
+      var formData = new FormData();
+      formData.append("cat[owner_id]", this.state.person.id);
+      formData.append("cat[location]", "foster");
+      ApiUtil.updateCat(this.state.cat.id, formData, this.handleSuccess);
+    }
+  },
+
+  handleSuccess: function () {
+    this.history.pushState(null, "cats/" + this.state.cat.id);
   },
 
   render: function() {
@@ -53,6 +68,8 @@ var Adoption = React.createClass({
             {personSearch}
 
           </ul>
+
+          <button onClick={this.handleAdopt}> Adopt </button>
       </div>
     );
   }

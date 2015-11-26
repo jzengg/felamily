@@ -22,6 +22,11 @@
       this.setState({cats: CatStore.filtered(filters)});
     },
 
+    handleClick: function (cat) {
+      this.props.updateParent("cat", cat);
+      FilterActions.resetParams();
+    },
+
     render: function () {
       var cats = this.state.cats || [];
       var results;
@@ -30,8 +35,8 @@
           results = cats.map(function (cat)
             {
               return(
-                <tr>
-                  <td onClick={this.props.updateParent.bind(null, "cat", cat)}> {cat.name} </td>
+                <tr key={cat.id}>
+                  <td onClick={this.handleClick.bind(null, cat)}> {cat.name} </td>
                   <td> {cat.location}</td>
                   <td> {cat.sex} </td>
                 </tr>
