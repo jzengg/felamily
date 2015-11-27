@@ -40,7 +40,7 @@ var PersonSearchResults = React.createClass({
 
     return (
       <div className="person-search-results-container">
-        <h5> Find a person</h5>
+        <h5 className="heading"> Find a person</h5>
         <PersonSearch />
         <ul className="search-results">
           {results}

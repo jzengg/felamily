@@ -1,0 +1,28 @@
+.adoption-selected-field {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 150px;
+  height: 18px;
+  /*float: right;*/
+}
+
+.adoption-form {
+  /*background: green;*/
+  width: 400px;
+  margin: 0 auto;
+}
+
+.adoption-form li {
+  float: left;
+}
+
+.adoption-input-person {
+  margin: 5px;
+}
+
+.adoption-form button {
+  border: 1px solid lightgrey;
+  background: white;
+  margin: 5px;
+  border-radius: 5px;
+}

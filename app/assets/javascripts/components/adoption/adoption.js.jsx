@@ -68,22 +68,28 @@ var Adoption = React.createClass({
 
     return (
       <div>
-        <h5> Adopt an animal</h5>
-          <ul className="selected-cat">
-            <li> {this.state.cat.name} </li>
-            <li> <button onClick={this.expandCat}> 🔎 </button></li>
+
+        <h5 className="heading"> Adopt an animal</h5>
+        <div className="adoption-form group">
+          <ul className="adoption-input-animal group">
+            <li className="adoption-label"> Animal </li>
+            <li className="adoption-selected-field"> {this.state.cat.name} </li>
+            <li>  <button onClick={this.expandCat}> 🔎 </button></li>
             <li> <button onClick={this.updateParent.bind(null, "cat", {})}> ♻  </button></li>
-            {catSearch}
+          {catSearch}
           </ul>
-          <ul className="selected-person">
-            <li> {this._personName()} </li>
+
+          <ul className="adoption-input-person group">
+            <li className="adoption-label"> New owner </li>
+            <li className="adoption-selected-field"> {this._personName()} </li>
             <li> <button onClick={this.expandPerson}> 🔎 </button></li>
             <li> <button onClick={this.updateParent.bind(null, "person", {})}> ♻  </button></li>
             {personSearch}
 
           </ul>
 
-          <button onClick={this.handleAdopt}> Adopt </button>
+          <button className="adoption-button" onClick={this.handleAdopt}> Adopt </button>
+        </div>
       </div>
     );
   }

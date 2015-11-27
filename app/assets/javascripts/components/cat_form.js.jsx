@@ -89,7 +89,7 @@ var CatForm = React.createClass({
     }
     return(
       <form className="cat-form" onSubmit={this.handleSubmit}>
-        <heading> Add a new animal</heading>
+        <h5 className="heading"> Add a new animal</h5>
           <label htmlFor="name"> Name </label>
             <input id="name" type="text" value={this.state.name} onChange={updateField.bind(null, "name")} />
           <br/>

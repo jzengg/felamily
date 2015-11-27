@@ -11,14 +11,3 @@
   width: 250px;
   margin: 0 auto;
 }
-
-.person-search-results-container > h5{
-  font-size: 13px;
-  display: block;
-  width: 95%;
-  text-align: center;
-  padding: 15px;
-  color: white;
-  margin-bottom: 25px;
-  background: darkblue;
-}
