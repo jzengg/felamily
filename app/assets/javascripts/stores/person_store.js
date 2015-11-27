@@ -16,24 +16,6 @@
     }
   };
 
-  // var _addVaccine = function (cat, vaccine) {
-  //   for (var i = 0; i < _cats.length; i++) {
-  //     if (cat.id == _cats[i].id) {
-  //       _cats[i].vaccines.push(vaccine);
-  //       return;
-  //     }
-  //   }
-  // };
-
-  // var _updateVaccine = function (cat) {
-  //   for (var i = 0; i < _cats.length; i++) {
-  //     if (cat.id == _cats[i].id) {
-  //       _cats[i] = cat;
-  //       return;
-  //     }
-  //   }
-  // };
-
   var _updatePerson = function (person) {
     for (var i = 0; i < _people.length; i++) {
       if (person.id == _people[i].id) {

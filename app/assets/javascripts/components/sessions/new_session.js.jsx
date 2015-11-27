@@ -7,6 +7,7 @@
     },
 
     submit: function (e) {
+      e.preventDefault();
       var credentials = {
         username: this.linkState("username").value,
         password: this.linkState("password").value

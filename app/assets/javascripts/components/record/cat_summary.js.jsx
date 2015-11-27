@@ -19,8 +19,11 @@ var RecordSummary = React.createClass({
           </div>
         </ul>
 
-        <ul className="summary-middle-column">
+        <ul className="summary-middle-column group">
           <li className="record-summary-location"> Location: <strong> {cat.location} {ownerLink}</strong> </li>
+          <li className="record-summary-location"> Entered shelter: <strong> {cat.entered_shelter} </strong> </li>
+          <li className="record-summary-location"> Left shelter: <strong> {cat.left_shelter} </strong> </li>
+          <li className="record-summary-location"> Time on shelter: <strong> {cat.time_on_shelter} </strong> </li>
         </ul>
 
         <ul className="summary-right-column">

@@ -12,6 +12,10 @@
   font-weight: bold;
 }
 
+.record-summary {
+  line-height: 1.5;
+}
+
 .summary-columns ul{
   display: block;
   float: left;
@@ -28,6 +32,12 @@
   float: none;
   padding: 10px;
 }
+
+/*.summary-middle-column strong {
+  float: right;
+  display: block;
+  margin-right: 130px;
+}*/
 
 .record-summary-available {
   color: #E54242;

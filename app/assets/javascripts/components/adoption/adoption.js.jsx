@@ -54,6 +54,7 @@ var Adoption = React.createClass({
       formData.append("cat[owner_id]", this.state.person.id);
       formData.append("cat[available]", "unavailable");
       formData.append("cat[location]", "adopted");
+      formData.append("cat[left_shelter]", new Date());
       ApiUtil.updateCat(this.state.cat.id, formData, this.handleSuccess);
     }
   },
