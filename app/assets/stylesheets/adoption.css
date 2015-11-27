@@ -2,21 +2,22 @@
   border: 1px solid black;
   border-radius: 5px;
   width: 150px;
-  height: 18px;
-  /*float: right;*/
+  height: 15px;
+  padding: 2px 5px 2px 5px;
 }
 
 .adoption-form {
-  /*background: green;*/
+  position: relative;
   width: 400px;
   margin: 0 auto;
 }
 
 .adoption-form li {
-  float: left;
+  display: inline-block;
+  vertical-align: middle;
 }
 
-.adoption-input-person {
+.adoption-input-person, .adoption-input-animal {
   margin: 5px;
 }
 
@@ -25,4 +26,23 @@
   background: white;
   margin: 5px;
   border-radius: 5px;
+}
+
+.adoption-form .adoption-button {
+  margin-top: 15px;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  font-size: 16px;
+  left: 30%;
+
+}
+
+.adoption-label-wrapper {
+  margin-top: 10px;
+  float: left;
+}
+
+.adoption-fields-wrapper {
+  float: right;
 }

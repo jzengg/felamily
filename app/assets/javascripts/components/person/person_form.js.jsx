@@ -60,7 +60,7 @@ var PersonForm = React.createClass({
     }
     return(
       <form className="cat-form" onSubmit={this.handleSubmit}>
-        <heading> Add a new person</heading>
+        <h5 className="heading"> Add a new person</h5>
           <label htmlFor="name"> First Name </label>
             <input id="name" type="text" valueLink={this.linkState("fname")}  />
           <br/>

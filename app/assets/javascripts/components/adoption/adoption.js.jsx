@@ -11,6 +11,12 @@ var Adoption = React.createClass({
     this.setState(change);
   },
 
+  closeParent: function (param) {
+    var change = {};
+    change[param+"Expanded"] = false;
+    this.setState(change);
+  },
+
   expandCat: function () {
     this.setState({catExpanded: !this.state.catExpanded});
   },
@@ -60,30 +66,38 @@ var Adoption = React.createClass({
     var catSearch;
     var personSearch;
     if (this.state.catExpanded) {
-      catSearch = <AdoptionCatSearch updateParent={this.updateParent}/>;
+      catSearch = <AdoptionCatSearch closeParent={this.closeParent} updateParent={this.updateParent}/>;
     }
     if (this.state.personExpanded) {
-      personSearch = <AdoptionPersonSearch updateParent={this.updateParent}/>;
+      personSearch = <AdoptionPersonSearch closeParent={this.closeParent} updateParent={this.updateParent}/>;
     }
 
     return (
       <div>
 
-        <h5 className="heading"> Adopt an animal</h5>
+        <h5 className="heading"> Adopt a cat</h5>
         <div className="adoption-form group">
           <ul className="adoption-input-animal group">
-            <li className="adoption-label"> Animal </li>
-            <li className="adoption-selected-field"> {this.state.cat.name} </li>
-            <li>  <button onClick={this.expandCat}> 🔎 </button></li>
-            <li> <button onClick={this.updateParent.bind(null, "cat", {})}> ♻  </button></li>
+            <div className="adoption-label-wrapper">
+              <li className="adoption-label"> Animal </li>
+            </div>
+            <div className="adoption-fields-wrapper group">
+              <li className="adoption-selected-field"> {this.state.cat.name} </li>
+              <li>  <button onClick={this.expandCat}> 🔎 </button></li>
+              <li> <button onClick={this.updateParent.bind(null, "cat", {})}> ♻  </button></li>
+            </div>
           {catSearch}
           </ul>
 
           <ul className="adoption-input-person group">
-            <li className="adoption-label"> New owner </li>
-            <li className="adoption-selected-field"> {this._personName()} </li>
-            <li> <button onClick={this.expandPerson}> 🔎 </button></li>
-            <li> <button onClick={this.updateParent.bind(null, "person", {})}> ♻  </button></li>
+            <div className="adoption-label-wrapper">
+              <li className="adoption-label"> New Owner </li>
+            </div>
+            <div className="adoption-fields-wrapper">
+              <li className="adoption-selected-field"> {this._personName()} </li>
+              <li> <button onClick={this.expandPerson}> 🔎 </button></li>
+              <li> <button onClick={this.updateParent.bind(null, "person", {})}> ♻  </button></li>
+            </div>
             {personSearch}
 
           </ul>

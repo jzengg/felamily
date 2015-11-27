@@ -1,6 +1,6 @@
 people = Person.create!([
   {fname: "James", lname: "McAdoo", email: "jmaccer@gmail.com", zipcode: 94101, creator_id: 2, profile_image: File.new("#{Rails.root}/app/assets/images/mac.jpg")},
-  {fname: "Arron", lname: "Affalo", email: "aaffalo@gmail.com", zipcode: 11044, creator_id: 1, profile_image: File.new("#{Rails.root}/app/assets/images/affalo.jpg")},
+  {fname: "Arron", lname: "Afflalo", email: "aaffalo@gmail.com", zipcode: 11044, creator_id: 1, profile_image: File.new("#{Rails.root}/app/assets/images/afflalo.jpg")},
   {fname: "Kendrick", lname: "Perkins", email: "kperkins@gmail.com", zipcode: 70112, creator_id: 1, profile_image: File.new("#{Rails.root}/app/assets/images/perkins.png")},
   {fname: "Paul", lname: "George", email: "pg13@gmail.com", zipcode: 46001, creator_id: 2, profile_image: File.new("#{Rails.root}/app/assets/images/pg.jpg")},
   {fname: "Andrea", lname: "Bargnani", email: "primo@gmail.com", zipcode: 11204, creator_id: 1, profile_image: File.new("#{Rails.root}/app/assets/images/primo.jpg")},

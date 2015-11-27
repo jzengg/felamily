@@ -27,17 +27,26 @@ var AdoptionPersonSearch = React.createClass({
 
   render: function () {
     return (
-      <div>
+      <div className="modal is-open">
 
-        <form className="search-bar" onSubmit={this.handleSubmit}>
-          <input onChange={this.handleChange} type="search" value={this.state.input} placeholder="Search for a person"/>
+      <div className="modal-form">
+        <h5 className="modal-header"> Find new owner </h5>
+        <span onClick={this.props.closeParent.bind(null,"person")} className="modal-close js-modal-close">&times;</span>
+        <form onSubmit={this.handleSubmit}>
+          <input className="search-bar" onChange={this.handleChange} type="search" value={this.state.input} placeholder="Search for a person"/>
         </form>
 
         <AdoptionPersonSearchResults updateParent={this.props.updateParent} />
+      </div>
 
+        <div className="modal-screen js-modal-close">
+
+
+        </div>
 
 
       </div>
+
     );
 
   },

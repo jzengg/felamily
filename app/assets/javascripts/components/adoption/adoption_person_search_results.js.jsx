@@ -36,7 +36,7 @@ var AdoptionPersonSearchResults = React.createClass({
           {
             return(
               <tr key={person.id}>
-                <td onClick={this.handleClick.bind(null, person)}> {person.fname} </td>
+                <td className="results-table-name" onClick={this.handleClick.bind(null, person)}> {person.fname} </td>
                 <td> {person.lname}</td>
                 <td> {person.zipcode} </td>
               </tr>
@@ -45,7 +45,7 @@ var AdoptionPersonSearchResults = React.createClass({
     }
 
     return (
-        <table className="search-results">
+        <table className="">
           <tr>
             <th>First Name</th>
             <th>Last Name</th>

@@ -85,7 +85,7 @@ var CatForm = React.createClass({
     var updateField = this.updateField;
     var preview;
     if (typeof this.state.imageFile != "undefined") {
-      preview = <img id="preview-image" className="preview-image" src={this.state.imageUrl} />
+      preview = <img id="preview-image" className="preview-image" src={this.state.imageUrl} />;
     }
     return(
       <form className="cat-form" onSubmit={this.handleSubmit}>

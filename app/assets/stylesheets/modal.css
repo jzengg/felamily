@@ -50,7 +50,15 @@
 
 .modal-form table {
   margin-left: -4px;
+}
 
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
 }
 
 .results-table-name:hover {
@@ -61,6 +69,6 @@ div.modal.is-open {
   display: block
 }
 
-div.modal.is-open {
+div.modal.is-closed {
   display: none;
 }
