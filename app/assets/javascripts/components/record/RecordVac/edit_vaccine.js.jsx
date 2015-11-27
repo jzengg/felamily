@@ -47,29 +47,40 @@ var EditVaccine = React.createClass({
       this.history.pushState(null, "/cats/" + this.props.cat.id + "/vaccine");
     },
 
+    closeForm: function () {
+      this.history.pushState(null, "/cats/" + this.props.cat.id + "/vaccine");
+    },
+
     render: function() {
 
 
       return (
-        <div>
-        <h4> Edit vaccination </h4>
-        <form onSubmit={this.handleSubmit}>
-        <label htmlFor="vaccine-category"> Category </label>
-          <select id="vaccine-category" onChange={this.updateField.bind(null, "category")} value={this.state.category}>
-            {this._categoryOptions()}
-          </select>
-          <label htmlFor="vaccine-given"> Date Given </label>
-            <input id="vaccine-given" onChange={this.updateField.bind(null, "given")} type="date" format="DD/MM/YYYY" value={this.state.given} />
-          <label htmlFor="vaccine-expires"> Date Vaccination Expires </label>
-            <input id="vaccine-given" onChange={this.updateField.bind(null, "expires")} type="date" format="DD/MM/YYYY" value={this.state.expires} />
-          <label htmlFor="vaccine-comments"> Comments </label>
-            <textarea id="vaccine-comments" onChange={this.updateField.bind(null, "comments")} value={this.state.comments}/>
+        <div className="modal is-open">
 
-          <button> Save changes </button>
-        </form>
+        <div className="modal-form-vaccine">
+          <h5 className="modal-header"> Edit vaccination </h5>
+          <span onClick={this.closeForm} className="modal-close js-modal-close">&times;</span>
+          <form onSubmit={this.handleSubmit}>
+            <label htmlFor="vaccine-category"> Category </label>
+            <select id="vaccine-category" onChange={this.updateField.bind(null, "category")} value={this.state.category}>
+              {this._categoryOptions()}
+            </select>
+            <label htmlFor="vaccine-given"> Date Given </label>
+              <input id="vaccine-given" onChange={this.updateField.bind(null, "given")} type="date" format="DD/MM/YYYY" value={this.state.given} />
+            <label htmlFor="vaccine-expires"> Expiration Date </label>
+              <input id="vaccine-given" onChange={this.updateField.bind(null, "expires")} type="date" format="DD/MM/YYYY" value={this.state.expires} />
+            <label htmlFor="vaccine-comments"> Comments </label>
+            <textarea id="vaccine-comments" onChange={this.updateField.bind(null, "comments")} value={this.state.comments}/>
+            <button> Save Changes </button>
+          </form>
           <button onClick={this.handleDestroy}> Delete record </button>
-          <Link to={"/cats/" + this.props.cat.id + "/vaccine"}> Cancel </Link>
+          <button onClick={this.closeForm}> Cancel </button>
         </div>
+
+        <div className="modal-screen js-modal-close"></div>
+      </div>
+
+
       );
     }
   });

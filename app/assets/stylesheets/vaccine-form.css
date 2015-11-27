@@ -22,3 +22,19 @@
   padding: 10px;
   float: right;
 }
+
+button.toggle-vaccine-form {
+  margin-top: 50px;
+  margin-left: 15px;
+  background: white;
+  border-radius: 5px;
+  padding: 8px;
+
+  border: 1px solid lightgrey;
+}
+
+.modal-form-vaccine button:hover {
+  background: lightblue;
+  color: white;
+  
+}

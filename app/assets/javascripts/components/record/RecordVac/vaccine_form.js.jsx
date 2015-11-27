@@ -69,7 +69,7 @@ var VaccineForm = React.createClass({
 
     return (
       <div>
-      <button onClick={this.toggleExpanded}> New Vaccination </button>
+      <button className="toggle-vaccine-form" onClick={this.toggleExpanded}> New Vaccination </button>
       {form}
       </div>
     );
