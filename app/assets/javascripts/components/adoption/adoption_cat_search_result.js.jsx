@@ -36,7 +36,7 @@
             {
               return(
                 <tr key={cat.id}>
-                  <td onClick={this.handleClick.bind(null, cat)}> {cat.name} </td>
+                  <td className="results-table-name" onClick={this.handleClick.bind(null, cat)}> {cat.name} </td>
                   <td> {cat.location}</td>
                   <td> {cat.sex} </td>
                 </tr>
@@ -45,7 +45,7 @@
       }
 
       return (
-          <table className="search-results">
+          <table className="">
             <tr>
               <th>Name</th>
               <th>Location</th>

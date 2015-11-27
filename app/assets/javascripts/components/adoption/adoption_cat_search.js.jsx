@@ -27,14 +27,21 @@ var AdoptionCatSearch = React.createClass({
 
   render: function () {
     return (
-      <div>
+      <div className="modal">
 
-        <form className="search-bar" onSubmit={this.handleSubmit}>
-          <input onChange={this.handleChange} type="search" value={this.state.input} placeholder="Search for a cat"/>
+      <div className="modal-form">
+        <h5 className="modal-header"> Find cat </h5>
+        <form onSubmit={this.handleSubmit}>
+          <input className="search-bar" onChange={this.handleChange} type="search" value={this.state.input} placeholder="Search for a cat"/>
         </form>
 
         <AdoptionCatSearchResults updateParent={this.props.updateParent} />
+      </div>
 
+        <div className="modal-screen">
+
+
+        </div>
 
 
       </div>
