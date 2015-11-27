@@ -1,0 +1,24 @@
+.modal-form-vaccine input, select, textarea {
+  display: block;
+  border: 1px solid black;
+  margin: 10px 0 10px 0;
+
+}
+
+.modal-form-vaccine textarea {
+  width: 489px;
+  min-height: 100px;
+}
+
+.modal-form-vaccine label {
+  font-weight: bold;
+}
+
+.modal-form-vaccine button {
+  background: white;
+  margin: 5px 5px 15px 5px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding: 10px;
+  float: right;
+}

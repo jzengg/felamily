@@ -30,7 +30,7 @@
 
 .modal-form {
   position: absolute;
-  top: 300px;
+  top: 200px;
   left: 50%;
   min-height: 400px;
   margin-left: -220px;
@@ -41,6 +41,21 @@
   border-radius: 5px;
   box-shadow: 2px 2px 2px grey;
   border: 1px solid lightgrey;
+}
+
+.modal-form-vaccine {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  min-height: 400px;
+  margin-left: -500px;
+  width: 500px;
+  padding: 0 20px;
+  background: #fff;
+  z-index: 3;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px grey;
+
 }
 
 .results-table-name {

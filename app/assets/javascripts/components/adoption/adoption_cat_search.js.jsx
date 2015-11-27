@@ -39,10 +39,7 @@ var AdoptionCatSearch = React.createClass({
         <AdoptionCatSearchResults updateParent={this.props.updateParent} />
       </div>
 
-        <div className="modal-screen js-modal-close">
-
-
-        </div>
+        <div className="modal-screen js-modal-close"></div>
 
 
       </div>

@@ -80,8 +80,9 @@ style them -->
 
 <!-- cat show page displays a link to owner if owned -->
 <!-- person show page displays list of cats owned -->
+<!-- style table -->
 bug: on person search page, typing in cat search bar still returns results..
-style table
+style vaccination add and edit into modals;
 
 
 https://css-tricks.com/complete-guide-table-element/
