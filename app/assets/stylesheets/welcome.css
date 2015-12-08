@@ -1,13 +1,13 @@
 .welcome-block {
   display: block;
   width: 800px;
-  margin: 10px auto;
+  margin: 10px 80px;
   padding: 5px;
 }
 
 .welcome-message {
   font-size: 36px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   border-bottom: 1px dotted grey;
 }
 
@@ -19,7 +19,8 @@
   display: block;
   width: 600px;
   margin: 0 auto;
+  border-radius: 5px;
   border: 1px solid black;
   margin-bottom: 15px;
-  box-shadow: 2px 2px 2px grey;
+  box-shadow: 3px 3px 3px grey;
 }
