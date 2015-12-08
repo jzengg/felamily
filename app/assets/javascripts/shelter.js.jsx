@@ -45,13 +45,6 @@ $(function () {
     }
   });
 
-  var AutoFocusFieldMixin = {
-    componentDidMount: function () {
-      this.refs.nameInput.getDOMNode().focus();
-    },
-  };
-
-
   var routes = (
       <Route path="/" component={App}>
         <IndexRoute component={ShelterSummary}/>
