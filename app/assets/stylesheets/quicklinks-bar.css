@@ -12,11 +12,11 @@
 
 .quicklinks-bar #logo {
   float: left;
-  margin-right: 8px;
+  margin-left: -10px;
   height: auto;
   width: auto;
-  max-width: 27px;
-  max-height: 27px;
+  max-width: 75px;
+  max-height: 100px;
 }
 
 .quicklinks-bar a:hover {
