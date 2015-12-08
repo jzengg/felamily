@@ -6,6 +6,10 @@
       return {username: "", password: ""};
     },
 
+    componentDidMount: function () {
+      this.refs.nameInput.getDOMNode().focus();
+    },
+
     submit: function (e) {
       e.preventDefault();
       var credentials = {
@@ -43,7 +47,7 @@
             Username
           </label>
             <div className="login-username">
-              <input id="login-username" type="text" valueLink={this.linkState("username")}/>
+              <input ref="nameInput" id="login-username" type="text" valueLink={this.linkState("username")}/>
             </div>
 
           <label htmlFor="login-password">

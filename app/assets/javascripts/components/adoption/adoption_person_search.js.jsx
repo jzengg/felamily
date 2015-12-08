@@ -5,6 +5,10 @@ var AdoptionPersonSearch = React.createClass({
     return {input: ""};
   },
 
+  componentDidMount: function () {
+    this.refs.nameInput.getDOMNode().focus();
+  },
+
   handleChange: function (e) {
     e.preventDefault();
     var searchString = e.currentTarget.value;
@@ -33,7 +37,7 @@ var AdoptionPersonSearch = React.createClass({
         <h5 className="modal-header"> Find new owner </h5>
         <span onClick={this.props.closeParent.bind(null,"person")} className="modal-close js-modal-close">&times;</span>
         <form onSubmit={this.handleSubmit}>
-          <input className="search-bar" onChange={this.handleChange} type="search" value={this.state.input} placeholder="Search for a person"/>
+          <input ref="nameInput" className="search-bar" onChange={this.handleChange} type="search" value={this.state.input} placeholder="Search for a person"/>
         </form>
 
         <AdoptionPersonSearchResults updateParent={this.props.updateParent} />
