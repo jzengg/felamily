@@ -14,7 +14,7 @@ html, body, ul, li, div, a, h1, h2, h3, h4, h5, header, input, select {
 body {
   font-size: 13px;
   font-weight: 400;
-  font-family: 'Helvetica' sans-serif;
+  font-family: 'Helvetica', sans-serif;
 }
 
 h2 {
