@@ -11,12 +11,15 @@
 }
 
 .quicklinks-bar #logo {
+  border: 1px solid lightgrey;
+  padding: 1px;
   float: left;
-  margin-left: -10px;
   height: auto;
   width: auto;
-  max-width: 75px;
-  max-height: 100px;
+  margin-top: -2px;
+  margin-right: 7px;
+  max-width: 33px;
+  max-height: 33px;
 }
 
 .quicklinks-bar a:hover {
