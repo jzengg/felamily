@@ -1,11 +1,7 @@
 var UserForm = React.createClass({
-    mixins: [ReactRouter.History, React.addons.LinkedStateMixin],
+    mixins: [ReactRouter.History, React.addons.LinkedStateMixin, AutoFocusFieldMixin],
     getInitialState: function () {
       return {username: "", password: ""};
-    },
-
-    componentDidMount: function () {
-      this.refs.nameInput.getDOMNode().focus();
     },
 
     submit: function (e) {

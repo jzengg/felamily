@@ -1,5 +1,5 @@
 var PersonSearch = React.createClass({
-  mixins: [ReactRouter.History],
+  mixins: [ReactRouter.History, AutoFocusFieldMixin],
 
   getInitialState: function () {
     return {input: ""};
@@ -34,7 +34,7 @@ var PersonSearch = React.createClass({
     return (
         <form className="person-search-bar" onSubmit={this.handleSubmit}>
           <label htmlFor="person-search"> Search
-          <input id="person-search" onChange={this.handleChange} type="search" value={this.state.input} />
+          <input ref="nameInput" id="person-search" onChange={this.handleChange} type="search" value={this.state.input} />
           </label>
         </form>
 

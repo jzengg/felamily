@@ -1,5 +1,5 @@
 var CatForm = React.createClass({
-  mixins: [React.addons.LinkedStateMixin, ReactRouter.History],
+  mixins: [React.addons.LinkedStateMixin, ReactRouter.History, AutoFocusFieldMixin],
 
   getInitialState: function () {
     return {name: "", available: "temp_unavailable", sex: "unknown", location: "cats", dob: "", imageUrl: "", imageFile: undefined};
@@ -91,7 +91,7 @@ var CatForm = React.createClass({
       <form className="cat-form" onSubmit={this.handleSubmit}>
         <h5 className="heading"> Add a new animal</h5>
           <label htmlFor="name"> Name </label>
-            <input id="name" type="text" value={this.state.name} onChange={updateField.bind(null, "name")} />
+            <input ref="nameInput" id="name" type="text" value={this.state.name} onChange={updateField.bind(null, "name")} />
           <br/>
 
         <label htmlFor="dob"> Date of birth </label>

@@ -1,5 +1,5 @@
 var PersonForm = React.createClass({
-  mixins: [React.addons.LinkedStateMixin, ReactRouter.History],
+  mixins: [React.addons.LinkedStateMixin, ReactRouter.History, AutoFocusFieldMixin],
 
   getInitialState: function () {
     return {fname: "", lname: "", zipcode: "", email: "", imageUrl: "", imageFile: undefined};
@@ -62,7 +62,7 @@ var PersonForm = React.createClass({
       <form className="cat-form" onSubmit={this.handleSubmit}>
         <h5 className="heading"> Add a new person</h5>
           <label htmlFor="name"> First Name </label>
-            <input id="name" type="text" valueLink={this.linkState("fname")}  />
+            <input ref="nameInput" id="name" type="text" valueLink={this.linkState("fname")}  />
           <br/>
           <label htmlFor="name"> Last Name </label>
             <input id="name" type="text" valueLink={this.linkState("lname")}  />
