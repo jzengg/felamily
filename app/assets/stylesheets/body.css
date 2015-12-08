@@ -11,3 +11,14 @@ h5.heading {
   color: white;
   background: navy;
 }
+
+div.app {
+  margin-left: 15px;
+}
+
+div.app-container {
+  width: 935px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid darkgrey;
+}

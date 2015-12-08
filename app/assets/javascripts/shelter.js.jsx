@@ -36,8 +36,10 @@ $(function () {
       return (
           <div className="app">
             {header}
+            <div className="app-container">
             {this.props.children}
             <Errors />
+            </div>
           </div>
       );
     }
