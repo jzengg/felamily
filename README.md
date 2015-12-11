@@ -2,8 +2,6 @@
 
 [link]: [http://www.felamily.com]
 
-## Summary
-
 Felamily is a web application inspired by ShelterManager built using Ruby on Rails and React.js. Felamily helps shelters manage their pets and adoptions.
 
 ### Languages:
@@ -30,6 +28,7 @@ You can:
 - Edit and delete records
 - Add and update vaccinations for cats
 - Search for cats by availability, location, name.
+- Search for people by name or email
 
 ## Technical Features
 
