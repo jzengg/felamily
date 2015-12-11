@@ -1,5 +1,6 @@
 class Cat < ActiveRecord::Base
   validates :name, length: {minimum: 2}
+
   belongs_to(
     :owner,
     class_name: "Person",
