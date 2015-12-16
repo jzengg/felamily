@@ -91,7 +91,6 @@ var EditForm = React.createClass({
         <label htmlFor="name"> Name </label>
           <input id="name" type="text" value={this.state.name} onChange={updateField.bind(null, "name")} />
         <br/>
-
       <label htmlFor="dob"> Date of birth </label>
           <input id="dob" type="date" value={this.state.dob} onChange={updateField.bind(null, "dob")} />
         <br/>
@@ -100,19 +99,14 @@ var EditForm = React.createClass({
           <select id="availability" onChange={updateField.bind(null, "available")} value={this.state.available}>
             {this._availabilityOptions()}
           </select>
-        <br/>
-
         <label htmlFor="location"> Location </label>
           <select id="location" onChange={updateField.bind(null, "location")} value={this.state.location}>
             {this._locationOptions()}
           </select>
-        <br/>
-
         <label htmlFor="sex"> Sex </label>
           <select id="sex" onChange={updateField.bind(null, "sex")} value={this.state.sex}>
             {this._sexOptions()}
           </select>
-        <br/>
         <label htmlFor="profile-picture"> Upload a profile picture </label>
         <input id="profile-picture" type="file" onChange={this.updateFile} />
 
