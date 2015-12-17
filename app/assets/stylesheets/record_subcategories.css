@@ -3,6 +3,7 @@
   border-radius: 5px;
   margin-left: 10px;
   padding: 8px;
+  cursor: pointer;
 }
 .animal-content h5.active-subcategory {
   background: navy;
