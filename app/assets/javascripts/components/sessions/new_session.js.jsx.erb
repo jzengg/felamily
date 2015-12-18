@@ -22,7 +22,8 @@
       }.bind(this));
     },
 
-    handleGuest: function () {
+    handleGuest: function (e) {
+      e.preventDefault();
       this.setState({username: "guest", password: "password"});
       this.signInGuest();
     },
