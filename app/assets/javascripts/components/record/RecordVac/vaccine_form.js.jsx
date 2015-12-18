@@ -2,7 +2,7 @@ var VaccineForm = React.createClass({
   getInitialState: function() {
     var date = new Date();
     var day = date.getDate();
-    var month = (date.getMonth() + 1) % 12;
+    var month = (date.getMonth() + 1);
     var year = date.getFullYear();
     var initialDate = year + "-" + month + "-" + day;
     var nextYear = year + 1 + "-" + month + "-" + day;
