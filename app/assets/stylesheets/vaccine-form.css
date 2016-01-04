@@ -23,6 +23,9 @@
   float: right;
 }
 
+button.toggle-vaccine-form:hover {
+  cursor: pointer;
+}
 button.toggle-vaccine-form {
   margin-top: 50px;
   margin-left: 15px;
@@ -36,5 +39,5 @@ button.toggle-vaccine-form {
 .modal-form-vaccine button:hover {
   background: lightblue;
   color: white;
-  
+  cursor: pointer;
 }
