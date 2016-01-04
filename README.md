@@ -1,6 +1,6 @@
 # Felamily
 
-[link]: [http://www.felamily.com]
+[Live](http://www.felamily.com)
 
 Felamily is a web application inspired by ShelterManager built using Ruby on Rails and React.js. Felamily helps shelters manage their pets and adoptions.
 
