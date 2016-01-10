@@ -1,11 +1,11 @@
 var VaccineForm = React.createClass({
   getInitialState: function() {
     var date = new Date();
-    var day = date.getDate();
-    var month = (date.getMonth() + 1);
-    var year = date.getFullYear();
-    var initialDate = year + "-" + month + "-" + day;
-    var nextYear = year + 1 + "-" + month + "-" + day;
+    var d = date.getDate();
+    var m = (date.getMonth() + 1);
+    var y = date.getFullYear();
+    var initialDate =  '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d);
+    var nextYear =  '' + (y+1) + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d);
     return {category: "first_round", comments: "", given: initialDate, expires: nextYear, expanded: false};
   },
 
